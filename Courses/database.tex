@@ -1,0 +1,62 @@
+\section{Database}
+
+\subsection{Theory}
+
+\subsubsection{Introduction}
+
+A database can be defined as a collection of related data items within a specific business.
+DBMS are sotwares that define, create, use and maintain a database, if we combine a DBMS with a database we get a database system
+The majority of DBMS softwares rely on SQL systems. 
+
+\vspace{10pt}
+
+To work with databases we need to model them to understand how they work. Modelling means representing reality in a 
+scaled version. The same with databases we connect information to represent how relationships in the world exist.
+Based on the business needings we design the database in a logical fashion and we translate it to 
+a our language of choice. The step is passing from conceptual design to logical design. The first is DBMS independent while the second is DBMS dependent.
+The process is:
+
+\begin{enumerate}
+    \item Requirement collection and analysis
+    \item Conceptual design
+    \item Logical design
+    \item Physical design
+\end{enumerate}
+
+\vspace{10pt}
+
+An SQL database is based on entities and relationships. Entities are business concepts
+with an unambiguous meaning to a particular set of users. Entities have certain characteristics called attributes.
+The rows are the entities (also called instances). The columns are the attributes. An association 
+between one or more entities is called relationship, it defines how tables are related to each other. 
+
+\vspace{10pt}
+
+Another useful concept is the one of cardinality, how many instances of the entities can be associated with each other. 
+
+We can have
+ \begin{itemize}
+    \item 1 to 1
+    \item 1 to many
+    \item Many to many
+\end{itemize}
+
+\vspace{10pt}
+
+An important step in the design is the one related to data normalization, we want to avoid redundant data. We split 
+the tables into smaller tables to avoid anomalies during insertion, deletion or updates. The 
+procedure follows a step by step transformation. The database is more complex from the structural point of view but can be easier to manage.
+
+We have 3 possible normal forms.
+
+\begin{itemize}
+    \item First NF \ra Each cell in the table can have only one value, never a list of values 
+    \item Second NF \ra An entity type is in 2NF when it is in 1NF and when all of its non-key
+attributes are functionally dependent on its primary key. Features should be fully dependent on the entire primary key
+    \item Third NF \ra An entity type is in 3NF when it is in 2NF, and non-key attributes are
+directly (non-transitively) dependent on the primary key.
+In other words: non-prime attributes must be functionally dependent on the
+key(s), but they must not depend on another non-prime attribute.
+
+\end{itemize}
+

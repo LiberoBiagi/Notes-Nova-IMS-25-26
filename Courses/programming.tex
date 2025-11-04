@@ -839,4 +839,55 @@ To create an array and work with them
 
     b = np.array([[1, 2, 3], [4, 5, 6]])
     b[0, 0] #to access matrix like
+
+    X = X.astype("int 64") #to change type
+
+
 \end{pythoncode}
+
+\vspace{10pt}
+
+The numpy dtypes are many. Some of them have limits on the size that they can use
+
+
+\begin{pythoncode}
+    X = np.random.randint(1, 101, size=(3, 4)) #random array creation
+
+    a = np.linspace(0, 10, 3) #list with elements between the first 2 evenly spaced, the last is how many elements we want
+
+    a = np.arange(0, 10, 2) 
+
+    np.zeros((3, 3)) #3x3 matrix of zeroes
+
+
+\end{pythoncode}
+
+\vspace{10pt}
+
+To access and slicing arrays we can use the same rules seen in Pandas
+
+\begin{pythoncode}
+    data[1]
+    data[0:2]
+    data[1:]
+    data[-2:]
+
+
+    matrix[2] #third row
+    matrix[0][2] #single element
+    matrix[0, 2] #also works
+
+    matrix [0:2, 0:2]
+
+    a[a < 5] #true or false depending on the comparison
+    a[a % 2 == 0] #same as above
+
+    & and | for and or or
+
+    data[data < 0] = 0 #assign values
+
+    a.reshape((4, 2)) #reshape the array
+\end{pythoncode}
+
+
+Some operations will return a view, a shallow copy, or a copy, deep copy.
