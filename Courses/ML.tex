@@ -805,18 +805,99 @@ Remember that
 
 \subsubsection{Bayesians classifiers}
 
+Bayesian classifiers are a class of probabilistic classifers, they give probabilities of
+being part of a certain class with respect to another.
+The reasons that we use them are:
+\begin{itemize}
+    \item They are statistical
+    \item Based on Bayes theorem
+    \item They have very good performance
+    \item They are incremental
+    \item They set a standard of quality
+\end{itemize}
 
+\vspace{10pt}
 
-When a classifier is always right we say that is based. Class finished.
+Recall Bayes theorem
 
+\begin{equation}
+    P(H|E) =  \frac{P(H)P(E|H)}{P(E)}
+\end{equation}
 
+Where:
 
+\begin{itemize}
+    \item H is our hypothesis
+    \item E is an evidence of the hypothesis
+\end{itemize}
 
+We can update both E and H with new knowledge.
 
+\vspace{10pt}
 
+If we assume E to be a data sample with attributes and an unknown class label and H
+to be an hypothesis that E belongs to a class C and we want to determine P(H|E) with 
+the Bayes theorem we get
+\begin{equation}
+    \text{Posterior} = \frac{\text{Likelihood * Prior}}{\text{Evidence}}
+\end{equation}
 
+Basically
 
+\begin{itemize}
+    \item Likelihood \ra The probability of observing the sample given that the hypothesis is true
+    \item Prior \ra Probability that a certain event happens regardless of the evidence
+    \item Evidence \ra Probability that our sample is observed
+\end{itemize}
 
+We can either maximise the likelihood or the posterior
+
+\vspace{10pt}
+
+Maximising the posterior means maximising:
+
+\begin{equation}
+    P(C_i|X) = P(X|C_i)P(C_i)
+\end{equation}
+
+\vspace{10pt}
+
+A special case is the Naive Bayes Classifier where we assume that P(X) is equal for all the classes.
+So the attributes are conditionally independent.
+To avoid that the probabilities of events without occurence in our sample will be zero we add one occurence to every value class combination (Laplace estimator).
+In case of missing values the instance is not included in the frequency counts during training, while for classification the attribute will be omitted from calculation
+
+\vspace{10pt}
+
+Knowing that the probability density function of a normal distribution is based on the two paramenters mean and standard deviation we can
+use those information in the sample to estimate the probabilities
+
+\vspace{10pt}
+
+Naive Bayes can have good sides
+
+\begin{itemize}
+    \item Easy to implement
+    \item Good results
+\end{itemize}
+
+\vspace{10pt}
+
+But also cons 
+\begin{itemize}
+    \item We lose accuracy assuming class independency
+    \item Dependencies exist in real life 
+\end{itemize}
+
+To solve the cons we use \textbf{Bayesians Belief Networks}. They allow for class conditional independencies between subsets of variables.
+Those networks are composed by two components
+\begin{enumerate}
+    \item Directed acyclic graph \ra Shows dependency among the variables and gives specification of joint probability distribution.
+    \item Set of conditional probabilities
+\end{enumerate}
+
+The nodes of the graph represent the variables while the arcs are the dependencies among the variables.
+The relationship among the variables \ra Each variable is conditionally independent of its non descendants in the network given the parennts.
 
 
 

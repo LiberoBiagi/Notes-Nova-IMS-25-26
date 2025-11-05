@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  4 NOV 2025 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  5 NOV 2025 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -839,22 +839,22 @@ Package pdftex.def Info: Courses/Images/L1.png  used on input line 295.
 
 [34]
 
-[35])
+[35]
 
-[36]
+[36])
+
+[37]
 \openout2 = `Courses/Stat.aux'.
 
  (Courses/Stat.tex
 Package pgfplots info on input line 64: Using 'lua backend=false' for axis: x coord trafo unsupported.
 
 
-[37
+[38
 
 
 
 ]
-
-[38]
 
 [39]
 
@@ -863,6 +863,8 @@ Package pgfplots info on input line 64: Using 'lua backend=false' for axis: x co
 [41]
 
 [42]
+
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 605--605
 []\T1/lmr/bx/n/10 Research ques-
  []
@@ -874,7 +876,7 @@ Underfull \hbox (badness 2469) in paragraph at lines 609--609
 
 
 
-[43]
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 676--676
 []\T1/lmr/bx/n/10 Research ques-
  []
@@ -896,14 +898,14 @@ Underfull \hbox (badness 2469) in paragraph at lines 680--680
 
 
 
-[44])
+[45])
 
-[45]
+[46]
 \openout2 = `Courses/database.aux'.
 
  (Courses/database.tex)
 
-[46
+[47
 
 
 
@@ -916,17 +918,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4176289F522C36187EF8426A47EEFC8C;7661.
  ) 
 Here is how much of TeX's memory you used:
- 34991 strings out of 468130
- 800347 string characters out of 5430633
+ 34997 strings out of 468130
+ 800401 string characters out of 5430633
  1953034 words of memory out of 5000000
  62456 multiletter control sequences out of 15000+600000
  691115 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,87p,776b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (46 pages, 720161 bytes).
+Output written on main.pdf (47 pages, 724054 bytes).
 PDF statistics:
- 1143 PDF objects out of 1200 (max. 8388607)
- 566 named destinations out of 1000 (max. 500000)
+ 1153 PDF objects out of 1200 (max. 8388607)
+ 572 named destinations out of 1000 (max. 500000)
  399 words of extra memory for PDF output out of 10000 (max. 10000000)
 
