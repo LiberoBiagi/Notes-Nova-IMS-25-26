@@ -691,3 +691,130 @@ An example of A Priori grouping is Cohort analysis \ra group observations based 
 
 \textbf{Cell based segmentation} is based on the quantiles and we try to segment our observations on those. 
 We can do that using just one variable using the \textbf{Migration matrix}.
+
+\vspace{10pt}
+
+To analyze our data we can use different approaches. One of them is the \textbf{RFM}.
+\begin{itemize}
+    \item Recency \ra Customers that have purchased more recently will purchase Again
+    \item Frequebcy \ra Customers that have purchased more will buy again
+    \item Monetary \ra Customers that have spent more will spend again
+\end{itemize}
+
+We can use RFM for customers files that contain purchase history. We have two methods
+
+\begin{enumerate}
+    \item Exact Quintiles
+    \begin{itemize}
+        \item Sort the database according to recency and divide into 5 quintiles
+        \item Do the same for frequency and monetary
+        \item We have 125 cells of equal size
+    \end{itemize}
+    \item Hard coding
+    \begin{itemize}
+        \item We divide the categories into exact values
+        \item More expensive to program 
+        \item We have many quantities from cell to cell
+    \end{itemize}
+\end{enumerate}
+
+The popularity of RFM comes from its semplicity and capacity to segment customers.
+
+\vspace{10pt}
+
+On the more general case of cluster analysis we need to understand which are the stages of it
+
+\begin{enumerate}
+    \item \textbf{Decide the set of variable that we want to use} \ra 
+To decide which variable we want to use we have to kniw which is the objective of the segmentation. Since
+the type of problem will determine the variables that we will use. If we want to group objects we want to maximise discrimination ability.
+The quality of the cluster analysis is stricly based on the variables used. The choice should replicate a theoretical context and use variables that we know will be good discriminators.
+
+    \item \textbf{Decide the similarity or dissimilarity criterion} \ra The usual choice is calculating the difference between the objects using metrics based on euclidean spaces. The differences are based on how much instances differe on numerical values. A measure of distance should obey three axioms: simmetry, distances are always positive and that we have the triangular inequality. The usual choice is the euclidean distance, but we also have the Minkowski, the weighted euclidean and correlation.
+    
+    \item \textbf{Decide our clustering algorithm}
+    
+    \item \textbf{Do profilization with the analysis and validation of the resulting solution}
+\end{enumerate}
+
+As said before we have to firstly differentiate between A priori grouping and Clustering.
+
+\vspace{10pt}
+
+To cluster our data we can have different approaches, based on different algorithms and ideas. 
+\begin{itemize}
+    \item Hierarchical methods
+    \item Partition methods
+    \item DBScan
+    \item Shift means
+    \item Self-organizing maps
+\end{itemize}
+
+With \textbf{Hierarchical clustering} we start from a feature matrix and we calculate a dissimilarity matrix to see the differences. This last matrix is based on the distances between the points.
+To aggregate we can use different aggregation rules like single linkage or complete linkage (connect the 2 closest of farthest points) or average linkage or group linkage.
+We can obtain also the dendrogram of the data and visualize differences with it.
+Hierarchical clustering can have many disadvantages
+
+\begin{itemize}
+    \item We can't go back after an operation
+    \item Even though is not computational costly we can't correct wrong decisions
+    \item Doesn't works really well with large datasets
+\end{itemize}
+
+To improve the performance of Hierarchical methods we can anal the links after each partition (CURE or chamaleon) or integrate iterative optimization (BIRCH).
+
+\vspace{10pt}
+
+With \textbf{Partition methods} (like k-means algorithm) we try to divide the data into k (decided at the start) different clusters. We will find for each cluster a centroid.
+Each group must contain at least one point and each point must belong to exactly one cluster. The algorithm works like this
+
+\begin{enumerate}
+    \item We create a random partition based on k
+    \item We relocate iteratively moving objects between groups
+    \item We decide if the partitioning is good based on the similarities between groups
+\end{enumerate}
+
+More specifically
+
+\begin{itemize}
+    \item Choose the seed
+    \item Associate each individual to a seed
+    \item Calculate the centroids
+    \item Go back to 2
+    \item End when we don't move anymore the centroids
+\end{itemize}
+
+With k-means we want to minimize intra-group variance (the SSE, sum of squared errors)
+\begin{equation}
+\text{SSE} = \sum_{i=1}^{k} \sum_{x \in C_i} \| x - \mu_i \|^2
+\end{equation}
+
+We can reduce the SSE by increasing k but good clustering with small k can have a lower SSE than a poor one with higher k.
+
+\vspace{10pt} 
+
+K-means is simple, efficient and linear but is sensitive to outliers, the initial random position and not good enough for non spherical clusters.
+One improvement to the problem if initialization is to use K-means++ that is made via a 4 step initialization process.
+\begin{enumerate}
+    \item Choose the first centroid randomly
+    \item Calculate the distance from the centroids for each point
+    \item Choose the next centroid probabilistically
+    \item Repeat untill we get k centroids
+\end{enumerate}
+
+This way can find better centroids and converges faster.
+
+\vspace{10pt}
+
+Another problem is understanding how many clusters we want. One way is to create many cases with different K and choose the best. 
+The choice should be done via
+\begin{enumerate}
+    \item Elbow curve method to lower intra cluster variability, we use a plot of the objective function value and the number of clusters
+    \item Silhouette analysis, how similar are the points inside the clusters
+    \item Evaluation of the profile of the cluster
+    \item Operational considerations, based on business environment
+\end{enumerate}
+
+\vspace{10pt}
+
+As said the shape of the clusters can be tricky for k-means, since is based on round shaped clusters. We can solve this by using k-medoids
