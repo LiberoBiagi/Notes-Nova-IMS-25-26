@@ -901,6 +901,125 @@ The relationship among the variables \ra Each variable is conditionally independ
 
 
 
+\subsubsection{Instance based learning}
+
+Instance based classifiers use the simplest form of learning, we just compare previous
+seen examples and we classifiy the new instance by similarity. We call this approach lazy learning. Some important concepts are
+feature space and similarity measures. The most basic algorithm is the nearest-neighbor that can be extended to KNN and K-d Trees.
+The simplest idea is that we store the training records and we use them to predict the class label of unseen cases.
+If we don't find an exact match we just use the closest point. Since using just one point would have too high of an impact with outliers we 
+dilute the depencdency on individual points and we use the k closest ones. 
+
+\vspace{10pt}
+
+As said we can use KNN, it requires 3 things:
+\begin{itemize}
+    \item The set of stored records
+    \item Distance metric to compute the distance between records
+    \item The number k
+\end{itemize}
+
+With K equal to 1 we can get a Voronoi diagram, we plot a decision boundary. 
+
+\vspace{10pt}
+
+Another thing that we have to decide is the choice of the distance metric.
+
+The most used are
+
+\begin{itemize}
+    \item \textbf{Euclidean:}
+    \[
+        d_E(x, y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+    \]
+
+    \item \textbf{Manhattan:}
+    \[
+        d_M(x, y) = \sum_{i=1}^{n} |x_i - y_i|
+    \]
+
+    \item \textbf{Minkowski:}
+    \[
+        d_p(x, y) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{\frac{1}{p}}
+    \]
+\end{itemize}
+
+To determine the class we can either take a vote of class labels among the K nearest neighbors or vote according to the distance using the 
+reciprocal squared distance
+
+\[
+w = \frac{1}{d^2}
+\]
+
+\vspace{10pt}
+
+One variant of the KNN is the distance-Weighted KNN where nearer neighbours will have more weight in the vote
+
+\begin{equation*}
+    f(\mathbf{X}_q) = \frac{\displaystyle\sum_{i=1}^{k} w_i\, f(\mathbf{X}_i)}{\displaystyle\sum_{i=1}^{k} w_i} \text{where} w_i = \frac{1}{d(\textbf{X}_q, \textbf{X}_i)^2}
+\end{equation*}
+
+With this approach called Stepard method we can use all the training examples.
+
+\vspace{10pt}
+
+Another critical aspect is the choice of the optimal k, if its too small we risk overfit and will be too sensitive to noisy points. If k is too large we might not find the true pattern of the data and we risk underfitting.
+For a balanced dataset our decision boundary will resemble a linear regression, k\ra n
+
+\vspace{10pt}
+
+Since is a scale sensitive algorithm we have to normalize the features to prevent one measure to dominate on the others.
+
+We need to put caution for irrelevant attributes. Also calculating the distances can be computationally expensive. KNN algorith are sensitive to outliers and to the choice of the distance.
+
+\vspace{10pt}
+
+To solve the problem of calculating all distances we can create an index of the distances to retrieve the neighbors efficiently. We get a k-d tree. A k-d tree is a balanced binary tree where each node indexes one of the instances of the training set.
+
+The get a K-d tree
+
+\begin{enumerate}
+    \item Make a list of the features in a randomized order
+    \item Find the meadian of the first feature and split the data
+    \item Split untill we have less than 2 datapoints in each node.
+\end{enumerate}
+
+To find the nearest neighbor, we traverse the tree from the leaves upward.
+At each step, we calculate the distance between the query point and the current node, then compare it with the distance to the parent node.
+We always keep the node with the smallest distance.
+At each branching point, we check which branch gives the smaller distance and continue this process until we reach the root.
+The nearest neighbor is the node with the smallest overall distance.
+
+K-d trees are useful when we have many more instances than features. We can also adappt them to predict continuous target ussing the average of the nearest neighbors.
+
+Othe similarity measures that can be used are
+\begin{enumerate}
+    \item Co-presence
+    \item Co-absence
+    \item Presence-absence
+    \item Absence-presence
+    \item Russel Rao similarity index \ra uses only CP
+    \item Sokal-Michener similarity index \ra Uses CP and CA
+    \item Jaccard similarity index \ra uses all but CA
+    \item Cosine similarity
+    \item Mahalanobis distance
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Brief recap of models and other useful things}

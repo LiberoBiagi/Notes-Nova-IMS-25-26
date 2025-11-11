@@ -438,6 +438,10 @@ INPUT .\Courses\Images\L1.png
 INPUT .\Courses\Images\L1.png
 INPUT .\Courses\Images\L1.png
 INPUT .\Courses\Images\L1.png
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx7.tfm
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx5.tfm
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx5.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
 INPUT .\Courses\Stat.tex
 INPUT .\Courses\Stat.tex
