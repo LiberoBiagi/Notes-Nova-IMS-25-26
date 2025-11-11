@@ -65,4 +65,61 @@ key(s), but they must not depend on another non-prime attribute.
 \vspace{10pt}
 
 
+\subsubsection{DBSM organization and structure}
+
+
+All DBMS follow a certain structure made by certain elements
+
+\includegraphics[width=16cm]{dbms structure.png}
+
+
+\begin{itemize}
+    \item \textbf{Connection manager} \ra
+    \item \textbf{Security manager}\ra
+    \item \textbf{DDL compiler}\ra
+    \item \textbf{Utilities}\ra
+    \item \textbf{DML compiler}\ra
+    \item \textbf{Query parser}\ra
+    \item \textbf{Query rewriter}\ra
+    \item \textbf{Query optimizer}\ra
+    \item \textbf{Query executor}\ra
+    \item \textbf{Transaction manager}\ra
+    \item \textbf{Buffer manager}\ra
+    \item \textbf{Lock manager}\ra
+    \item \textbf{Recovery manager}\ra
+\end{itemize}
+
+A DBMS needs to interact with various parties, such as a database designer, a
+database administrator, an application, or even an end-user (Ex. APIs).
+
+\vspace{10pt}
+
+To design our databases we can use an ERD (Entity Relationship Diagram) notation.
+
+Some of them can be Chen, IDEF1X, Bachman, Crow's Foot (we use this), Min-Max or UML.
+
+\includegraphics[width=8cm]{structure erd.png}
+
+\includegraphics[width=8cm]{basic crows.png}
+
+An entity is represented by a rectangle, with its
+name on the top. The name is singular. The attribute(s) that uniquely distinguishes
+an instance of the entity is the identifier.
+
+Relationships have two indicators. The first one refers to the maximum number of times that an instance of one
+entity can be associated with instances in the related entity. The second one describes the minimum number of times one instance can
+be related to others. It can be zero or one, and optional or mandatory.
+
+\includegraphics*[width=6cm]{multiplicities.png}
+\includegraphics*[width=6cm]{options.png}
+
+
+Relations can be
+\begin{itemize}
+    \item One to one
+    \item One to many
+    \item Many to many
+\end{itemize}
+
+Since we are working with tables we need to pass from schemas to tables, we use keys (foreign and primary)
 

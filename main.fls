@@ -457,6 +457,36 @@ OUTPUT Courses\database.aux
 INPUT .\Courses\database.tex
 INPUT .\Courses\database.tex
 INPUT Courses\database.tex
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\dbms structure.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\structure erd.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\basic crows.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\multiplicities.png
+INPUT .\Courses\Images\options.png
+INPUT .\Courses\Images\options.png
+INPUT .\Courses\Images\options.png
+INPUT .\Courses\Images\options.png
+INPUT .\Courses\Images\options.png
+INPUT .\Courses\Images\options.png
 INPUT main.aux
 INPUT .\Courses\data.aux
 INPUT .\Courses\data.aux

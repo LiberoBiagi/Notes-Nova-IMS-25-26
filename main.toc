@@ -46,3 +46,4 @@
 \contentsline {section}{\numberline {5}Database}{51}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Theory}{51}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Introduction}{51}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}DBSM organization and structure}{52}{subsubsection.5.1.2}%
