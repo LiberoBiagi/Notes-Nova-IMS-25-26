@@ -729,6 +729,99 @@ Where $\beta$ is the probability of committing a Type II error.
 
 
 
+If we want to make \textbf{tests on two samples} we can follow the same idea.
+
+For proportions
+
+\[
+\begin{cases}
+    H_0 : p_A = p_B \\[4pt]
+    H_1 : p_A > p_B
+\end{cases}
+\]
+The test statistic will be
+
+\[
+Z_{obs} = \frac{\hat{p_A}-\hat{p_B}}{\sqrt{\frac{\hat{p_A}(1-\hat{p_A})}{n_A}+\frac{\hat{p_B}(1-\hat{p_B})}{n_B}}} \sim N(0,1)
+\]
+
+
+With critical region 
+\[
+Z_{obs} \ge Z_{1-\alpha}
+\]
+
+
+\vspace{10pt}
+
+For means
+
+\[
+\begin{cases}
+    H_0 : \mu_A = \mu_B \\[4pt]
+    H_1 : \mu_A < \mu_B
+\end{cases}
+\]
+The test statistic will be
+
+\[
+t_{\text{obs}} = 
+\frac{\hat{\mu}_A - \hat{\mu}_B}{
+\sqrt{
+\frac{\hat{\sigma}_A^2}{n_A} +
+\frac{\hat{\sigma}_B^2}{n_B}
+}
+}
+\sim t(n_A + n_B - 2)
+\]
+
+If the samples have the same variance:
+
+\[
+t_{\text{obs}} = 
+\frac{\hat{\mu}_A - \hat{\mu}_B}{
+\hat{\sigma}
+\sqrt{
+\frac{1}{n_A} + \frac{1}{n_B}
+}
+}
+\sim t(n_A + n_B - 2)
+\]
+
+With critical region:
+
+\[
+t_{\text{obs}} \le t_{\alpha; \, n_A + n_B - 2}
+\]
+
+
+Before testing for differences for means we should determine if the variances are equal
+
+
+\[
+\begin{cases}
+    H_0 : \sigma_A^2 = \sigma_B^2 \\[4pt]
+    H_1 : \sigma_A^2 \neq \sigma_B^2
+\end{cases}
+\]
+
+With test statistic 
+
+\[
+F_{\text{obs}} = 
+\frac{\hat{\sigma}_A^2}{\hat{\sigma}_B^2}
+\sim F(n_A - 1, \, n_B - 1)
+\]
+
+With critical region
+
+\[
+F_{\text{obs}} \ge F_{\alpha; \, n_A - 1, \, n_B - 1}
+\]
+
+
+
+
 
 \subsubsection{Confidence Intervals}
 
@@ -737,7 +830,24 @@ Another way to perform statistical testing is via the use of Confidence Interval
 The confidence is the difference between 1 and the alpha of the test statistic.
 
 
+The general form of a confidence interval is 
 
+\[
+\bar{X} \pm t_{1-\frac{\alpha}{2}} (\frac{\hat{\sigma}}{\sqrt{n}})
+\]
+
+Basically with this form we want to estimate the population mean using the sample mean
+, the percentile of the t distribution and the standard error.
+
+\vspace{10pt}
+
+When we use confidence Intervals we don't know if the parameter will fall inside the interval but we interpret it
+as we are 95\% confident that the population parameter is between X and X'. Hence we get a range of acceptable estimates for the parameter while 
+values that are outside won't be reasonable estimates. 
+
+\vspace{10pt}
+
+It's possible to notice that if we increase the sample size we will reduce the standard error, then we can get more precise estimates of our parameter. 
 
 
 
