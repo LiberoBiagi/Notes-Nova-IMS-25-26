@@ -850,16 +850,105 @@ values that are outside won't be reasonable estimates.
 It's possible to notice that if we increase the sample size we will reduce the standard error, then we can get more precise estimates of our parameter. 
 
 
+\subsubsection{Linear regression model}
+
+Regression analysis is a disciplie that tries to uncover relationships between 2 or more variables.
+This analysis is based on cross-sectional data, data that we obtain by random sampling from a population. Since we 
+are having a random sampling process the covariance between the observations is zero. So for i$\ne$j
+
+\[
+Cov(y_i,y_j) = Cov(x_i, x_j) = Cov(y_i, x_j) = 0
+\]
+
+We want to calculate the causal effect of x on y, so how does y changes if x is changed and all other factors are held constant.
+
+\vspace{10pt}
+
+One of the most basic model that we can use is the simple linear regression model. We assume to have two variables y and x. We want to explain y in terms of x, so how y changes with changes in x.
+
+To do that we need to confront some issues
+\begin{itemize}
+    \item How do we allow for other factors that can affect y
+    \item What is the functional relationship between y and x 
+    \item How to be sure to capture a ceteris paribus relationship between y and x 
+\end{itemize}
+
+The model follows this structure
+
+\[
+y = \beta_0 + \beta_1x + u
+\]
+
+In this equation u is the error term, a random disturbance in our population. It represents unobserved factors that aren't on x that can affect y.
+The equation also addresses the issues of the functional relationship between x and y. Since if $\Delta$u=0 then x has a linear effect on y.
+
+\[
+\Delta y = \beta_1\Delta x
+\]
+
+The linearity part means that one unit change on x will have the same effect on y regardless of the initial value of x.
+
+\vspace{10pt}
+
+Another assumption is the conditional mean independence one. We say that unobserved factors do not contain information on explanatory variables.
+
+\[
+E[u|x]=0
+\]
+
+Given the previous notes about the simple linear regression model now we want to estimate the parameters.
+
+Starting from 
+
+\[
+E[u \mid x] = 0 \;\Rightarrow\;
+\begin{cases}
+E[xu] = 0 \\
+E[u] = 0
+\end{cases}
+\;\Leftrightarrow\;
+\begin{cases}
+E\big[x (y - \beta_0 - \beta_1 x)\big] = 0 \\
+E\big[y - \beta_0 - \beta_1 x\big] = 0
+\end{cases}
+\]
+
+Assuming that we have a random sample of n individuals and using the method of moments we get
+
+\[
+\frac{1}{n} \sum_{i=1}^{n} x_i \left( y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i \right) = 0
+\tag{2}
+\]
+
+\[
+\frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i \right) = 0
+\]
+
+That we can solve obtaining 
+
+\[
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}
+\tag{4}
+\]
+
+\[
+\hat{\beta}_1 =
+\frac{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}
+{\frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2}
+\]
 
 
+The estimates for the parameters are called OLS estimates and they are the best possible values for a simple linear regression model.
 
+The error term can be calculated as
 
+\[
+\hat{u}_i = y_i - \hat{y}_i = y_i - \hat{\beta}_0 - \hat{\beta}_1 x_i
+\]
 
+Those values are obtained by minimising the SSR by derivative with respect to both the $\beta_i$.
 
-
-
-
-
+\vspace{10pt}
 
 
 
