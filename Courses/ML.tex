@@ -1005,6 +1005,102 @@ Othe similarity measures that can be used are
     \item Mahalanobis distance
 \end{enumerate}
 
+\subsubsection{Neural Networks}
+
+One new family of algorithm is the ones of the neural networks. They have many applications in many fields and like
+AI they had periods of summers and winters. The strength of neural networks comes from
+the fact that they learn automatically, are data driven and can be universal approximators also
+for non linear problems. Even though they are pretty much two completely different things 
+neural networks are inspired by biological brain structures. The idea is that neurons will fire after they recieve 
+a certain input and so will our perceptrons after their activation fucntion manages to go over a certain threshold.
+
+\vspace{10 pt}
+
+Neural networks receive some inputs x from other neurons or the environment and will feed an output to a connection with a certain weight that will go to the next neuron.
+The total input that a neuron receives is the weighted sum of inputs from all the sources. The activation function will make the output from the input.
+
+A neural network usually with one neuron (perceptron) has 4 elements
+
+\begin{itemize}
+    \item Input 
+    \item Weights
+    \item Bias
+    \item Activation function
+\end{itemize}
+
+The activation function can be of 3 kind
+
+\begin{itemize}
+    \item Tanh
+    \item Sigmoid
+    \item Threshold model (can be Relu or the identity)
+\end{itemize}
+
+As said the models will learn automatically by adjusting the weights in the network to reach as much generalization as possible.
+The idea is like trial and error
+\begin{enumerate}
+    \item Random weights
+    \item Small adjustments until we reach a good result
+\end{enumerate}
+
+We have two main kind of signals: the function (input to output) and the error (output to input).
+
+After we calculate the error we go back to change a bit the weights every time we iterate with the model.
+
+\vspace{10pt}
+
+The model will generate an hyperplane to divide the dataset into the classes (if classification).
+For linear problems we can use just one perceptron (will converge after enough iterations) while for non linear ones we might need more layers. 
+
+\vspace{10pt}
+With more layers we enter the domain of the \textbf{Multilayer Perceptron (MLP)}.
+
+\begin{itemize}
+    \item \textbf{Input layer} $\rightarrow$ Each neuron receives one input from the outside.
+    \item \textbf{Hidden layer(s)} $\rightarrow$ Connect the input layer to the output layer; usually one or two hidden layers are enough.
+    \item \textbf{Output layer} $\rightarrow$ Produces the final prediction.
+\end{itemize}
+
+The training algorithm is called \textbf{Backpropagation}.  
+We define a loss function (which measures the error) and we want to minimize it.  
+This is done by computing its gradient with respect to the weights.
+
+The variation of the loss for different weight values defines the \textbf{error surface},  
+while the difference between the network output and the target defines the \textbf{error signal}.
+\vspace{10pt}
+Delta rule (error term)
+
+For a unit $j$ in the \textbf{output layer}:
+\[
+\mathrm{Err}_j = O_j (1 - O_j)\,(T_j - O_j)
+\]
+
+For a unit $j$ in a \textbf{hidden layer}:
+\[
+\mathrm{Err}_j = O_j (1 - O_j)\sum_{k} \mathrm{Err}_k \, w_{jk}
+\]
+\vspace{10pt}
+Weight update rule
+
+For a weight $w_{ij}$ connecting neuron $i$ to neuron $j$:
+
+\[
+\Delta w_{ij} = \alpha\, \mathrm{Err}_j \, a_i
+\]
+
+where $\alpha$ is the learning rate and $a_i$ is the activation of neuron $i$.
+
+The weight update becomes:
+
+\[
+w_{ij}^{\text{new}} = w_{ij}^{\text{old}} + \Delta w_{ij}
+\]
+
+or equivalently:
+
+\[
+w_{ij} = w_{ij}^{\text{old}} + \alpha\, \mathrm{Err}_j \, a_i.
+\]
 
 
 
