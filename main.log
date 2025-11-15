@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  13 NOV 2025 10:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  15 NOV 2025 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -930,28 +930,27 @@ Package pdftex.def Info: Courses/Images/dbms structure.png  used on input line 7
 
 
 ]
-<Courses/Images/structure erd.png, id=1021, 646.21425pt x 509.5035pt>
-File: Courses/Images/structure erd.png Graphic file (type png)
-<use Courses/Images/structure erd.png>
-Package pdftex.def Info: Courses/Images/structure erd.png  used on input line 101.
-(pdftex.def)             Requested size: 227.62204pt x 179.46394pt.
-
 
 [55 <./Courses/Images/dbms structure.png>]
+<Courses/Images/structure erd.png, id=1027, 646.21425pt x 509.5035pt>
+File: Courses/Images/structure erd.png Graphic file (type png)
+<use Courses/Images/structure erd.png>
+Package pdftex.def Info: Courses/Images/structure erd.png  used on input line 120.
+(pdftex.def)             Requested size: 227.62204pt x 179.46394pt.
 <Courses/Images/basic crows.png, id=1028, 784.1295pt x 343.88475pt>
 File: Courses/Images/basic crows.png Graphic file (type png)
 <use Courses/Images/basic crows.png>
-Package pdftex.def Info: Courses/Images/basic crows.png  used on input line 103.
+Package pdftex.def Info: Courses/Images/basic crows.png  used on input line 122.
 (pdftex.def)             Requested size: 227.62204pt x 99.82372pt.
 <Courses/Images/multiplicities.png, id=1029, 602.25pt x 254.75175pt>
 File: Courses/Images/multiplicities.png Graphic file (type png)
 <use Courses/Images/multiplicities.png>
-Package pdftex.def Info: Courses/Images/multiplicities.png  used on input line 113.
+Package pdftex.def Info: Courses/Images/multiplicities.png  used on input line 132.
 (pdftex.def)             Requested size: 170.71652pt x 72.21239pt.
 <Courses/Images/options.png, id=1031, 585.98924pt x 280.6485pt>
 File: Courses/Images/options.png Graphic file (type png)
 <use Courses/Images/options.png>
-Package pdftex.def Info: Courses/Images/options.png  used on input line 114.
+Package pdftex.def Info: Courses/Images/options.png  used on input line 133.
 (pdftex.def)             Requested size: 170.71652pt x 81.75854pt.
 )
 
@@ -972,7 +971,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,17n,87p,776b,2230s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (56 pages, 1393943 bytes).
+Output written on main.pdf (56 pages, 1395082 bytes).
 PDF statistics:
  1264 PDF objects out of 1440 (max. 8388607)
  616 named destinations out of 1000 (max. 500000)

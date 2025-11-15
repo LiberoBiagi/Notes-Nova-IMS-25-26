@@ -74,19 +74,38 @@ All DBMS follow a certain structure made by certain elements
 
 
 \begin{itemize}
-    \item \textbf{Connection manager} \ra
-    \item \textbf{Security manager}\ra
-    \item \textbf{DDL compiler}\ra
-    \item \textbf{Utilities}\ra
-    \item \textbf{DML compiler}\ra
-    \item \textbf{Query parser}\ra
-    \item \textbf{Query rewriter}\ra
-    \item \textbf{Query optimizer}\ra
-    \item \textbf{Query executor}\ra
-    \item \textbf{Transaction manager}\ra
-    \item \textbf{Buffer manager}\ra
-    \item \textbf{Lock manager}\ra
-    \item \textbf{Recovery manager}\ra
+    \item \textbf{Connection manager} \ra provides facilities to set-up a database connection. It can be
+set-up locally or through a network
+    \item \textbf{Security manager}\ra verifies whether a user has
+the right privileges to execute the database actions required
+    \item \textbf{DDL compiler}\ra compiles the data definitions specified in
+DDL. Most relational databases use SQL as their DDL
+    \item \textbf{Utilities}\ra A loading utility (load data from a variety of sources),
+reorganization utility (reorganizes the data), user management utilities (support the
+creation of user groups or accounts), etc
+    \item \textbf{DML compiler}\ra compiler compiles the data manipulation
+statements specified in DML
+    \item \textbf{Query parser}\ra parses the query into an internal representation format that can
+then be further evaluated by the system. It checks the query for syntactical and
+semantical correctness
+    \item \textbf{Query rewriter}\ra  optimizes the query, independently of the current database state. It
+simplifies it using a set of predefined rules and heuristics that are DBMS-specific
+    \item \textbf{Query optimizer}\ra optimizes the query based upon the current database state. It can
+make use of predefined indexes that are part of the internal data model and provide
+quick access to the data
+    \item \textbf{Query executor}\ra takes care of the actual execution by calling on the storage
+manager to retrieve the data requested
+    \item \textbf{Transaction manager}\ra supervises the execution of database transactions.
+Remember, a database transaction is a sequence of read/write operations considered
+to be an atomic unit
+    \item \textbf{Buffer manager}\ra is responsible for managing the buffer memory of the DBMS. The
+DBMS checks first the memory when data need to be retrieved. Retrieving data from the
+buffer is significantly faster than retrieving them from external disk-based storage
+    \item \textbf{Lock manager}\ra essential component for providing concurrency control, which
+ensures data integrity at all times
+    \item \textbf{Recovery manager}\ra supervises the correct execution of database transactions. It keeps
+track of all database operations in a logfile and will be called upon to undo actions of
+aborted transactions or during crash recovery
 \end{itemize}
 
 A DBMS needs to interact with various parties, such as a database designer, a
