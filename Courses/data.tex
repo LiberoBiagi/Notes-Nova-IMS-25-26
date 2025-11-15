@@ -817,4 +817,39 @@ The choice should be done via
 
 \vspace{10pt}
 
-As said the shape of the clusters can be tricky for k-means, since is based on round shaped clusters. We can solve this by using k-medoids
+As said the shape of the clusters can be tricky for k-means, since is based on round shaped clusters. We can solve this by using k-medoids.
+
+\vspace{10pt}
+
+Another method to evaluate the clustering quality is the DBI. It focus on how compact the clusters are internally and how separated are from each other. We aim at lower values.
+DBI is made by 3 key components: Scatter $S_i$ (average distance for the points in the cluster from the centroid), Separation $M_{ij}$ (distance between the centroids of 2 clusters) and similarity ratio $R_{ij}$ (how similar two clusters are, the lower the better).
+
+To calculate the DBI
+
+\begin{enumerate}
+    \item Compute the centroid of each cluster
+    \item Calculate $S_i$ for each cluster
+    \item Calculate $M_{ij}$ for each pair of clusters
+    \item Compute $R_{ij}$ for each cluster pair and select the maximum $R_{ij}$.
+    \item DBI is given by the average of the $R_{ij}$
+\end{enumerate}
+
+\vspace{10pt}
+
+We want to use elbow, Silhouette and DBI together and maximise them as much as possible to find the optimal k.
+If they do not converge we need to choose based on the domain knowledge and Interpretability of our analysis.
+
+It's very easy to interpret the elbow curve since we want to minimize the intra-cluster variability. The other 2 provides us for additional information (Silhouette how similar each point is to it's own cluster (higher is better) and DBI the average similarity ratio 
+of each cluster with it's most similar one (lower is betetr))
+
+The evaluation of the cluster profile is subjective dependent on the analyst.
+
+Operational considerations are based on the business, usually we want a k small enough for developing a specific strategy,
+a number if individuals large enough to be worth it to develop a specific startegy. Usually we can have an high initial k and grouping the clusters
+
+\vspace{10pt}
+
+Other important characteristics of the clusters are the shape and the density of the points. As said k-means can have problems with clusters of different size and density.
+Also in this setting we are assuming that either an individual is part or not of a cluster, yes or no.
+
+One variant is the k-medoids algorithm where each cluster is represented by one of the (real) points located near the center of the cluster.
