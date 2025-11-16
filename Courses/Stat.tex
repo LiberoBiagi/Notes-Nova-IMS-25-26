@@ -950,6 +950,179 @@ Those values are obtained by minimising the SSR by derivative with respect to bo
 
 \vspace{10pt}
 
+Recall
+
+\[
+\text{SST} = \sum_{i=1}^n (y_i - \bar{y})^2 = \text{SSR} + \text{SSE} \ra \text{Total sum of squares}
+\]
+
+\[
+\text{SSR} = \sum_{i=1}^n (\hat{y}_i - \bar{y})^2 \ra \text{Regression sum of squares}
+\]
+
+\[
+\text{SSE} = \sum_{i=1}^n (y_i - \hat{y}_i)^2 \ra \text{Error sum of squares}
+\]
+
+
+With the OLS method we will find the best solution every time. To evaluate it we can use the $R^2$, it measures the fraction of the sample variation in y that is explained by x.
+
+\[
+R^2 = \frac{SSE}{SST}=1-\frac{SSR}{SST}
+\]
+
+
+Sometimes linear dependencies are not enough so we can incorporate many non linearities into our models. 
+Some of the most used are logarithmic transformations. 
+\vspace{10pt}
+
+We can start by defining the interpretations
+
+\begin{itemize}
+    \item Level-Level \ra No transformation is needed
+    \item Log-Level \ra From exponential shape to linear 
+       \item Log-Log \ra We have both logarithmic and exponential shapes and we transform them into linear
+    \item Level-Log \ra From logarithmic shape to linear 
+ 
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lccc}
+\hline
+\textbf{Model} & \textbf{Dep. Variable} & \textbf{Regressor} & \textbf{Interpretation of $\beta_1$} \\
+\hline
+Level--Level & $y$ & $x$ &
+$\Delta E[y \mid x_i] = \beta_1 \,\Delta x$ \\[6pt]
+
+Log--Level & $\log(y)$ & $x$ &
+$\%\Delta E[y \mid x_i] \approx 100\,\beta_1\,\Delta x$ \\[6pt]
+
+Log--Log & $\log(y)$ & $\log(x)$ &
+$\%\Delta E[y \mid x_i] \approx \beta_1 \,\%\Delta x$ \\[6pt]
+
+Level--Log & $y$ & $\log(x)$ &
+$\Delta E[y \mid x_i] \approx \frac{\beta_1}{100}\,\%\Delta x$ \\
+\hline
+\end{tabular}
+\end{table}
+
+When we use simple regression we have the drawback that is very difficult to draw ceteris paribus conclusions about how x affects y.
+The assumption that all the other factors affecting y are uncorrelated with x is often unrealistic. A solution is using multiple regression models. 
+With this new setting is easier to fix certain values to get the actual importance of a certain x.
+
+The general model with k explanatory variables has the following shape
+
+\[
+y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik} + u_i,
+\qquad
+\text{assuming } E[u_i \mid x_{i1},\ldots,x_{ik}] = 0.
+\]
+
+If we fix $x_2,...,x_k$ as $\Delta x_j = 0$ for j = 2,...,k we have
+
+\[
+\Delta\hat{y}_i = \hat{\beta}_i \Delta x_{i1}
+\]
+
+The residuals are obtained as 
+
+\[
+\hat{u}_i = y_i - \hat{y}_i
+\]
+
+And the following properties hold
+
+\begin{enumerate}
+    \item $\bar{y} = \bar{\hat{y}}$
+
+    \item $\bar{y} = \hat{\beta}_0 
+        + \hat{\beta}_1 \bar{x}_1 
+        + \cdots 
+        + \hat{\beta}_k \bar{x}_k$
+
+    \item The sample covariance between each $x_j$, for $j = 1,\ldots,k$, 
+          and $\hat{u}_i$ is zero. Hence, the sample covariance between 
+          $\hat{y}_i$ and $\hat{u}_i$ is also zero.
+\end{enumerate}
+
+The multiple linear model follows certain assumptions
+
+\begin{enumerate}
+
+    \item \textbf{MLR1: Linear in Parameters} \\
+    The model in the population can be written as
+    \[
+        y_i = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ik} + u_i
+        = x_i' \beta + u_i .
+    \]
+
+    \item \textbf{MLR2: Random Sampling} \\
+    We have a random sample of $n$ observations,
+    \[
+        \{(x_{i1}, x_{i2}, \ldots, x_{ik}, y_i)\}_{i=1}^n,
+    \]
+    following the population model in Assumption MLR1.
+
+    \item \textbf{MLR3: No Perfect Collinearity} \\
+    In the sample there are no exact linear relationships among the independent variables.  
+    Put otherwise, the matrix $X$ has rank $k+1$.
+
+    \item \textbf{MLR4: Zero Conditional Mean} \\
+    Conditional on the entire matrix $X$, each error $u_i$ has zero mean:
+    \[
+        E[u_i \mid X] = 0.
+    \]
+
+    \item \textbf{MLR5: Homoskedasticity} \\
+    The error $u$ has the same variance given any value of the explanatory variables:
+    \[
+        \operatorname{Var}(u \mid X) = \sigma^2 I_n,
+    \]
+    where $I_n$ denotes the $n$-dimensional identity matrix.
+
+    \item \textbf{MLR6: Normality} \\
+    We have:
+    \[
+        u_i \mid X \sim N(0, \sigma^2).
+    \]
+
+\end{enumerate}
+
+\vspace{20pt}
+\begin{theorem}[Unbiasedness of OLS]
+Under assumptions MLR1--MLR4, the OLS estimators are unbiased estimators 
+of the population parameters. We have:
+\[
+    E[\hat{\beta} \mid X] = \beta .
+\]
+\end{theorem}
+
+\begin{theorem}[Variances of OLS Estimators]
+Under assumptions MLR1--MLR5, the variance--covariance matrix of the OLS 
+estimators is:
+\[
+    \operatorname{Var}(\hat{\beta} \mid X)
+    = \sigma^{2}(X'X)^{-1}.
+\]
+\end{theorem}
+
+\begin{theorem}[Gauss--Markov Theorem]
+Under assumptions MLR1--MLR5, the OLS estimators are the Best Linear Unbiased 
+Estimators (BLUE) of the regression coefficients. That is,
+\[
+    \operatorname{Var}(\hat{\beta}_j \mid X)
+    \le
+    \operatorname{Var}(\tilde{\beta}_j \mid X),
+\]
+for any estimator $\tilde{\beta}_j$ that is linear in $y$ and unbiased.  
+In matrix form:
+\[
+    \operatorname{Var}(\hat{\beta} \mid X)
+    \le
+    \operatorname{Var}(\tilde{\beta} \mid X).
+\]
+\end{theorem}
 
 
 
