@@ -1080,13 +1080,6 @@ The multiple linear model follows certain assumptions
         \operatorname{Var}(u \mid X) = \sigma^2 I_n,
     \]
     where $I_n$ denotes the $n$-dimensional identity matrix.
-
-    \item \textbf{MLR6: Normality} \\
-    We have:
-    \[
-        u_i \mid X \sim N(0, \sigma^2).
-    \]
-
 \end{enumerate}
 
 \vspace{20pt}
@@ -1124,6 +1117,150 @@ In matrix form:
 \]
 \end{theorem}
 
+\vspace{10pt}
+
+Now that we have defined our assumptions and description of the linear models we want to make inferences on the population parameters. 
+We can do that by constructing confidence intervals or testing possible values. We know that OLS estimators are random variables and we know their expected values and variances. But 
+we want to know their distribution. In order to derive those distributions we need additional assumptions, for example that the errors are normally distributed.
+
+\begin{enumerate}[resume]
+    \item \textbf{MLR6: Normality} \\
+    We have
+    \[
+    \textbf{u} | \textbf{X} \sim N(\textbf{0}, \sigma^2 \textbf{I})
+    \]
+\end{enumerate}
+
+We know that the error term is a sum of many different unobserved factors that are normally distributed. Under normality assumption OLS is BLUE. If we can't assume normality we can use a large sample size.
+
+\begin{itemize}
+    \item Assumptions 1-5 \ra Gauss-Markov assumptions
+    \item Assumptions 1-6 \ra Classical assumptions
+\end{itemize}
+
+\vspace{10pt}
+
+\begin{theorem}[Normal Sampling Distribution of OLS]
+Under Assumptions MLR1--MLR6 we have
+\[
+    \hat{\beta}_j \mid X \sim 
+    N\!\left( 
+        \beta_j,\;
+        \operatorname{Var}\!\left( \hat{\beta}_j \mid X \right)
+    \right).
+\]
+Therefore,
+\[
+    z = 
+    \frac{
+        \hat{\beta}_j - \beta_j
+    }{
+        \sqrt{\operatorname{Var}\!\left( \hat{\beta}_j \mid X \right)}
+    }
+    \sim N(0,1).
+\]
+\end{theorem}
+
+\begin{theorem}[t-distribution for Standardized Estimators]
+Under Assumptions MLR1--MLR6 we have
+\[
+    t = 
+    \frac{
+        \hat{\beta}_j - \beta_j
+    }{
+        \sqrt{\widehat{\operatorname{Var}}\!\left( \hat{\beta}_j \mid X \right)}
+    }
+    \sim t(n - k - 1).
+\]
+\end{theorem}
+
+\vspace{10pt}
+
+If we want to make inferences on $\beta$ we will have
+\[
+\begin{array}{l}
+H_0 : \beta_j = a \\
+H_1 : \beta_j \ne a
+\end{array}
+\]
+
+We have two possibilities
+
+\begin{itemize}
+    \item If $|t_{obs}| > t_{\alpha/2}$ \ra Reject $H_0$ at $\alpha$ level
+    \item If $|t_{obs}| \le t_{\alpha/2}$ \ra Do not reject $H_0$
+\end{itemize}
+where 
+\[
+t_{\text{obs}} =
+\frac{\hat{\beta}_j - a}
+{\sqrt{\widehat{\operatorname{Var}}\!\left( \hat{\beta}_j \right)}}
+\]
+
+\[
+t_{\alpha/2} : \quad P(t > t_{\alpha/2}) = \frac{\alpha}{2}
+\]
+
+\textbf{Definition:} 
+The p-value is the probability of obtaining a test statistic at least as extreme as the one actually observed, 
+assuming that the null hypothesis is true.
+
+\begin{itemize}
+    \item Calculate the p-value for $H_0 : \beta_j = a$:
+    \begin{itemize}
+        \item $H_1 : \beta_j \ne a \implies \text{p-value} = 2 P\big(|t| > |t_{\text{obs}}| \mid H_0 \text{ is true}\big)$
+        \item $H_1 : \beta_j > a \implies \text{p-value} = P\big(t > t_{\text{obs}} \mid H_0 \text{ is true}\big)$
+        \item $H_1 : \beta_j < a \implies \text{p-value} = P\big(t < t_{\text{obs}} \mid H_0 \text{ is true}\big)$
+    \end{itemize}
+    
+    \item For example, a p-value of $0.02$ indicates little evidence supporting $H_0$.
+    
+    \item At the 5\% significance level, you would reject the null hypothesis.
+    
+    \item \textbf{Rejection rule:}
+    \begin{itemize}
+        \item p-value $> \alpha \implies$ do not reject $H_0$ at the $\alpha \times 100\%$ level
+        \item p-value $\le \alpha \implies$ reject $H_0$ at the $\alpha \times 100\%$ level
+    \end{itemize}
+\end{itemize}
+
+Very often we want to test whether there is any relation between $x_j$ and the expected value of $y$, without imposing a sign on the partial effect a priori.
+
+Thus, in most applications, our primary interest lies in testing the null hypothesis
+\[
+H_0 : \beta_j = 0.
+\]
+
+Here, $\beta_j$ measures the partial effect of $x_j$ on the expected value of $y$, after controlling for all other independent variables.  
+
+If $\beta_j = 0$, this means that, once the other variables have been accounted for, $x_j$ has no effect on the expected value of $y$.
+
+\vspace{10pt}
+
+Suppose we want to test a single hypothesis involving more than one of the $\beta_j$.  
+
+The null and alternative hypotheses are:
+
+\[
+H_0 : \beta_1 - \beta_2 = 0 \quad \text{vs.} \quad H_1 : \beta_1 - \beta_2 < 0
+\]
+
+Under the null, the corresponding $t$-statistic is
+
+\[
+t = \frac{\hat{\beta}_1 - \hat{\beta}_2}{\text{se}(\hat{\beta}_1 - \hat{\beta}_2)}.
+\]
+
+and 
+
+\[
+\text{se}(\hat{\beta}_1 - \hat{\beta}_2) 
+= \sqrt{
+    \widehat{\operatorname{Var}}(\hat{\beta}_1)
+    + \widehat{\operatorname{Var}}(\hat{\beta}_2)
+    - 2 \, \widehat{\operatorname{Cov}}(\hat{\beta}_1, \hat{\beta}_2)
+}.
+\]
 
 
 
