@@ -1275,6 +1275,138 @@ and
 If we want to make inferences on multiple parameters using multiple restrictions
 we can use the \textbf{F-test}.
 
+First we need to consider an unrestricted model
+
+\[
+y = \beta_0 +\beta_1 x_1 +...+\beta_k x_k +u
+\]
+
+We can test if a subset of the independent variables has no partial effect on the dependent
+
+\[
+H_0 : \beta_{k-q+1} = \beta_{k-q+2} = \beta_k = 0
+\]
+
+
+Assuming that it is the last q variables in the list of independent
+variables, which puts q exclusion restrictions on the model.
+
+Formally we have
+
+\[
+F = 
+\frac{(\text{SSR}_R - \text{SSR}_{UR})/q}{\text{SSR}_{UR}/(n - k - 1)}
+\]
+
+\[
+=
+\frac{(R^2_{UR} - R^2_{R})/q}{(1 - R^2_{UR})/(n - k - 1)}
+\sim F(q,\, n-k-1)
+\]
+
+
+Where
+
+\begin{itemize}
+    \item q = $df_{H_0} - df_{H_1} = df_R - df_{UR}$ (number of restrictions under the null)
+    \item n - k - 1 = $df_{UR}$ (df of the unrestricted model)
+\end{itemize}
+
+
+Let $F_{\text{obs}}$ be the observed test statistic.
+
+\[
+\text{reject } H_0 \quad \text{if} \quad F_{\text{obs}} > F_{\alpha}
+\quad (\text{or if p-value} < \alpha)
+\]
+
+\[
+\text{do not reject } H_0 \quad \text{if} \quad F_{\text{obs}} \le F_{\alpha}
+\quad (\text{or if p-value} \ge \alpha)
+\]
+
+The reasoning is as follows. Under the null hypothesis we have
+
+\[
+F \sim F(k,\, n-k-1)
+\]
+
+If we observe $F > F_{\alpha}$ and $H_0$ is true, then a low-probability event has occurred.
+
+The p-value is defined as
+
+\[
+\text{p-value} = P(F > F_{\text{obs}} \mid H_0 \text{ is true}).
+\]
+
+
+If the null is 
+
+\[
+H_0 : \beta_1 = \beta_2 = ... = \beta_k = 0
+\]
+
+We are testint the overall significance of the regression with a restricted model 
+
+\[
+y = \beta_0 + u
+\]
+
+The F statistic becomes
+
+\[
+F = \frac{\text{SSE/k}}{\text{SSR/n-k-1}}
+\]
+
+\[
+= \frac{R^2/k}{(1-R^2)/(n-k-1)} \sim F_{(k, n-k-1)}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
