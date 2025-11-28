@@ -1,7 +1,7 @@
 \section{Data Mining}
-\subsection{Theory}
 
-\subsubsection{Introduction}
+
+\subsection{Introduction}
 
 Fernando Becao presents himself and the tutor.
 
@@ -25,7 +25,7 @@ Project is 45\% and is divided into
 Both exam and project will expire after the year
 
 
-\subsubsection{Context}
+\subsection{Context}
 
 Random debate about things
 
@@ -193,7 +193,7 @@ We can have different methodologies to acquire insights from data.
 
 
 
-\subsubsection{Terms, data, problems and input space}
+\subsection{Terms, data, problems and input space}
 
 
 We use ML algorithms instead of fixed formulas because the events are too complex for a simple formula.
@@ -328,7 +328,7 @@ Kind of variables
     \item Administrative metadata
 \end{itemize}
 
-\subsubsection{Visualize the information}
+\subsection{Visualize the information}
 
 Today visualization
 \vspace{10pt}
@@ -475,7 +475,7 @@ As rule of thumb we should have 0.95 < Lie Factor < 1.05
     \item We can put different vies of the dataset together. We can select different subsets to compare them
 \end{itemize}
 
-\subsubsection{Data preparation, preprocessing and missing data}
+\subsection{Data preparation, preprocessing and missing data}
 
 Today data preparation and pre-processing
 
@@ -670,7 +670,7 @@ The main ways are
 \end{itemize}
 
 
-\subsubsection{Cluster analysis}
+\subsection{Cluster analysis}
 
 
 Cluster analysis is basically classify different objects in a finite and smaller subspace, basically binning with extra-steps.
@@ -853,3 +853,51 @@ Other important characteristics of the clusters are the shape and the density of
 Also in this setting we are assuming that either an individual is part or not of a cluster, yes or no.
 
 One variant is the k-medoids algorithm where each cluster is represented by one of the (real) points located near the center of the cluster.
+
+\subsection{DBSCAN}
+
+Density Based Clustering is a clustering algorithm meant to find outliers. 
+The previously seen methods are based on several assumptions that if they are not true will give us suboptimal results. Here with DBSCAN we don't assume any specific shape for our clusters, basically we want to find regions with an high desity of points. We use mainly two parameters:
+
+\begin{enumerate}
+    \item $\epsilon$ \ra radius around a point
+    \item MinPts \ra minimum number of points required to form a dense region
+\end{enumerate}
+
+Steps 
+\begin{enumerate}
+    \item Pick a point
+    \item Check the neighborhood to find core and border points
+    \item Expand the cluster to find if the neighbors of a core point are also core point. We apply this step to all found core points.
+    \item Stop when we can't expand our cluster
+\end{enumerate}
+
+
+The choice of the hyperparameters is based most on case to case
+
+\vspace{10pt}
+
+A different approach is HDBSCAN where we can try different values. It adapts at different levels of density both wit $\epsilon$ and MinPts. Basically we want to explore with different density levels and we build a dendrogram.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

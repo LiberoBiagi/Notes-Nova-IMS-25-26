@@ -11,6 +11,35 @@
 \usepackage{geometry}             % margini comodi
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{fancyvrb}
+\usepackage{framed}
+
+% ridefinisci l'ambiente Verbatim per metterlo dentro una cornice framed
+\let\OldVerbatim\Verbatim
+\let\OldEndVerbatim\endVerbatim
+
+\renewenvironment{Verbatim}
+  {\begin{framed}\OldVerbatim}
+  {\OldEndVerbatim\end{framed}}
+
+  \usepackage{fancyvrb}
+\usepackage{framed}
+
+% --- Per l'ambiente Verbatim (fancyvrb) ---
+\let\OldVerbatim\Verbatim
+\let\OldEndVerbatim\endVerbatim
+
+\renewenvironment{Verbatim}
+  {\begin{framed}\OldVerbatim}
+  {\OldEndVerbatim\end{framed}}
+
+% --- Per l'ambiente verbatim standard ---
+\let\oldverbatim\verbatim
+\let\oldendverbatim\endverbatim
+
+\renewenvironment{verbatim}
+  {\begin{framed}\oldverbatim}
+  {\oldendverbatim\end{framed}}
 
 
 \usepackage{enumitem}

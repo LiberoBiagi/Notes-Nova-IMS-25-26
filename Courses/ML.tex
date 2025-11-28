@@ -1,7 +1,7 @@
 \section{Machine Learning}
-\subsection{Theory}
 
-\subsubsection{Introduction}
+
+\subsection{Introduction}
 
 Machine Learning differs from traditional programming, we want to model a function to predict data or patterns. Machine Learning has many applications in multiple fields. Since we are using data is important to notice that those can have biases like people. Some biases related to people can be confirmation, falalcy of centrality or survivorship.
 
@@ -67,7 +67,7 @@ This is the most basic linear case. We want to estimate the parameters a and b t
 
 \hrule
 
-\subsubsection{Machine Learning tribes}
+\subsection{Machine Learning tribes}
 
 Machine learning implies that the machine will learn something, there are different approaches for that. They can be applied to different tasks for better performances.
 
@@ -152,7 +152,7 @@ If we cross together the tribes and the components seen in the previous class we
 \end{itemize}
 
 
-\subsubsection{Feature Selection}
+\subsection{Feature Selection}
 
 The most important part of a machine learning model is the dataset, sometimes the data aren't good enough on their own so we must account for that. Some ways are
 
@@ -302,7 +302,7 @@ Lasso Regression on the other hand tries to minimize the magnitudes. It can lead
 
 
 
-\subsubsection{Linear and Logistic Regression}
+\subsection{Linear and Logistic Regression}
 
 Today we look at our first algorithms, we start with \textbf{Linear Regression}.
 
@@ -487,7 +487,7 @@ To estimate the parameters and how to interpret them:
 
 \vspace{10pt}
 
-\subsubsection{Model Selection and Assessment}
+\subsection{Model Selection and Assessment}
 
 Today we see model selection with Carina Albuquerque (breaking bad mentioned).
 
@@ -803,7 +803,7 @@ Remember that
 
 
 
-\subsubsection{Bayesians classifiers}
+\subsection{Bayesians classifiers}
 
 Bayesian classifiers are a class of probabilistic classifers, they give probabilities of
 being part of a certain class with respect to another.
@@ -901,7 +901,7 @@ The relationship among the variables \ra Each variable is conditionally independ
 
 
 
-\subsubsection{Instance based learning}
+\subsection{Instance based learning}
 
 Instance based classifiers use the simplest form of learning, we just compare previous
 seen examples and we classifiy the new instance by similarity. We call this approach lazy learning. Some important concepts are
@@ -1005,7 +1005,7 @@ Othe similarity measures that can be used are
     \item Mahalanobis distance
 \end{enumerate}
 
-\subsubsection{Neural Networks}
+\subsection{Neural Networks}
 
 One new family of algorithm is the ones of the neural networks. They have many applications in many fields and like
 AI they had periods of summers and winters. The strength of neural networks comes from
@@ -1103,7 +1103,7 @@ w_{ij} = w_{ij}^{\text{old}} + \alpha\, \mathrm{Err}_j \, a_i.
 \]
 
 
-\subsubsection{Decision Trees}
+\subsection{Decision Trees}
 
 
 
@@ -1117,107 +1117,3 @@ w_{ij} = w_{ij}^{\text{old}} + \alpha\, \mathrm{Err}_j \, a_i.
 
 
 
-\subsection{Brief recap of models and other useful things}
-
-\subsubsection{Lecture 1}
-
-\begin{itemize}
-    \item \textbf{Training example:} A pair $(x, f(x))$.
-    \item \textbf{Target function:} The true function $f(x)$ that we want to estimate.
-    \item \textbf{Hypothesis:} A proposed function $h$, believed to be similar to $f$; the output of the learning algorithm.
-    \item \textbf{Concept:} Boolean function that describes the instances of the dataset.
-          \begin{itemize}
-              \item $f(x) = 1 \;\Rightarrow$ positive example
-              \item $f(x) = 0 \;\Rightarrow$ negative example 
-          \end{itemize}
-    \item \textbf{Classifier:} A discrete-valued function produced by the learning algorithm.  
-          The possible values of $f \in \{1,2,\dots,K\}$ are the \emph{classes} or \emph{class labels}.  
-          (In most algorithms the classifier actually returns a real-valued function that must be interpreted).
-    \item \textbf{Hypothesis space:} The space of all hypotheses that can, in principle, be produced by the learning algorithm.
-    \item \textbf{Version space:} The subset of the hypothesis space that has not yet been ruled out by the training examples.
-\end{itemize}
-
-
-\subsubsection{Lecture 2}
-\subsubsection{Lecture 3}
-\subsubsection{Lecture 4}
-\subsubsection{Lecture 5}
-
-\subsection{Things seen at the practical}
-
-\subsubsection{ML process}
-
-\begin{itemize}
-    \item Identify business needs
-    \item Import and integrate data
-    \item Explore the data
-    \item Data preparation
-    \item Modelling
-    \item Assessment
-    \item Deploiment
-\end{itemize}
-
-
-\subsubsection{Feature selection}
-
-\begin{itemize}
-    \item Divide the dataset into Training, Test and Validation
-    \item Define independent and target variables
-    \item Fill the Nans and preprocess the dataset avoiding data leakage.
-    \item Filter methods 
-    \begin{enumerate}
-        \item Setting a Variance threshold
-        \item Correlation indices
-        \item Statistical Hypothesis Testing
-    \end{enumerate}
-    \item Wrapper methods
-    \begin{enumerate}
-        \item Exhaustive feature selection
-        \item Forward selection
-        \item Backward selection
-        \item Stepwise selection
-        \item RFE
-    \end{enumerate}
-    \item Embedded methods
-    \item \begin{enumerate}
-        \item Regularization (Lasso and Ridge)
-        \item Tree-based methods
-    \end{enumerate}
-\end{itemize}
-
-
-
-\subsubsection{Models}
-
-\begin{itemize}
-    \item Decision Tree Classifier
-    \item Logistic Regression
-    \item Support Vector Classifier
-    \item Linear Regression (OLS, Lasso, Ridge, ElasticNet)
-\end{itemize}
-
-
-\subsubsection{Metrics}
-
-\begin{itemize}
-    \item MAE
-    \item $R^2$
-    \item Adjusted $R^2$
-    \item MSE
-    \item RMSE
-    \item MedAE
-    \item MAPE
-    \item ROC curve
-    \item AUC
-    \item Precision-Recall curve
-    \item Macro Evaluation
-    \item Micro Evaluation
-    \item OVR methods
-    \item Weighted metrics
-    \item P-values
-    \item Confusion matrix
-    \item Accuracy
-    \item Precision
-    \item Recall
-    \item F1
-\end{itemize}

@@ -1,8 +1,7 @@
 \section{Statistic for data science}
 
-\subsection{Theory}
 
-\subsubsection{Data exploration and basic concepts}
+\subsection{Data exploration and basic concepts}
 
 Statistics is the approach of answering questions using data. We aim to find rules that are true for a certain population basing our findings on a smaller subset of the mentioned population (sample)
 
@@ -205,7 +204,7 @@ To visualize correlation we use a \textbf{Scatterplot}
 
 \hrule
 
-\subsubsection{Statistical Distributions}
+\subsection{Statistical Distributions}
 
 \vspace{10pt}
 
@@ -444,7 +443,7 @@ To summarize
 
 
 
-\subsubsection{Point Estimation}
+\subsection{Point Estimation}
 
 Suppose that we have a population distributed with certain parameters. Like $\mu$ as mean or p as proportion.
 Since we can't check the full population (usually), we start from a sample and we try to see if the estimate can be good enough.
@@ -569,7 +568,7 @@ The estimator with the lower MSE is considered more efficient.
 
 \vspace{10pt}
 
-\subsubsection{Hypothesis Testing}
+\subsection{Hypothesis Testing}
 
 \vspace{10pt}
 
@@ -823,7 +822,7 @@ F_{\text{obs}} \ge F_{\alpha; \, n_A - 1, \, n_B - 1}
 
 
 
-\subsubsection{Confidence Intervals}
+\subsection{Confidence Intervals}
 
 Another way to perform statistical testing is via the use of Confidence Intervals. A CI is a range computed using sample statistic used to estimate a parameter of a population with a certain level of confidence.
 
@@ -850,7 +849,7 @@ values that are outside won't be reasonable estimates.
 It's possible to notice that if we increase the sample size we will reduce the standard error, then we can get more precise estimates of our parameter. 
 
 
-\subsubsection{Linear regression model}
+\subsection{Linear regression model}
 
 Regression analysis is a disciplie that tries to uncover relationships between 2 or more variables.
 This analysis is based on cross-sectional data, data that we obtain by random sampling from a population. Since we 
@@ -1363,9 +1362,13 @@ F = \frac{\text{SSE/k}}{\text{SSR/n-k-1}}
 \]
 
 
+\subsubsection{Homoskedasticity}
 
+We want to detect when we have heteroskedasticity and how to solve the problems. OLS in this case will not be unbiased.
 
+in small samples use breush pagan 
 
+big robust
 
 
 
@@ -1422,73 +1425,3 @@ F = \frac{\text{SSE/k}}{\text{SSR/n-k-1}}
 
 
 
-
-
-\subsection{Exercises}  
-
-\begin{itemize}
-    \item We have a N$\sim$(102, 8) find the area less than 120
-
-    \begin{verbatim}
-        pnorm(120, mean=102, sd=8, lower.tail=TRUE)
-    \end{verbatim}
-
-\item Same as above but we want the area more than 120
-
-\begin{verbatim}
-    pnorm(120, mean=102, sd=8, lower.tail=FALSE)
-\end{verbatim}
-
-\item Proportion of a Z distribution where the z score is between 0 and 1.75
-
-\begin{verbatim}
-    pnorm(1.75, mean=0, sd=1, lower.tail=TRUE) - 
-    pnorm(0, mean=0, sd=1, lower.tail=TRUE)
-\end{verbatim}
-
-\item Proportion of a Z distribution more extreme than $\pm$2
-
-\begin{verbatim}
-    pnorm(2, mean=0, sd=1, lower.tail=False)*2
-\end{verbatim}
-
-\item Which z-scores separate middle 90\% and the outer 10\%
-
-\begin{verbatim}
-    qnorm(0.95, mean=0, sd=1, lower.tail=TRUE)
-\end{verbatim}
-
-\item We have a N$\sim$(102, 8), which value separates the top 10\%
-
-\begin{verbatim}
-    qnorm(0.90, mean=102, sd=8, lower.tail=TRUE) 
-\end{verbatim}
-
-\item Find the 95th percentile of a chi-squared with 7 df
-
-\begin{verbatim}
-    qchisq(0.95, df=7)
-\end{verbatim}
-
-\item Find 2.5th and 97.5 percentiles of a Student distribution with 5 df
-
-\begin{verbatim}
-    qt(0.95, df=5)
-
-    or
-
-    qt(c(0.25, 0.975), df=5)
-\end{verbatim}
-
-\item Finde 95th percetile of an F distribution with 12, 5 df
-
-\begin{verbatim}
-    qt(0.95, df1=12, df2=5)
-\end{verbatim}
-
-
-
-
-\subsection{Code}
-    
-\end{itemize}

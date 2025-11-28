@@ -1,12 +1,15 @@
 \section{Database}
 
-\subsection{Theory}
 
-\subsubsection{Introduction}
+\subsection{Introduction}
+
+\subsubsection{What is a database}
 
 A database can be defined as a collection of related data items within a specific business.
 DBMS are sotwares that define, create, use and maintain a database, if we combine a DBMS with a database we get a database system
 The majority of DBMS softwares rely on SQL systems. 
+
+\subsubsection{Conceptual Modelling of a database}
 
 \vspace{10pt}
 
@@ -45,6 +48,8 @@ We can have
 
 \vspace{10pt}
 
+\subsubsection{Normalization}
+
 An important step in the design is the one related to data normalization, we want to avoid redundant data. We split 
 the tables into smaller tables to avoid anomalies during insertion, deletion or updates. The 
 procedure follows a step by step transformation. The database is more complex from the structural point of view but can be easier to manage.
@@ -65,7 +70,9 @@ key(s), but they must not depend on another non-prime attribute.
 \vspace{10pt}
 
 
-\subsubsection{DBSM organization and structure}
+\subsection{Database modelling}
+
+\subsubsection{Architecture}
 
 
 All DBMS follow a certain structure made by certain elements
@@ -113,6 +120,8 @@ database administrator, an application, or even an end-user (Ex. APIs).
 
 \vspace{10pt}
 
+\subsubsection{ERD}
+
 To design our databases we can use an ERD (Entity Relationship Diagram) notation.
 
 Some of them can be Chen, IDEF1X, Bachman, Crow's Foot (we use this), Min-Max or UML.
@@ -132,7 +141,7 @@ be related to others. It can be zero or one, and optional or mandatory.
 \includegraphics*[width=6cm]{multiplicities.png}
 \includegraphics*[width=6cm]{options.png}
 
-
+\subsubsection{From ERD to tables}
 Relations can be
 \begin{itemize}
     \item One to one
@@ -140,9 +149,14 @@ Relations can be
     \item Many to many
 \end{itemize}
 
-Since we are working with tables we need to pass from schemas to tables, we use keys (foreign and primary)
 
-\subsubsection{SQL}
+
+Since we are working with tables we need to pass from schemas to tables, we use keys (foreign and primary).
+We can also create a linking table to model many to many relations.
+
+\subsection{SQL}
+
+\subsubsection{What is SQL}
 
 SQL means Structured Query Language. It was created by IBM in 1974 and can be implemented by each vendor (SQL dialects). 
 
@@ -153,9 +167,11 @@ Key characteristics
 \begin{itemize}
     \item Set-oriented and declarative
     \item Free form
-    \item CCase insensitive
-    \item Can be used via promp or via a program
+    \item Case insensitive
+    \item Can be used via prompt or via a program
 \end{itemize}
+
+\subsubsection{Create a database}
 
 To show existing databases
 
@@ -187,6 +203,8 @@ See tables in the database
     SHOW TABLES;
 \end{verbatim}
 
+
+\subsubsection{Create tables}
 Create a Table 
 
 \begin{verbatim}
@@ -281,4 +299,230 @@ Drop a table
 
 \begin{verbatim}
 DROP TABLE [IF EXISTS] table_name [, table_name]
+\end{verbatim}
+
+
+\subsubsection{CRUD operations}
+
+
+CRUD operations refere to those operations that are meant to Create, Read, Update and Delete data in our database.
+
+\vspace{10pt}
+
+To insert data
+
+\begin{verbatim}
+    INSERT INTO table_name(c1, c2,...)
+    VALUES (v1,v2,...);
+\end{verbatim}
+
+To read data
+
+\begin{verbatim}
+    SELECT column_1, column_2,\dots
+    FROM table_1
+    [INNER|LEFT|RIGHT] JOIN table_2 ON condition
+    WHERE conditions
+    GROUP BY column_1
+    HAVING group_conditions
+    ORDER BY column_1
+    LIMIT offset, length;
+\end{verbatim}
+
+To update our data
+
+\begin{verbatim}
+    UPDATE [LOW_PRIORITY] [IGNORE] table_name
+    SET column_name1 = expr1,
+    column_name2 = expr2,
+    [WHERE condition];
+\end{verbatim}
+
+To delete data
+
+\begin{verbatim}
+    DELETE FROM table_name
+    WHERE condition;
+\end{verbatim}
+
+
+\subsubsection{SQL clauses and operators}
+
+The main clauses and operators that we have in SQL are
+
+\begin{itemize}
+    \item LIMIT
+    \item DISTINCT
+    \item ORDER BY
+    \item BETWEEN
+    \item [NOT] LIKE
+\end{itemize}
+
+\vspace{10pt}
+
+LIMIT is used in the select statement to costrain the number of rows to return
+
+\begin{verbatim}
+    SELECT select_list
+    FROM table\_name
+    LIMIT [offset] row_count;
+\end{verbatim}
+
+Offset specifies the offset of the first row to return (from 0) while row\_count the maximum number of rows to return
+
+\vspace{10pt}
+
+LIMIT will remove duplicates
+
+\begin{verbatim}
+    SELECT DISTINCT e.first_name FROM employees AS e LIMIT 10;
+\end{verbatim}
+
+\vspace{10pt}
+
+The BETWEEN operator is a logical one that we can use to specify a value within or not a range
+
+\begin{verbatim}
+SELECT e.emp_no, e.first_name, e.last_name, e.hire_date
+FROM employees AS e
+WHERE e.hire_date BETWEEN '1999-01-01' AND '1999-12-31';
+\end{verbatim}
+
+\vspace{10pt}
+
+The LIKE operator is a logical operator that tests whether a string
+contains a specified pattern or not
+
+\begin{verbatim}
+SELECT e.first_name, e.last_name
+FROM employees AS e
+WHERE e.last_name LIKE 'T%';
+
+
+SELECT e.first_name, e.last_name
+FROM employees AS e
+WHERE e.last_name NOT LIKE 'Tr%';
+\end{verbatim}
+
+We can use the keyword AS to refere in a different way
+
+\begin{verbatim}
+table_name AS table_alias
+
+SELECT
+[column_1 | expression] AS descriptive_name
+FROM table_name;
+
+SELECT
+e.firstName, e.lastName
+FROM employees e
+ORDER BY e.firstName;
+
+SELECT
+CONCAT (lastName, ' ', firstname) AS Full_name
+FROM employees;
+
+\end{verbatim}
+
+The IN operator allows you to determine if a specified value matches
+any value in a set of values or returned by a subquery.
+
+\begin{verbatim}
+SELECT column1,column2,...
+FROM table_name
+WHERE column_n IN (value1,value2,...);
+\end{verbatim}
+
+The SELECT statement does not provide the result set sorted.
+To sort the result set, you add the ORDER BY clause to the SELECT statement
+
+\begin{verbatim}
+SELECT select_list
+FROM table_name
+ORDER BY column1 [ASC|DESC], column2 [ASC|DESC], ...;
+
+\end{verbatim}
+
+\subsubsection{SQL joins}
+
+There are four basic types of SQL joins: inner, left, right, and
+full.
+
+
+\vspace{10pt}
+
+INNER
+\begin{verbatim}
+SELECT column_list
+FROM table_A
+INNER JOIN table_B ON join_condition;
+
+SELECT column_list
+FROM table_A
+INNER JOIN table_B USING (column_name);
+
+SELECT column_list
+FROM table_A A, table_B B
+WHERE A.column_name = B.column_name;
+
+SELECT column_list
+FROM Table_A A
+INNER JOIN Table_B B
+ON A.Key = B.Key;
+\end{verbatim}
+
+LEFT
+
+\begin{verbatim}
+SELECT column_list
+FROM Table_A A
+LEFT JOIN Table_B B
+ON A.Key = B.Key;
+\end{verbatim}
+
+RIGHT
+
+\begin{verbatim}
+ELECT column_list
+FROM Table_A A
+RIGHT JOIN Table_B B
+ON A.Key = B.Key;
+\end{verbatim}
+
+OUTER/FULL
+
+\begin{verbatim}
+SELECT * FROM t1
+LEFT JOIN t2 ON t1.id = t2.id
+UNION ALL
+SELECT * FROM t1
+RIGHT JOIN t2 ON t1.id = t2.id
+\end{verbatim}
+
+Left excluding
+
+\begin{verbatim}
+SELECT column_list
+FROM Table_A A
+LEFT JOIN Table_B B
+ON A.Key = B.Key
+WHERE B.Key IS NULL;
+\end{verbatim}
+
+Right excluding
+
+\begin{verbatim}
+SELECT column_list
+FROM Table_A A
+RIGHT JOIN Table_B B
+ON A.Key = B.Key
+WHERE A.Key IS NULL;
+\end{verbatim}
+
+Self 
+
+\begin{verbatim}
+SELECT m.lastName AS Manager, e.lastName AS 'Direct report'
+FROM employees e
+INNER JOIN employees m ON m.employeeNumber = e.reportsTo;
 \end{verbatim}
