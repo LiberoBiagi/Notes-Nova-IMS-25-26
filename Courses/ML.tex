@@ -1105,15 +1105,151 @@ w_{ij} = w_{ij}^{\text{old}} + \alpha\, \mathrm{Err}_j \, a_i.
 
 \subsection{Decision Trees}
 
+The class of decision trees can be applied both at classification and estimation. A good advantage is that the trees represent rules, so we can interpret the results very well. 
+
+\vspace{10pt}
+
+At each level we set a rule and we divide our sample in different branches, we will do that untill we will reach a certain granularity in our results. Our test set data will flow in the tree and we will get a solution based on where they fall. If we want to discriminate between classes we want to have leaves that are as pure as possible, so that they represent only individuals of a particular class. 
+
+Each edge will add a conjunction and each new leaf will add a disjunction.
+
+\vspace{10pt}
+
+As said decision trees have many advantages
+
+\begin{itemize}
+    \item Interpretability
+    \item Can deal with different types of data
+    \item Don't care about scale of the data
+    \item Automatic definition of the useful attributes for each class
+    \item Can be used for regression
+    \item Non-parametric
+\end{itemize}
+
+But also disadvantages
+
+\begin{itemize}
+    \item MOst algorithms will require a discrete target
+    \item Small data variations can result in different trees
+    \item Sub-trees can be duplicated several times
+    \item With many classes we have worse results
+    \item Linear boundaires should be perpendicular to the axis
+\end{itemize}
 
 
+When we bulid a decision tree we start from our training set and we have to decide 
+
+\begin{itemize}
+    \item Which variable to query 
+    \item Where to cut
+    \item Which node we should part
+    \item How many edges per node
+    \item When to stop
+\end{itemize}
+
+At each level we can divide an independet variable into different partitions where we want to measure the evaluate the quality of it. We do that continuously untill we don't reach the stopping criterion. 
+
+\vspace{10pt}
+
+The algorithm is a greedy one
+
+\begin{itemize}
+    \item The tree is built in a top-down recursive divide-and-conquer manner
+    \item All training examples start at root
+    \item If the attributes that are selected are continuous they are discretized
+    \item Examples are partitioned based on the selected attributes
+    \item Test attributes are selected on the basis of a heuristic or statistical measure
+\end{itemize}
+
+On the other hand to stop the partitions
+
+\begin{itemize}
+    \item All samples in a node belongs to the same class
+    \item We can't divide anymore and we use majority voting to classify
+    \item There are no samples left
+\end{itemize}
+
+Also we can have different algorithms
+
+\begin{itemize}
+    \item DDT 
+    \item ID3, C4.5, C5
+    \item CART
+    \item CHAID
+    \item And many more
+\end{itemize}
+
+More specifically
+
+\vspace{10pt}
+
+\textbf{DDT}
+\begin{itemize}
+    \item Greed search
+    \item No backtraking
+    \item Can be stuck in a local minimum
+    \item We start with a dataset o pre-classified individuals and each node specifies an attribute used as a test
+    \item The metric is a discriminative one $f(a) = \frac{1}{n} \sum_{i=1}^{|A|} C_i$ to measure the dominance or purity of the most frequent class
+    
+\end{itemize}
+
+\vspace{10pt}
+
+\textbf{ID3, C4.5}
+\begin{itemize}
+    \item We select the attribute with the highest information gain
+    \item So we want to minimize the entropy $Entropy(D) = - \sum_{i=1}^{m} p_i log_2(p_i)$
+    \item If we choose the attribute A to split the node with the tuples in D in v partitions the information needed to classify D is $ Entropy_A(D) = \sum_{j=i}^{y} \frac{|D_j|}{|D|} \times Entropy(D_j)$
+    \item The information gained by branching on attribute A is $ Gain(A) = Entropy(D) - Entropy_A(D)$
+\end{itemize}
 
 
+\vspace{10pt}
+\textbf{CART}
 
+\begin{itemize}
+    \item We use the Gini index $gini(D) = 1 - \sum_{j=1}^{n}p^2_j$
+    \item If a data set D is split on A in D1 and D2 the gini index is $ gini_{age}(D) = \frac{|D_1|}{|D|} gini(D_1) + \frac{|D_2|}{|D|}gini(D_2)$
+    \item We have a reduction in impurity $\Delta gini(A) = gini(D) - gini_A(D)$
+    \item We choose the attribute that maximises the reduction in impurity
+\end{itemize}
 
+\vspace{10pt}
 
+One problem of trees is that they are very prone to overfit on the training data. To solve we can either do
 
+\begin{itemize}
+    \item Prepruning \ra We will not split a node if the goodness of the measure will go under a threshold
+    \item Postpruning \ra We remove leaves and branches after the tree is made
+\end{itemize}
 
+\vspace{10pt}
 
+Trees can also be used for regression tasks. Every leaf represents a value and we will predict that value (or mean of several values) if our instance is falling in the designated area of our tree.
+
+To find the best splitting point of a tree we can use the MSE and minimize the local split errors. We can also use MAE or sum of residuals.
+MSE at the leaf level will use the mean value while MAE will go with the median. 
+But the important thing is to determine a stopping point since we can easily overfit if we have one leaf for every possible value.
+
+\vspace{10pt}
+
+Since we want to avoid overfit we can do that by removing a leaf, calculate the MSE and do that for everyone. We will stay with the best tree.
+
+This can be problematic since every time we remove a leaf the MSE will grow, then we use the Tree score
+
+\[
+TressScore = MSE + \alpha T
+\]
+
+$\alpha$ is an hyperparameter that we find using our validation set, T is the number of leaves.
+
+\begin{enumerate}
+    \item Compute the cost complexity pruning path by creating a fully grown tree and compute the $\alpha$ that minimizes the TreeScore.
+    \item Split the data for cross validation
+    \item For each $\alpha$ prune the tree
+    \item FInd the average validation score
+    \item Select the optimal $\alpha$
+    \item Train the final model
+\end{enumerate}
 
 
