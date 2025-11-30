@@ -125,7 +125,7 @@ We can also look at relevant variables like:
     \item Relative spend on each product
 \end{itemize}
 
-\textbf{Canonical tasks in data mining}
+\subsection{Canonical tasks in data mining}
 
 If we want to classify new data from a decision criterion previously learned we talk about \textbf{Supervised learning}
 
@@ -160,7 +160,8 @@ In our datasets the features are the columns while the rows are the instances
 
 \textbf{Visualization} -> n-D data can be difficult to visualize so we can flatten them into 2-D ones. Examples are histograms, bubbles and goggle boxes. We can also do some dimensionality reduction using PCA or other algorithm.
 
-\textbf{Data mining process}
+\subsection{The data mining process}
+
 
 We can have different methodologies to acquire insights from data.
 
@@ -190,10 +191,6 @@ We can have different methodologies to acquire insights from data.
 
 
 \vspace{10pt}
-
-
-
-\subsection{Terms, data, problems and input space}
 
 
 We use ML algorithms instead of fixed formulas because the events are too complex for a simple formula.
@@ -328,7 +325,7 @@ Kind of variables
     \item Administrative metadata
 \end{itemize}
 
-\subsection{Visualize the information}
+\subsection{Exploration}
 
 Today visualization
 \vspace{10pt}
@@ -376,8 +373,6 @@ Guidelines
 \vspace{10pt}
 
 As rule of thumb we should have 0.95 < Lie Factor < 1.05
-
-\newpage
 
 \textbf{Suggestions}
 
@@ -475,7 +470,7 @@ As rule of thumb we should have 0.95 < Lie Factor < 1.05
     \item We can put different vies of the dataset together. We can select different subsets to compare them
 \end{itemize}
 
-\subsection{Data preparation, preprocessing and missing data}
+\subsection{Preprocessing}
 
 Today data preparation and pre-processing
 
@@ -670,7 +665,7 @@ The main ways are
 \end{itemize}
 
 
-\subsection{Cluster analysis}
+\subsection{Segmentation}
 
 
 Cluster analysis is basically classify different objects in a finite and smaller subspace, basically binning with extra-steps.
@@ -750,6 +745,10 @@ To cluster our data we can have different approaches, based on different algorit
     \item Self-organizing maps
 \end{itemize}
 
+\subsection{Clustering techniques}
+
+\subsubsection{Hierarchical Clustering}
+
 With \textbf{Hierarchical clustering} we start from a feature matrix and we calculate a dissimilarity matrix to see the differences. This last matrix is based on the distances between the points.
 To aggregate we can use different aggregation rules like single linkage or complete linkage (connect the 2 closest of farthest points) or average linkage or group linkage.
 We can obtain also the dendrogram of the data and visualize differences with it.
@@ -761,9 +760,11 @@ Hierarchical clustering can have many disadvantages
     \item Doesn't works really well with large datasets
 \end{itemize}
 
-To improve the performance of Hierarchical methods we can anal the links after each partition (CURE or chamaleon) or integrate iterative optimization (BIRCH).
+To improve the performance of Hierarchical methods we can analize the links after each partition (CURE or chamaleon) or integrate iterative optimization (BIRCH).
 
 \vspace{10pt}
+
+\subsubsection{Partition methods}
 
 With \textbf{Partition methods} (like k-means algorithm) we try to divide the data into k (decided at the start) different clusters. We will find for each cluster a centroid.
 Each group must contain at least one point and each point must belong to exactly one cluster. The algorithm works like this
@@ -805,6 +806,124 @@ One improvement to the problem if initialization is to use K-means++ that is mad
 This way can find better centroids and converges faster.
 
 \vspace{10pt}
+
+
+\subsubsection{DBScan}
+
+Density Based Clustering is a clustering algorithm meant to find outliers. 
+The previously seen methods are based on several assumptions that if they are not true will give us suboptimal results. Here with DBSCAN we don't assume any specific shape for our clusters, basically we want to find regions with an high desity of points. We use mainly two parameters:
+
+\begin{enumerate}
+    \item $\epsilon$ \ra radius around a point
+    \item MinPts \ra minimum number of points required to form a dense region
+\end{enumerate}
+
+Steps 
+\begin{enumerate}
+    \item Pick a point
+    \item Check the neighborhood to find core and border points
+    \item Expand the cluster to find if the neighbors of a core point are also core point. We apply this step to all found core points.
+    \item Stop when we can't expand our cluster
+\end{enumerate}
+
+
+The choice of the hyperparameters is based most on case to case
+
+\vspace{10pt}
+
+A different approach is HDBSCAN where we can try different values. It adapts at different levels of density both wit $\epsilon$ and MinPts. Basically we want to explore with different density levels and we build a dendrogram.
+The parameters are min\_cluster\_size and min\_samples. The steps are
+
+\begin{itemize}
+    \item Transform distances
+    \item Build a graph and hierarchy
+    \item Condense and select clusters
+    \item Output
+\end{itemize}
+
+\subsubsection{Shift mean}
+
+Mean shift is another algorithm that is density based and mode seeking. It treats the data as a sample from an unknown probability density and looks for the local maxima (nodes) of this density, which will become the cluser centers. It uses a silding window (kernel) of radius h that is moved to the mean of the points inside the windows looking for the highest density. The windows are moved untill they converge, if they are really near they are put together inside the same cluster. 
+
+\vspace{10pt}
+
+Algorithm:
+\begin{itemize}
+    \item Create the kernel
+    \item At every iteration move the window towards the most dense region within itself
+    \item Repeat untill the movements are negligible
+    \item Do this for every points untill we have clear saparations
+\end{itemize}
+
+The main characteristics are that all the data points will converge to the same cluster every time and that we have an attraction basin (a region where all the starting points will converge to a certain cluster).
+
+\vspace{10pt}
+
+Strengths
+
+\begin{itemize}
+    \item Can identify different shapes
+    \item Can leave outliers as noise
+    \item We dont't have to choose the number of clusters
+    \item Good for small and medium datasets
+    \item Versatile even though it can struggle in high dimensions
+\end{itemize}
+
+Weaknesses
+
+\begin{itemize}
+    \item Struggles with varying densities
+    \item Sensitive to radius choice
+    \item The radius is critical and difficult to set
+    \item Expensive for large datasets
+    \item Suffers from the curse of dimensionality
+\end{itemize}
+
+\subsubsection{Self-organizing maps}
+
+With SOMs we want to train a unsupervised neural network where the inputs are connected to a matrix of neurons. Each neuron is a vector in the input space that during the training is pulled in the position of the input data dragging with them their neighbours in the output space. The map aims to pass between the data patterns. Input patterns are then compared with the neurons and the closest is considered the winner. The winner is updated and so its neighbors. The difference between data and neurons is called quantization error.
+
+\vspace{10pt}
+
+Algorithm
+
+\begin{itemize}
+    \item \textbf{Step 0:} Randomly initialize the weights $w_{ij}$.
+    \item Set the neighborhood topological parameters.
+    \item Set the learning rate $\alpha$.
+
+    \item \textbf{Step 1:} While stop condition is false:
+    \begin{itemize}
+        \item \textbf{Step 2:} For each input vector $\mathbf{x}$:
+        \begin{itemize}
+            \item \textbf{Step 3:} For each unit $j$, compute  
+            \[
+                D(j) = \sum_i (w_{ij} - x_i)^2
+            \]
+            \item \textbf{Step 4:} Find the unit that minimizes $D(j)$ (Best Matching Unit).
+            \item \textbf{Step 5:} For each unit $j$ in the neighborhood and for all $i$:
+            \[
+                w_{ij}^{new} = w_{ij}^{old} + \alpha \left(x_i - w_{ij}^{old}\right)
+            \]
+        \end{itemize}
+
+        \item \textbf{Step 6:} Update the learning rate $\alpha$.
+        \item \textbf{Step 7:} Reduce the radius of the topological neighborhood.
+    \end{itemize}
+\end{itemize}
+
+
+\vspace{10pt}
+
+From our SOM we get as output
+
+\begin{itemize}
+    \item U-matrices
+    \item Component planes
+    \item Hit plots
+\end{itemize}
+
+\subsection{Data Clustering}
 
 Another problem is understanding how many clusters we want. One way is to create many cases with different K and choose the best. 
 The choice should be done via
@@ -854,34 +973,100 @@ Also in this setting we are assuming that either an individual is part or not of
 
 One variant is the k-medoids algorithm where each cluster is represented by one of the (real) points located near the center of the cluster.
 
-\subsection{DBSCAN}
-
-Density Based Clustering is a clustering algorithm meant to find outliers. 
-The previously seen methods are based on several assumptions that if they are not true will give us suboptimal results. Here with DBSCAN we don't assume any specific shape for our clusters, basically we want to find regions with an high desity of points. We use mainly two parameters:
-
-\begin{enumerate}
-    \item $\epsilon$ \ra radius around a point
-    \item MinPts \ra minimum number of points required to form a dense region
-\end{enumerate}
-
-Steps 
-\begin{enumerate}
-    \item Pick a point
-    \item Check the neighborhood to find core and border points
-    \item Expand the cluster to find if the neighbors of a core point are also core point. We apply this step to all found core points.
-    \item Stop when we can't expand our cluster
-\end{enumerate}
+\vspace{10pt}
 
 
-The choice of the hyperparameters is based most on case to case
+\subsection{Association rules}
+
+Another way to find patterns is the use of association rules, we want to extract compact patterns that describe subsets of data. Based on events that occur together to find rules on the form if X then Y. We get information about things that happen toegther. 
 
 \vspace{10pt}
 
-A different approach is HDBSCAN where we can try different values. It adapts at different levels of density both wit $\epsilon$ and MinPts. Basically we want to explore with different density levels and we build a dendrogram.
+We can start with a table of purchased items to create a table of co-occurences with the number of times that any pair of products were purchased together. 
+
+Usually association rules are expressed in the form of 
+
+\begin{center}
+\textit{"If the item A is part of an event, then the item B will also be part of the event X percent of time"}
+\end{center}
+
+The rules are not to be considered as causation but as association. All rules have an antecedent and a consequent \ra if a customer buys shoes, then 10\% of the time will also buy socks.
+
+\vspace{10pt}
+
+To evaluate rules we usually use
+
+\begin{itemize}
+    \item Confidence \ra How strong is the implication, the conditional probability that C occurs given the occurence of A
+    \item Consequent support \ra Consequent transactions over the total number of transactions
+    \item Support \ra How frequently the combination occurs in the database
+    \item Lift \ra how much more often A and B occur together than would be expected if they were statistically independent, how strong the correlation is beyond random chance
+\end{itemize}
+
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Outer universe U
+  \draw[thick] (0,0) ellipse (3cm and 2cm);
+  \node[above] at (0,2) {$U$};
+
+  % A (left) and C (right) with opacity to show overlap clearly
+  \filldraw[fill=blue!40, draw=black, opacity=0.5] (-0.9,0) ellipse (1.6cm and 1.2cm); % A
+  \filldraw[fill=red!40,  draw=black, opacity=0.5] (0.9,0)  ellipse (1.6cm and 1.2cm); % C
+
+  % Labels
+  \node at (-1.5, 0.7) {$A$};
+  \node at ( 1.5, 0.7) {$C$};
+  \node at ( 0, -0.2) {$B$}; % intersection visible
+
+\end{tikzpicture}
 
 
+\begin{itemize}
+    \item Confidence \ra $\frac{B}{A} = P(C \cap A)$
+    \item Consequent support \ra $\frac{C}{U}$
+    \item Support \ra $\frac{B}{U} = P(A \cap C)$
+    \item Lift \ra $\frac{\text{Confidence}}{\text{Consequent support}} = \frac{P(C \cap A)}{P(C)}$
+\end{itemize}
 
 
+\vspace{10pt}
+
+How to read 
+
+\begin{enumerate}
+    \item A lift of 2 means that two events will occur together twice as often as would be expected if their occurrences were independent
+    \item A lift greater than 1 means a positive association
+    \item A lift smaller than 1 means a negative association
+    \item A lift equal to 1 means that that the two events are uncorrelated
+    \item A credible rule should have good confidence, high support and a lift higher than 1
+    \item High confidence and low support must be taken with caution
+\end{enumerate}
+
+
+\vspace{10pt}
+
+Apriori algorithm for association rules
+
+\begin{enumerate}
+    \item Frequent itemset generation
+    \item Create candidate itemsets
+    \item Pruning infrequent itemsets
+    \item Repeat the process
+    \item Association rule generation
+    \item Pruning rules
+\end{enumerate}
+
+\vspace{10pt}
+
+Types of rules
+
+\begin{itemize}
+    \item Trivial 
+    \item Inexplicable
+    \item Actionable
+    \item Rules obtained by promotions
+\end{itemize}
+
+We can also find product hierarchies. Remember that we need a lot of data about products and the customers.
 
 
 
