@@ -464,6 +464,7 @@ INPUT .\Courses\Stat.tex
 INPUT Courses\Stat.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt8.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt8.tfm
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr5.tfm
 INPUT .\Courses\database.tex
 INPUT .\Courses\database.tex
 OUTPUT Courses\database.aux

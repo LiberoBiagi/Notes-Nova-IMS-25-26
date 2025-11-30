@@ -3,6 +3,8 @@
 
 \subsection{Data exploration and basic concepts}
 
+\subsubsection{Preliminary concepts}
+
 Statistics is the approach of answering questions using data. We aim to find rules that are true for a certain population basing our findings on a smaller subset of the mentioned population (sample)
 
 \vspace{10pt}
@@ -36,7 +38,7 @@ We want to estimate in a precise way those parameters basing the computation on 
 
 One of the problems regarding the samples is that those can be biased. To avoid that we want to get a sample that is representative of the population. One way is the use of \textbf{simple random sampling method}.
 
-\textbf{Describing and visualizing data}
+\subsubsection{Describing and visualizing data}
 
 We have different ways to describe our data, they depend on multiple factors.
 
@@ -206,6 +208,8 @@ To visualize correlation we use a \textbf{Scatterplot}
 
 \subsection{Statistical Distributions}
 
+\subsubsection{Motivations and important concepts}
+
 \vspace{10pt}
 
 Since random variables can take certain values with certain probabilities we would like to describe them somehow. The collection of those probability is called probability distribution. This can describe the probability of each event happening. Recall that the sum of the probabilities is 1.
@@ -233,7 +237,7 @@ For the continuous case we calculate the integral between the 2 values that we c
 
 \vspace{10pt}
 
-\textbf{Discrete distributions}
+\subsubsection{Discrete distributions}
 
 If we can count the sample space we say that our random variable is discrete
 
@@ -328,7 +332,7 @@ With
 \end{itemize}
 
 
-\textbf{Continuous distributions}
+\subsubsection{Continuous distributions}
 
 \vspace{10pt}
 
@@ -443,8 +447,8 @@ To summarize
 
 
 
-\subsection{Point Estimation}
-
+\subsection{Point estimation, hypothesis testing and confidence intervals}
+\subsubsection{Point estimation}
 Suppose that we have a population distributed with certain parameters. Like $\mu$ as mean or p as proportion.
 Since we can't check the full population (usually), we start from a sample and we try to see if the estimate can be good enough.
 
@@ -568,7 +572,7 @@ The estimator with the lower MSE is considered more efficient.
 
 \vspace{10pt}
 
-\subsection{Hypothesis Testing}
+\subsubsection{Hypothesis Testing}
 
 \vspace{10pt}
 
@@ -726,7 +730,7 @@ The probability of rejecting a false Null hypothesis is known as power.
 
 Where $\beta$ is the probability of committing a Type II error. $\alpha$ is the probability of making a type I error.
 
-
+\subsubsection{Inference for two samples}
 
 If we want to make \textbf{tests on two samples} we can follow the same idea.
 
@@ -822,7 +826,7 @@ F_{\text{obs}} \ge F_{\alpha; \, n_A - 1, \, n_B - 1}
 
 
 
-\subsection{Confidence Intervals}
+\subsubsection{Confidence Intervals}
 
 Another way to perform statistical testing is via the use of Confidence Intervals. A CI is a range computed using sample statistic used to estimate a parameter of a population with a certain level of confidence.
 
@@ -851,6 +855,8 @@ It's possible to notice that if we increase the sample size we will reduce the s
 
 \subsection{Linear regression model}
 
+\subsubsection{Introduction}
+
 Regression analysis is a disciplie that tries to uncover relationships between 2 or more variables.
 This analysis is based on cross-sectional data, data that we obtain by random sampling from a population. Since we 
 are having a random sampling process the covariance between the observations is zero. So for i$\ne$j
@@ -860,6 +866,8 @@ Cov(y_i,y_j) = Cov(x_i, x_j) = Cov(y_i, x_j) = 0
 \]
 
 We want to calculate the causal effect of x on y, so how does y changes if x is changed and all other factors are held constant.
+
+\subsubsection{Simple Linear Regression Model}
 
 \vspace{10pt}
 
@@ -1006,6 +1014,8 @@ $\Delta E[y \mid x_i] \approx \frac{\beta_1}{100}\,\%\Delta x$ \\
 \end{tabular}
 \end{table}
 
+\subsubsection{Multiple Linear Regression Model}
+
 When we use simple regression we have the drawback that is very difficult to draw ceteris paribus conclusions about how x affects y.
 The assumption that all the other factors affecting y are uncorrelated with x is often unrealistic. A solution is using multiple regression models. 
 With this new setting is easier to fix certain values to get the actual importance of a certain x.
@@ -1118,6 +1128,8 @@ In matrix form:
 
 \vspace{10pt}
 
+\subsubsection{Introduction to inference}
+
 Now that we have defined our assumptions and description of the linear models we want to make inferences on the population parameters. 
 We can do that by constructing confidence intervals or testing possible values. We know that OLS estimators are random variables and we know their expected values and variances. But 
 we want to know their distribution. In order to derive those distributions we need additional assumptions, for example that the errors are normally distributed.
@@ -1148,6 +1160,8 @@ And
 \end{itemize}
 
 \vspace{10pt}
+
+\subsubsection{The t-Test}
 
 \begin{theorem}[Normal Sampling Distribution of OLS]
 Under Assumptions MLR1--MLR6 we have
@@ -1271,6 +1285,9 @@ and
 }.
 \]
 
+
+\subsubsection{The F-test}
+
 If we want to make inferences on multiple parameters using multiple restrictions
 we can use the \textbf{F-test}.
 
@@ -1362,23 +1379,131 @@ F = \frac{\text{SSE/k}}{\text{SSR/n-k-1}}
 \]
 
 
-\subsubsection{Homoskedasticity}
+\subsubsection{Heteroskedasticity}
 
-We want to detect when we have heteroskedasticity and how to solve the problems. OLS in this case will not be unbiased.
+Consider a basic multiple linear regression model and the notion of homoskedasticity, that the variance of the unobserved error is constant
 
-in small samples use breush pagan 
+\[
+Var = (u|\textbf{X}) = \sigma^2
+\]
 
-big robust
+If this is not true than the errors are heteroskedastic
+
+\[
+Var = (u|\textbf{X}) = \sigma^2_i
+\]
+
+\vspace{10pt}
+
+The consequences of Heteroskedasticity are
+
+\begin{itemize}
+    \item Gauss-Markov doesn't hold, than OLS is not BLUE
+    \item The estimators of the variances $Var(\hat{\beta}_j | \textbf{X})$ are biased
+    \item The standard errors of the OLS are no longer valid for constructing confidence intervals and t statistics
+    \item The usual OLS t statistics do not have t distributions
+    \item F statistics are no longer F distributed (and the LM statistic no longer has an asymptotic chi-square distribution)
+    \item In summary the statistics that we used to test hypotheses under Gauss-Markov are not valid in the presence of Heteroskedasticity
+\end{itemize}
+
+However 
+
+\begin{itemize}
+    \item OLS estimators are still unbiased and consistent
+\end{itemize}
+
+We want to test for the presence of Heteroskedasticity so
+
+\[
+\begin{aligned}
+H_0 &: \operatorname{Var}(u \mid \mathbf{X}) = \sigma^2 \\
+H_1 &: \operatorname{Var}(u \mid \mathbf{X}) = \sigma_i^2
+\end{aligned}
+\]
 
 
+The idea is that we have Var[u|\textbf{X}] = E[$u^2$|\textbf{X}] because E[u|\textbf{X}]=0. We want to see if $u^2$ is related in expected value to one or more of the explanatory variables. We assume a linear function
+
+\[
+u^2 = \alpha_0 + \alpha_1 x_1 + ... + \alpha_k x_k + error
+\]
+
+And then we test using F-stat or LM-stat 
+
+\[
+H_0 : \alpha_1 = \alpha_2 = ... = \alpha_k = 0
+\]
 
 
+We can use the following tests
+
+\begin{itemize}
+    \item Breusch-Pagan
+    \item White (full)
+    \item White (special)
+\end{itemize}
+
+\textbf{Breusch-Pagan}
+
+\begin{enumerate}
+  \item Estimate the model
+  \[
+    y_i = \beta_0 + \beta_1 x_{1i} + \cdots + \beta_k x_{ki} + u_i
+  \]
+  by OLS and obtain the residuals $\hat{u}_i$.
+  \item Run the auxiliary regression
+  \[
+    \hat{u}_i^{\,2} = \alpha_0 + \alpha_1 x_{1i} + \cdots + \alpha_k x_{ki} + v_i,
+    \qquad i=1,\dots,n,
+  \]
+  and record the $R^2$ from this regression, denote it $R_u^2$.
+  \item Test
+  \[
+    H_0:\ \alpha_1=\alpha_2=\cdots=\alpha_k=0
+    \quad\text{vs.}\quad
+    H_1:\ \text{not all }\alpha_j\text{ are zero.}
+  \]
+  Two equivalent test statistics are commonly used:
+  \begin{itemize}
+    \item \textbf{LM (Lagrange multiplier) test:}
+    \[
+      \mathrm{LM} = n\,R_u^2 \xrightarrow{d} \chi^2_{k}\quad\text{under }H_0.
+    \]
+    \item \textbf{F–approximation:}
+    \[
+      F \;=\; 
+      \frac{(R_u^2/k)}{(1-R_u^2)/(n-k-1)}
+      \quad\text{with (approx.) }F_{k,\,n-k-1}\text{ distribution under }H_0.
+    \]
+  \end{itemize}
+\end{enumerate}
 
 
+\textbf{White test}
+
+\[
+\begin{aligned}
+&\text{The White (1980) auxiliary regression considers also the squares of the independent variables and all cross products.}\\[6pt]
+&\text{• Consider, without any lost of generality, } k = 3:\\
+&\qquad y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + u\\[6pt]
+&\text{The auxiliary regression is:}\\
+&\qquad \hat{u}^{\,2} =
+ \alpha_0 + \alpha_1 x_1 + \alpha_2 x_2 + \alpha_3 x_3 +\\
+&\qquad\qquad\quad
+ \alpha_4 x_1^{2} + \alpha_5 x_2^{2} + \alpha_6 x_3^{2} +\\
+&\qquad\qquad\quad
+ \alpha_7 x_1 x_2 + \alpha_8 x_1 x_3 + \alpha_9 x_2 x_3 + \text{error}
+\end{aligned}
+\]
 
 
-
-
+\begin{itemize}
+    \item With only 3 independent variables the auxiliary has 9 independent variables. With 6 the auxiliary regression involves 27 regressors. This abundance of regressors is a weakness in the pure form of the White since it uses many degrees of freedom for models with just a moderate number of independent variables. The special White test considers the following auxiliary regression:
+    \[
+        \hat{u}^{\,2} = \alpha_0 + \alpha_1 \hat{y} + \alpha_2 \hat{y}^2 + \text{error}
+    \]
+    We can preserve the spirit of the White test while conserving on degrees of freedom by using the OLS fitted values in a test for heteroskedasticity.
+\end{itemize}
 
 
 

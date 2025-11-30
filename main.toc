@@ -33,25 +33,38 @@
 \contentsline {subsection}{\numberline {3.9}Decision Trees}{44}{subsection.3.9}%
 \contentsline {section}{\numberline {4}Statistic for data science}{47}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Data exploration and basic concepts}{47}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Preliminary concepts}{47}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Describing and visualizing data}{47}{subsubsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.2}Statistical Distributions}{49}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Point Estimation}{52}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Hypothesis Testing}{53}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Confidence Intervals}{56}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Linear regression model}{56}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}Homoskedasticity}{61}{subsubsection.4.6.1}%
-\contentsline {section}{\numberline {5}Database}{62}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Introduction}{62}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}What is a database}{62}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Conceptual Modelling of a database}{62}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Normalization}{62}{subsubsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.2}Database modelling}{63}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Architecture}{63}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}ERD}{64}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}From ERD to tables}{64}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}SQL}{64}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}What is SQL}{64}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Create a database}{65}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Create tables}{65}{subsubsection.5.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.4}CRUD operations}{67}{subsubsection.5.3.4}%
-\contentsline {subsubsection}{\numberline {5.3.5}SQL clauses and operators}{68}{subsubsection.5.3.5}%
-\contentsline {subsubsection}{\numberline {5.3.6}SQL joins}{69}{subsubsection.5.3.6}%
+\contentsline {subsubsection}{\numberline {4.2.1}Motivations and important concepts}{49}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Discrete distributions}{49}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Continuous distributions}{50}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Point estimation, hypothesis testing and confidence intervals}{52}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Point estimation}{52}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Hypothesis Testing}{53}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Inference for two samples}{55}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Confidence Intervals}{56}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Linear regression model}{56}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Introduction}{56}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Simple Linear Regression Model}{56}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Multiple Linear Regression Model}{58}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Introduction to inference}{59}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}The t-Test}{59}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}The F-test}{61}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.7}Heteroskedasticity}{62}{subsubsection.4.4.7}%
+\contentsline {section}{\numberline {5}Database}{64}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduction}{64}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}What is a database}{64}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Conceptual Modelling of a database}{64}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Normalization}{64}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Database modelling}{65}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Architecture}{65}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}ERD}{66}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}From ERD to tables}{66}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}SQL}{66}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}What is SQL}{66}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Create a database}{67}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Create tables}{67}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}CRUD operations}{69}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.5}SQL clauses and operators}{70}{subsubsection.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.6}SQL joins}{71}{subsubsection.5.3.6}%
