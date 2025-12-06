@@ -526,3 +526,104 @@ SELECT m.lastName AS Manager, e.lastName AS 'Direct report'
 FROM employees e
 INNER JOIN employees m ON m.employeeNumber = e.reportsTo;
 \end{verbatim}
+
+\subsubsection{Functions}
+
+Functions in SQL can be
+
+\begin{itemize}
+    \item Aggregate \ra Performs a calculation on multiple values and returns a single value. Can be AVG(), MAX(), MIN(), STDEV(), COUNT() or SUM(). COUNT() has three main forms
+    \begin{enumerate}
+        \item COUNT(*) \ra returns the number of rows including duplicates, non-NULL and NULL rows.
+        \item COUNT(expression) \ra returns the number of rows with non NULL values
+        \item COUNT(DISTINCT expression) \ra returns the number of distinct rows that do not contain NULL values
+    \end{enumerate}
+    \begin{verbatim}
+        SELECT count(employee_id) as employees
+        FROM employee
+        WHERE department_id = 50;
+    \end{verbatim}
+
+    \item Math \ra mathematical computations. Can be MOD(), ROUND(), TRUNCATE(), SIN(n), SQRT(n), RAND(), LOG(n) or POW()
+    \begin{verbatim}
+        SELECT round(salary, 2)
+        FROM employee;
+    \end{verbatim} 
+
+    \item Date \ra make computations on date values. Can be CURDATE()/CURRENT\_DATE(), DATEDIFF(), DAY(), DAYOFWEEK(), NOW(), MONTH(), TIMEDIFF() or YEAR().
+    
+    \item String \ra work on strings. Can be CONCAT(), LENGTH(), LOWER(), REPLACE(), SUBSTRING(), TRIM(), UPPER() or INSTR()
+
+\end{itemize}
+
+\subsubsection{Group By}
+
+The GROUP BY clause tries to take a set of rows and summarize them by values. It returns one row for each group. Is used with SUM, AVG, MAX, MIN and COUNT.
+
+\begin{verbatim}
+    SELECT c1, c2, ..., cn, aggregate_function(ci)
+    FROM table_name
+    WHERE where_conditions
+    GROUP BY c1, c2, ..., cn;
+\end{verbatim}
+
+\subsubsection{Having}
+
+The HAVING clause is used in the SELECT statement to specify filter conditions for a group of rows or aggregates. Oten used with GROUP BY to filter groups based on a specific condition. HAVING applies a filter condition to each group of rows, while the WHERE does that to each individual row.
+
+\begin{verbatim}
+    SELECT select_list
+    FROM table_name
+    WHERE search_condition
+    GROUP BY group_by_expression
+    HAVING group_condition
+\end{verbatim}
+
+\subsubsection{Views}
+
+A VIEW is defined by means of an SQL query and its content is generated upon invocation of the view by an application or other query. Queries can be run against the view. A view will not physically store the data. Each time a view is queried the underlying query called view definition is executed. We create views to do queries that we might want to do frequently.
+
+\begin{verbatim}
+    CREATE[OR REPLACE] VIEW [db_name.]view_name[(column_list)]
+    AS select-statement
+\end{verbatim}
+
+\subsubsection{Triggers}
+
+A TRIGGER is a piece of SQL code made of declarative and/or procedural instructions and stored in the catalog of the RDBMS. Is automatically runned whenever a specific event (INSERT, UPDATE, DELETE) occurs and a specific condition is evaluated as true.
+
+\begin{verbatim}
+    CREATE TRIGGER trigger_name trigger_time trigger_event
+    ON table_name
+    FOR EACH ROW
+    BEGIN what trigger does
+    END;
+\end{verbatim}
+
+Where trigger time can be BEFORE or AFTER. 
+
+Where trigger event can be INSET, UPDATE or DELETE.
+
+\vspace{10pt}
+
+Advantages
+
+\begin{itemize}
+    \item Aumatization and verification in case of specific events or situations
+    \item Can model more rules without change the code
+    \item Can assign default values for new tuples
+    \item Synchronic updates in case of data replication
+    \item Automatic auditing and logging
+    \item Automatic exporting of data
+\end{itemize}
+
+Disadvantages
+
+\begin{itemize}
+    \item Hidden, difficult to manage
+    \item Cascade effects
+    \item Uncertain outcomes 
+    \item Deadlock situations
+    \item Debugging complexities
+    \item Maintainability problems
+\end{itemize}

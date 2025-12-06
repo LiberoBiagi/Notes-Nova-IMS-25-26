@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  30 NOV 2025 17:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  6 DEC 2025 11:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -846,7 +846,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [31]
 
 [32]
-<Courses/Images/L2.png, id=947, 380.622pt x 298.11375pt>
+<Courses/Images/L2.png, id=1017, 380.622pt x 298.11375pt>
 File: Courses/Images/L2.png Graphic file (type png)
 <use Courses/Images/L2.png>
 Package pdftex.def Info: Courses/Images/L2.png  used on input line 285.
@@ -854,7 +854,7 @@ Package pdftex.def Info: Courses/Images/L2.png  used on input line 285.
 
 
 [33]
-<Courses/Images/L1.png, id=959, 368.577pt x 305.943pt>
+<Courses/Images/L1.png, id=1029, 368.577pt x 305.943pt>
 File: Courses/Images/L1.png Graphic file (type png)
 <use Courses/Images/L1.png>
 Package pdftex.def Info: Courses/Images/L1.png  used on input line 295.
@@ -965,53 +965,53 @@ Overfull \hbox (27.41563pt too wide) detected at line 1497
 [][]
  []
 
-)
+
 
 [63]
+
+[64])
+
+[65]
 \openout2 = `Courses/database.aux'.
 
  (Courses/database.tex
 
-[64
+[66
 
 
 
 ]
-<Courses/Images/dbms structure.png, id=1201, 738.3585pt x 393.26926pt>
+<Courses/Images/dbms structure.png, id=1282, 738.3585pt x 393.26926pt>
 File: Courses/Images/dbms structure.png Graphic file (type png)
 <use Courses/Images/dbms structure.png>
 Package pdftex.def Info: Courses/Images/dbms structure.png  used on input line 80.
 (pdftex.def)             Requested size: 455.24408pt x 242.47424pt.
 
 
-[65 <./Courses/Images/dbms structure.png>]
-<Courses/Images/structure erd.png, id=1207, 646.21425pt x 509.5035pt>
+[67 <./Courses/Images/dbms structure.png>]
+<Courses/Images/structure erd.png, id=1289, 646.21425pt x 509.5035pt>
 File: Courses/Images/structure erd.png Graphic file (type png)
 <use Courses/Images/structure erd.png>
 Package pdftex.def Info: Courses/Images/structure erd.png  used on input line 129.
 (pdftex.def)             Requested size: 227.62204pt x 179.46394pt.
-<Courses/Images/basic crows.png, id=1208, 784.1295pt x 343.88475pt>
+<Courses/Images/basic crows.png, id=1290, 784.1295pt x 343.88475pt>
 File: Courses/Images/basic crows.png Graphic file (type png)
 <use Courses/Images/basic crows.png>
 Package pdftex.def Info: Courses/Images/basic crows.png  used on input line 131.
 (pdftex.def)             Requested size: 227.62204pt x 99.82372pt.
-<Courses/Images/multiplicities.png, id=1209, 602.25pt x 254.75175pt>
+<Courses/Images/multiplicities.png, id=1291, 602.25pt x 254.75175pt>
 File: Courses/Images/multiplicities.png Graphic file (type png)
 <use Courses/Images/multiplicities.png>
 Package pdftex.def Info: Courses/Images/multiplicities.png  used on input line 141.
 (pdftex.def)             Requested size: 170.71652pt x 72.21239pt.
-<Courses/Images/options.png, id=1211, 585.98924pt x 280.6485pt>
+<Courses/Images/options.png, id=1293, 585.98924pt x 280.6485pt>
 File: Courses/Images/options.png Graphic file (type png)
 <use Courses/Images/options.png>
 Package pdftex.def Info: Courses/Images/options.png  used on input line 142.
 (pdftex.def)             Requested size: 170.71652pt x 81.75854pt.
 
 
-[66 <./Courses/Images/structure erd.png> <./Courses/Images/basic crows.png> <./Courses/Images/multiplicities.png> <./Courses/Images/options.png>]
-
-[67]
-
-[68]
+[68 <./Courses/Images/structure erd.png> <./Courses/Images/basic crows.png> <./Courses/Images/multiplicities.png> <./Courses/Images/options.png>]
 
 [69]
 
@@ -1019,28 +1019,36 @@ Package pdftex.def Info: Courses/Images/options.png  used on input line 142.
 
 [71]
 
-[72])
+[72]
 
-[73] (main.aux (Courses/data.aux) (Courses/programming.aux) (Courses/ML.aux) (Courses/Stat.aux) (Courses/database.aux))
+[73]
+
+[74]
+
+[75]
+
+[76])
+
+[77] (main.aux (Courses/data.aux) (Courses/programming.aux) (Courses/ML.aux) (Courses/Stat.aux) (Courses/database.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B4A9CC9F745BA43AF713DF8FA9C33901;11656.
+(rerunfilecheck)             Checksum: B13955F3F14245F5303A6A2B1CFAFEE6;13723.
  ) 
 Here is how much of TeX's memory you used:
- 36020 strings out of 468130
- 817469 string characters out of 5430633
- 1969942 words of memory out of 5000000
- 63337 multiletter control sequences out of 15000+600000
+ 36058 strings out of 468130
+ 818085 string characters out of 5430633
+ 1969950 words of memory out of 5000000
+ 63351 multiletter control sequences out of 15000+600000
  713184 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,87p,776b,2220s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (73 pages, 1494578 bytes).
+Output written on main.pdf (77 pages, 1517582 bytes).
 PDF statistics:
- 1496 PDF objects out of 1728 (max. 8388607)
- 692 named destinations out of 1000 (max. 500000)
- 620 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1592 PDF objects out of 1728 (max. 8388607)
+ 716 named destinations out of 1000 (max. 500000)
+ 732 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1505,6 +1505,205 @@ We can use the following tests
     We can preserve the spirit of the White test while conserving on degrees of freedom by using the OLS fitted values in a test for heteroskedasticity.
 \end{itemize}
 
+\subsubsection{Asymptotic Properties of the OLS}
+
+
+So fare we saw finite sample, small sample and exact properties of the OLS estimators in the population model.
+
+\vspace{10pt}
+Properties of OLS that hold for any sample size
+
+\begin{itemize}
+    \item Unbiasedness under MLR1 to MLR4
+    \item Variances formulas under MLR1 to MLR5
+    \item Gauss-Markov Theorem under MLR1 to MLR5
+    \item Exact sampling distributions/tests under MLR1 to MLR6
+\end{itemize}
+
+Properties of OLS in large samples 
+
+\begin{itemize}
+    \item Consistency under MLR1 to MLR4
+    \item Asymptotic normality tests under MLR1 to MLR5
+\end{itemize}
+
+Practically the normality assumption MLR6 can be questioned and if it does not hold the results of the t or F tests may be wrong. They still work if the sample size is large enough, also OLS estimates are normal in large samples even without MLR6.
+
+\vspace{10pt}
+
+\textbf{Asymptotic normality of OLS}, under MLR1 to MLR5 we have
+
+\[
+z = \frac{\hat{\beta}_j}{se(\hat{\beta}_j)} \sim N(0,1)
+\]
+
+Consequently we have that 
+
+\begin{itemize}
+    \item In large samples the t-distribution is close to the N(0,1)
+    \item Than t-tests are valid in large samples without MLR6
+    \item Same for confidence intervals and F-tests
+    \item But MLR1 to MLR5 are still necessary expecially for homoskedasticity
+\end{itemize}
+
+\subsubsection{RESET Test}
+
+Another test that we have is the RESET (Resegression Specification Error Test) which is used to see if our model makes sense. Given an original model
+
+\[
+y = \beta_0 +\beta_1x_1 + ... + \beta_kx_k + u
+\]
+
+we should have that no non-linear functions should be significant when added to this equation. Even though it can detect functional form problems it can use too many dof if there are many explanatory variables in the original model. Also certain kind of nonlinearities will not be picked if we add quadratic terms.
+
+The RESET adds polynomials in the fitted OLS to detect general kinds of functional form misspecification.
+\begin{enumerate}
+    \item Estimate the model $y = \beta_0 + \beta_1 x_1 + \dots + \beta_k x_k + u$ and obtain the fitted values $\hat{y}_i$.
+    \item Estimate the augmented model 
+    \[
+        y_i = \beta_0 + \beta_1 x_1 + \dots + \beta_k x_k 
+        + \gamma_1 \hat{y}_i^{\,2} + \gamma_2 \hat{y}_i^{\,3} + u_i
+    \]
+    \item Test the null $H_0 : \gamma_1 = \gamma_2 = 0$ using an F-test with $2$ and $n-k-3$ dof (or an LM with $2$ dof).
+\end{enumerate}
+
+
+\subsubsection{Multiple Regression Analysis with Qualitative Information}
+If we want to test the effect of qualitative information we can use dummy variables, variables that take either 1 or 0 as values. We can incorporate them inside our model like any other variable. 
+
+\vspace{10pt}
+
+\[
+y = \beta_0 + \beta_1D +\beta_2x +u
+\]
+
+\vspace{10pt}
+
+We can interpret the 1 in $\beta_1$ as a shift in the intercept or the slope if we have an interaction with the $x_s$.
+
+\vspace{10pt}
+
+\begin{itemize}
+    \item D = 0 \ra $y=\beta_0 + \beta_2x +u$
+    \item D = 1 \ra $ y = (\beta_0 + \beta_1) + \beta_2x + u$
+\end{itemize}
+
+\vspace{10pt}
+
+$\beta_1$ is the difference with respect to the base group (D = 0) and we have that
+
+\vspace{10pt}
+
+\[
+\beta_1 = E[y|\textbf{x}, D=1] - E[y|\textbf{x}, D=0]
+\]
+
+\vspace{10pt}
+
+The dummy variables trap occurs because dummy variables create perfect collinearity; to avoid it, one must drop one category from each set of dummies (or omit the intercept). The latter will make more difficult the test for the difference between parameters and the $R^2$ formula only works if the regression has the intercept.
+
+\vspace{10pt}
+
+It can be easily tested if the difference in means is significant
+
+\vspace{10pt}
+
+\[
+H_0:\delta_0 = 0\text{ vs }H_1:\delta_0 \ne 0
+\]
+
+\vspace{10pt}
+
+A common specification uses the dependent variable in logs. In this case, the coefficient on the dummy has a percentage interpretation. For example, in the model 
+
+\vspace{10pt}
+
+\[
+\log(\text{sal}) = \beta_0 + \delta_0 \,\text{fem} + \beta_1 \,\text{educ} + u,
+\]
+
+\vspace{10pt}
+
+the quantity $\delta_0 \times 100$ represents the approximate percentage difference in a woman's wage relative to that of a man. However, this log approximation may be inaccurate when the percentage difference is large. A more accurate measure is given by
+
+\vspace{10pt}
+
+\[
+100 \left(e^{\delta_0} - 1\right).
+\]
+
+\vspace{10pt}
+
+We can use several dummy independent variables in the same equation. For example, we could add the dummy variable \texttt{married} to the wage equation, as follows:
+
+\vspace{10pt}
+
+\[
+    \text{sal} = \beta_0 + \delta_0 \,\text{fem} + \delta_1 \,\text{married} + \beta_1 \,\text{educ} + u
+\]
+
+\vspace{10pt}
+
+The introduction of these dummies changes the model intercepts, depending on the combination of categories:
+
+\vspace{10pt}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+    \hline
+    & Male & Female \\
+    \hline
+    Married & $\beta_0 + \delta_1$ & $\beta_0 + \delta_0 + \delta_1$ \\
+    \hline
+    Single & $\beta_0$ & $\beta_0 + \delta_0$ \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+Any categorical can be turned into a set of dummy variables, if we have a lot of them we can thing about grouping them like top 10, 11 to 20 and so on.
+
+In the wage example, if \texttt{married} and \texttt{female} are included, we have the following possibilities:
+
+\vspace{5pt}
+
+\begin{center}
+\begin{tabular}{|c|c|l|}
+    \hline
+    Female & Married & Characterization \\
+    \hline
+    1 & 0 & Single woman \\
+    1 & 1 & Married woman \\
+    0 & 1 & Married man \\
+    0 & 0 & Single man \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+
+Including only \texttt{female} and \texttt{married} allows us to estimate the gender gap and the marriage premium.
+
+\vspace{5pt}
+
+However, a major limitation of this model is that the marriage premium is assumed to be the same for men and women.
+
+\vspace{10pt}
+
+A way to solve can be to choose as baseline single men and see the differences between different possibilities using marrmale, marrfem and singfem.
+
+
+
+
+
+\subsection{Panel Data}
+
+\subsubsection{Motivations}
+
+\subsubsection{Estimators}
+
+\subsubsection{Hausman Test}
 
 
 
