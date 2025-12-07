@@ -1694,17 +1694,342 @@ However, a major limitation of this model is that the marriage premium is assume
 A way to solve can be to choose as baseline single men and see the differences between different possibilities using marrmale, marrfem and singfem.
 
 
-
-
-
 \subsection{Panel Data}
+
 
 \subsubsection{Motivations}
 
+We saw both cross-sectional and time series, if we consider data that follows both the dimensions we have panel. We look at how cross-sectional units are followed over time. Panel data can be used to analyze time-invariant unobservable. 
+
+The basic model is
+
+\[
+y_{it}= \beta_0 + \beta_1x_{it} + u_{it}
+\]
+
+Where y and x are observed fo i=1,...,N individuals over t=1,...,T time periods
+
+Those data help with issues that can't be addressed with pure cross-sectional or time-series. We are not using only the i index since individuals in the samples can differ in terms of x and other dimensions. Omitted variables can explain many trends and in panel data we try to solve for those. Let y and \textbf{x}=($x_1, x_2, ..., x_k$) be observable random variables and c an unobservable random variable, or unobserved heterogeneity. We want to fix c and get the partial effects of the observable variables.
+
+\[
+E[y \mid x_1, x_2, \ldots, x_k, c]
+\]
+
+Assuming
+
+\[
+E[y \mid \mathbf{x}, c] = \beta_0 + \mathbf{x}\beta + c
+\]
+
+If \( c \) is uncorrelated with any \( x \) we just consider it as an error term but if the 
+\[
+\operatorname{Cov}(x_j, c) \ne 0
+\]
+for some \( j \), if we put it as an error we encounter problems.
+
+
+
 \subsubsection{Estimators}
+
+The estimators employed in this setting are 
+
+\begin{itemize}
+    \item Pooled OLS
+    \item Random effects estimation
+    \item Fixed effects estimation
+\end{itemize}
+
+Let's look at them.
+
+\vspace{10pt}
+
+A \textbf{pooled OLS} applies the OLS for a sample of N X T observations ignoring the panel structure. With certain assumptions the pooled OLS can be used to obtain a consistent estimator of $\beta$ 
+
+\[
+y_{it} = \mathbf{x}_{it}\boldsymbol{\beta} + v_{it}
+\]
+
+
+Where $v_{it} = c_{i} + u_{it}$ are the composite errors. For each t $v_{it}$ is the sum of unobserved effect and an idiosyncratic error ($u_{it}$). Pooled OLS estimation is ok when the regressor are not correlated with c.
+
+\vspace{10pt}
+
+The assumptions of pooled OLS are
+
+\begin{enumerate}
+
+    \item \textbf{POLS.1: Linearity} \\
+    The data sequence $\{y_{it}, x_{1it}, x_{2it}, \ldots, x_{kit}\}$ follows the linear model:
+    \[
+    y_{it} = \mathbf{x}_{it}\boldsymbol{\beta} + v_{it}, 
+    \qquad 
+    t = 1,2,\ldots,T,\; i = 1,2,\ldots,N
+    \]
+    where $\{v_{it}\}$ is the sequence of composite errors.
+
+    \item \textbf{POLS.2: Random Sampling} \\
+    The individuals are selected by random sampling.  
+    This implies that $\{y_i, x_i\}$ are i.i.d., i.e., the observations are independent across individuals but not necessarily across time.
+
+    \item \textbf{POLS.3: Contemporaneous exogeneity} \\
+    \[
+    E[v_{it} \mid x_{it}] = 0,
+    \]
+    which implies that
+    \[
+    E[x_{it} c_i] = 0
+    \qquad \text{and} \qquad
+    E[x_{it} u_{it}] = 0,
+    \]
+    hence
+    \[
+    E[x_{it} v_{it}] = 0.
+    \]
+
+    \item \textbf{POLS.4: No Perfect Collinearity} \\
+    In the sample, no independent variable is constant nor a perfect linear combination of the others.
+
+    \item \textbf{POLS.5: Homoskedasticity and no serial correlation} \\
+    \[
+    \operatorname{Var}(u_i \mid x_i, c_i) = \sigma_u^2 I.
+    \]
+
+\end{enumerate}
+
+Knowing that we have a sample of $N$ independent cross sections observed during $T$ periods
+of time and that $c_i$ is independent of $u_{it}$, under POLS1--POLS4, the pooled OLS is
+consistent. However, if $c_i$ is correlated with any element of $x_t$, then pooled OLS is
+biased and inconsistent.
+
+\vspace{10pt}
+
+In this setting the composite errors will be serially correlated due to c in each time period. So inference with pooled OLS requires a robust variance matrix estimator. 
+
+
+\vspace{15pt}
+
+As with pooled OLS a \textbf{random effects analysis} puts c in the error term. The rationale is that the variation across individuals is assumed to be random and uncorrelated with the predictor or the independent variables included in the model. This estimation is appropriate when c is random and influences the dependent variable but is not correlated with the independent variables. 
+
+Random effects analysis has these properties
+
+\begin{enumerate}
+
+    \item \textbf{RE.1: Linearity} \\
+    The data sequence $\{y_{it}, x_{1it}, x_{2it}, \ldots, x_{kit}\}$ follows the linear model:
+    \[
+    y_{it} = \mathbf{x}_{it}\boldsymbol{\beta} + v_{it},
+    \qquad 
+    t = 1,2,\ldots,T,\; i = 1,2,\ldots,N
+    \]
+    where $\{v_{it}\}$ is the sequence of composite errors.
+
+    \item \textbf{RE.2: Random Sampling} \\
+    The individuals are selected by random sampling.  
+    This implies that $\{y_i, x_i\}$ are i.i.d., i.e., the observations are independent across individuals but not necessarily across time.
+
+    \item \textbf{RE.3: Strict exogeneity} \\
+    Random effects estimation imposes stricter assumptions than pooled OLS: strict exogeneity and orthogonality between $c_i$ and $x_{it}$.  
+    \begin{enumerate}
+        \item[(a)] $E[u_{it} \mid x_i, c_i] = 0, \qquad t = 1,\ldots,T$
+        \item[(b)] $E[c_i \mid x_i] = E[c_i] = 0$
+    \end{enumerate}
+    where $x_i = (x_{i1}, x_{i2}, \ldots, x_{iT})$.
+
+    \item \textbf{RE.4: No perfect collinearity} \\
+    For consistency of GLS, the usual GLS rank condition is required (see later explanation):
+    \[
+    \operatorname{rank}\!\left( E\!\left[ X_i' \Omega^{-1} X_i \right] \right) = K.
+    \]
+
+    \item \textbf{RE.5: Homoskedasticity} \\
+    \begin{enumerate}
+        \item[(a)] $E[u_i u_i' \mid x_i, c_i] = \sigma_u^2 I_T$
+        \item[(b)] $E[c_i^{\,2} \mid x_i] = \sigma_c^2$
+    \end{enumerate}
+
+\end{enumerate}
+
+The random effects approach exploits the serial correlation in the composite error
+\[
+v_{it} = c_i + u_{it},
+\]
+in a generalized least squares (GLS) framework.
+
+\begin{itemize}
+    \item We have
+    \[
+    E[v_{it}^2]
+    = E[(c_i + u_{it})^2]
+    = E[c_i^2] + 2E[c_i u_{it}] + E[u_{it}^2]
+    = \sigma_c^2 + \sigma_u^2,
+    \tag{7}
+    \]
+
+    \item For \( t \neq s \),
+    \[
+    E[v_{it} v_{is}]
+    = E[(c_i + u_{it})(c_i + u_{is})]
+    = E[c_i^2]
+    = \sigma_c^2.
+    \tag{8}
+    \]
+
+    \item Hence, the variance--covariance matrix \( \Omega \) of the $T$ observations for individual $i$ is
+    \[
+    \Omega =
+    \begin{pmatrix}
+    \sigma_c^2 + \sigma_u^2 & \sigma_c^2 & \cdots & \sigma_c^2 \\
+    \sigma_c^2 & \sigma_c^2 + \sigma_u^2 & \cdots & \sigma_c^2 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \sigma_c^2 & \sigma_c^2 & \cdots & \sigma_c^2 + \sigma_u^2
+    \end{pmatrix}.
+    \]
+\end{itemize}
+
+Let $\hat{\beta}_{RE}$ be the random effect estimator
+
+\begin{itemize}
+    \item Under RE1 to RE4 is consistent
+    \item Under RE1 to RE5 is asimptotically efficient
+\end{itemize}
+
+
+\vspace{15pt}
+
+Given that individuals have characteristics that may or may not influence the outcome we have that c may be correlated with the explanatory variables, in this case we use \textbf{fixed effects estimation}.
+
+The assumptions are 
+
+
+\begin{enumerate}
+
+    \item \textbf{FE.1: Linearity} \\
+    The data sequence $\{y_{it}, x_{1it}, x_{2it}, \ldots, x_{kit}\}$ follows the linear model:
+    \[
+    y_{it} = \mathbf{x}_{it}\boldsymbol{\beta} + c_i + u_{it}, 
+    \qquad 
+    t = 1,2,\ldots,T,\; i = 1,2,\ldots,N
+    \tag{9}
+    \]
+
+    \item \textbf{FE.2: Random Sampling} \\
+    The individuals are selected by random sampling.  
+    This implies that $\{y_i, x_i\}$ are i.i.d., i.e., the observations are independent across individuals but not necessarily across time.
+
+    \item \textbf{FE.3: Strict exogeneity} \\
+    \[
+    E[u_{it} \mid x_i, c_i] = 0, \qquad t = 1,2,\ldots,T
+    \]
+
+    \item \textbf{FE.4: No perfect collinearity} \\
+    \[
+    \operatorname{rank}\Bigg(\sum_{t=1}^{T} E[\ddot{x}_{it}' \ddot{x}_{it}]\Bigg) = k
+    \]
+
+    \item \textbf{FE.5: Homoskedasticity} \\
+    \[
+    E[u_i u_i' \mid x_i, c_i] = \sigma_u^2 I_T
+    \]
+
+\end{enumerate}
+
+In fixed effects analysis E[$c_i$|$x_i$] is allowed to be any function of \textbf{$x_i$}. We relax assumption RE3b which allows to consistenly estimate partial effects in the presence of time constant omitted variables that can be arbitrarily related to the observale $x_{it}$. Therefore fixed effects analysis is more robust than random effects one. The idea for estimating $\beta$ under FE3 is to transform the equations to eliminate c. This is called fixed eefects transformation. 
+Considering the mean values within each individual:
+\[
+\bar{y}_i = \frac{1}{T} \sum_{t=1}^{T} y_{it}, \qquad
+\bar{x}_i = \frac{1}{T} \sum_{t=1}^{T} x_{it}, \qquad
+\bar{u}_i = \frac{1}{T} \sum_{t=1}^{T} u_{it}.
+\]
+
+Subtracting these terms for each $t$ gives the FE transformed equation:
+\[
+y_{it} - \bar{y}_i = (x_{it} - \bar{x}_i) \beta + (u_{it} - \bar{u}_i)
+\tag{10}
+\]
+
+or, in shorthand notation:
+\[
+\ddot{y}_{it} = \ddot{x}_{it} \beta + \ddot{u}_{it}, \qquad t = 1,2,\ldots,T
+\tag{11}
+\]
+
+\textbf{Downside:} cannot be used to investigate time-invariant causes of $y$.
+
+\medskip
+
+\textbf{Fixed Effects Estimation:}
+\begin{itemize}
+    \item Since the assumption $E[\ddot{x}_{it}' \ddot{u}_{it}] = 0$ holds under Assumption FE.3, we can apply pooled OLS.
+    \item The fixed effects (FE) estimator, denoted by $\hat{\beta}_{FE}$, is the pooled OLS estimator from the regression of $\ddot{y}_{it}$ on $\ddot{x}_{it}$.
+\end{itemize}
+
+It can be shown that the errors $\ddot{\textbf{u}}_{it}$ are negatively serially correlated, but as T gets large the correlation tends to 0. 
+
+\vspace{10pt}
+
+Under FE1 to FE4 the fixed effects estimator is consistent. 
+
+\vspace{10pt}
+
+To summarize
+
+\begin{enumerate}
+
+    \item \textbf{Pooled OLS}
+    \begin{itemize}
+        \item $c_i$ is not correlated with $x_{it}$
+        \item Ignore panel data structure and estimate through OLS
+        \item Under POLS.1 to POLS.4, it is consistent
+    \end{itemize}
+
+    \item \textbf{Random Effects}
+    \begin{itemize}
+        \item $c_i$ is not correlated with $x_{it}$
+        \item Consider correlation structure and estimate through GLS
+        \item Under RE.1 to RE.5, it is consistent and efficient
+    \end{itemize}
+
+    \item \textbf{Fixed Effects}
+    \begin{itemize}
+        \item $c_i$ is correlated with $x_{it}$
+        \item Demean each variable in the regression and estimate through OLS
+        \item Under FE.1 to FE.4, it is consistent
+    \end{itemize}
+
+\end{enumerate}
+
+
 
 \subsubsection{Hausman Test}
 
+
+
+Since the key consideration in choosing between a random effects and fixed effects
+approach is whether $c_i$ and $x_{it}$ are correlated, it is important to have a method for testing
+this assumption.
+
+\begin{itemize}
+    \item Hausman (1978) proposed a test based on the difference between the random effects and
+    fixed effects estimates. Since FE is consistent when $c_i$ and $x_{it}$ are correlated, but RE is
+    inconsistent, a statistically significant difference is interpreted as evidence against the
+    random effects assumption RE.3b.
+
+    \item \textbf{Hausman test}
+    \begin{itemize}
+        \item The hypotheses are
+        \[
+        H_0: E[x_{it} c_i] = 0 \quad \text{(both FE and RE are consistent estimators, RE is the most efficient)}
+        \]
+        versus
+        \[
+        H_1: E[x_{it} c_i] \neq 0 \quad \text{(only FE is consistent)}.
+        \]
+
+        \item The test applies only to variables that vary over time.
+
+        \item If the assumption RE.4 fails, one must use the \textit{Robust Hausman test}.
+    \end{itemize}
+\end{itemize}
 
 
 

@@ -1129,7 +1129,7 @@ As said decision trees have many advantages
 But also disadvantages
 
 \begin{itemize}
-    \item MOst algorithms will require a discrete target
+    \item Most algorithms will require a discrete target
     \item Small data variations can result in different trees
     \item Sub-trees can be duplicated several times
     \item With many classes we have worse results
@@ -1247,9 +1247,188 @@ $\alpha$ is an hyperparameter that we find using our validation set, T is the nu
     \item Compute the cost complexity pruning path by creating a fully grown tree and compute the $\alpha$ that minimizes the TreeScore.
     \item Split the data for cross validation
     \item For each $\alpha$ prune the tree
-    \item FInd the average validation score
+    \item Find the average validation score
     \item Select the optimal $\alpha$
     \item Train the final model
 \end{enumerate}
 
 \subsection{Ensemble Learning}
+
+Ensemble Learning means combinining multiple models to achieve better performance than any single one. It can overcome problems like overfitting, being stuck in local optima and expanding the space of representable functions. Based on the idea of "The wisdom of crowds". The google search algorithm is an ensemble. 
+
+\vspace{10pt}
+
+Theoretical and empirical studies demonstrated that ensembles are tipically more accurate than single classifiers. Though we don't have a single and rigourous definiton of ensembled classifiers. We can see neural networks as ensembles and see that they can be seen as universal approximators with this idea.
+
+\vspace{10pt}
+
+Ensembles work from the Bias-Variance decomposition
+
+\[
+\text{Expected Prediction Error} = \text{Bias}^2 + Variance + Irreducible Error
+\]
+
+\begin{itemize}
+    \item Bagging reduces variance
+    \item Boosting reduces bias
+    \item Stacking reduces both
+\end{itemize}
+
+
+Classifier ensembles work due to
+
+\begin{itemize}
+    \item Statistical reasons \ra Since we are observing a large searching space we might not find the global optimum so we can average several local ones to get a solid solution
+    \item Computational reasons \ra Can be given by imperfect training algorithms, too much data, small sample size, divide and conquer solutions and data fusion
+\end{itemize}
+\includegraphics[width=17cm]{ensemble tree.png}
+
+\textbf{How to set up an ensemble}
+
+\begin{itemize}
+    \item Combination Level
+    \begin{itemize}
+        \item How are the individual inputs combined?
+    \end{itemize}
+
+    \item Classifier Level
+    \begin{itemize}
+        \item Do we use same or different classifiers?
+        \item What base classifier is best: decision tree, NN or another?
+        \item How many classifiers are needed? Do we overproduce and select?
+        \item Should the $L$ classifiers be trained together or incrementally?
+    \end{itemize}
+
+    \item Feature Level
+    \begin{itemize}
+        \item Shall we use all features or use a bespoke subset for each classifier?
+        \item How do we select/extract such subsets?
+    \end{itemize}
+
+    \item Data Level
+    \begin{itemize}
+        \item How can we manipulate the data submitted for training to the base classifier so as to ensure high diversity and high individual accuracy?
+    \end{itemize}
+\end{itemize}
+
+\vspace{10pt}
+
+\begin{itemize}
+    \item A combiner can be
+    \begin{itemize}
+        \item Nontrainable
+        \item Trainable
+        \item Meta classifier
+    \end{itemize}
+
+    \item To build the ensemble
+    \begin{itemize}
+        \item The classifiers can be trained independently or in sequence
+    \end{itemize}
+
+    \item How to introduce diversity
+    \begin{itemize}
+        \item Use different approaches and parameters
+        \item Manipulate the training samples
+        \item Use different target labels
+        \item Partition the dataset
+        \item Use different classifier models or hybrid ensembles
+    \end{itemize}
+
+    \item Ensemble size
+    \begin{itemize}
+        \item Determine the number of classifiers in the ensemble
+    \end{itemize}
+
+    \item Universality
+    \begin{itemize}
+        \item Some approaches can be used with any classifier while others are specifically for a subset of them, like the random forest
+    \end{itemize}
+\end{itemize}
+
+\vspace{10pt}
+
+Ensemble learning has some benefits
+
+\begin{itemize}
+    \item Improved accuracy
+    \item Less overfitting
+    \item Increased robustness
+    \item Versatility
+    \item Handling of complex problems
+    \item Bias reduction
+    \item Imbalanced data performance
+\end{itemize}
+
+We have two main strategies
+\begin{itemize}
+    \item Fusion \ra each ensemble member knows the whole feature space
+    \item Selection \ra each member knows a subset of the space in a specialized way
+\end{itemize}
+
+
+The outputs can be of three levels
+
+\begin{enumerate}
+    \item Abstract \ra each member output one prediction
+    \item Ranked \ra each member ranks the predictions in order of plausability
+    \item Measurement \ra each classifer outputs the confidence for each prediction
+\end{enumerate}
+
+The final output is usually given by a majority voting choosing the class that has been selected the majority of the times. By Condorcet Jury Theorem as the number of classifiers L \ra $\infty$ the ensemble accuracy $P_maj$ \ra 1.0.
+
+\vspace{10pt}
+
+If we consider that the classifiers have different accuracy level we can use a weighted majority vote with some parameters that will sum to 1. 
+
+\vspace{10pt}
+
+For regression the final output can be obtained by averaging the predictions of the others. 
+
+\vspace{10pt}
+
+Specifically of meta-algorithms we have the idea pf ensemble methods, they combine several machine learning techniques in one predictive model to
+
+\begin{itemize}
+    \item Decrease variance \ra Bagging
+    \item Decrease bias \ra Boosting
+    \item Improve predictions \ra Stacking
+\end{itemize}
+
+\vspace{10pt}
+
+\textbf{Bagging} \ra acronym for Bootstrap AGGregatING, the ensemble is built on bootstrap replicates of the training set and the outputs are combined by plurality vote. We obtain diversity by using different training sets. The base classifier should be unstable, small changes will have to lead to large ones. Usually 25 to 30 decision trees are sufficient. If the classifiers are independent we are guaranteed an improve on the individual performance. The idea of bootstrapping is to randomly drawing with replacement B observations from our dataset and train on them.
+
+\vspace{10pt}
+
+The most famous algorithm is the Random forest. Is a very efficient algorithm on large data sets. The randomness is given by choosing a random training set for each base learner and the fact that the splits of the decision trees are chosen randomly.
+
+\begin{itemize}
+    \item From the training set, create $t$ bootstrap samples
+    \begin{itemize}
+        \item Similar to Bagging, but generally the size of bootstrap samples is the same as the size of the training set
+    \end{itemize}
+
+    \item Attribute selection
+    \begin{itemize}
+        \item If there are a total of $X$ attributes in the observations, choose a number $x \ll X$, e.g., $x = \sqrt{X}$
+        \item This value of $x$ is held constant while growing the forest
+        \item For the split of each node in each base learner (Decision Tree), randomly select $x$ attributes out of $X$
+        \item Choose one attribute out of $x$ to split the node
+        \item This is one reason Random Forest trees are created faster than regular trees, where each split decision involves all attributes
+    \end{itemize}
+
+    \item Tree growth
+    \begin{itemize}
+        \item Each tree is grown to the largest extent possible
+        \item No pruning, since we desire high variance and low correlation between any two base learners
+    \end{itemize}
+
+    \item Steps summary
+    \begin{enumerate}
+        \item Bootstrap data
+        \item Randomly select attributes for each node
+        \item Build tree until end
+        \item Calculate performance from OOB (Out-Of-Bag) observations
+    \end{enumerate}
+\end{itemize}
