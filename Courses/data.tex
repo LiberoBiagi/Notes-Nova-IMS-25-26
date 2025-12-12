@@ -1071,16 +1071,116 @@ We can also find product hierarchies. Remember that we need a lot of data about 
 
 
 \subsection{Dimensionality reduction}
+Dimensionality reduction is the process of reducing the number of dimensions (features) in a dataset while retaining as much meaningful information as possible. It is used for visualization, computational efficiency and noise reduction. High-dimensional data often suffer from the curse of dimensionality.
 
+Dimensionality reduction can be achieved through:
 
+\begin{itemize}
+    \item \textbf{Feature selection} → selecting a subset of relevant features
+    \item \textbf{Feature extraction} → transforming data into a lower-dimensional representation
+\end{itemize}
 
+The goal is to preserve the structure of the original dataset when projecting it into a lower-dimensional space. Linear methods like PCA aim to preserve variance, while non-linear methods like t-SNE and UMAP focus on preserving neighborhood relations or the manifold structure.
 
+High-dimensional data often lie on or near a lower-dimensional manifold. This motivates dimensionality reduction.
 
+\vspace{10pt}
 
+To recap:
 
+\begin{itemize}
+    \item Data redundancy
+    \item Low intrinsic dimensionality
+    \item Noise in high dimensions
+    \item Manifold hypothesis
+\end{itemize}
 
+Dimensionality reduction can be obtained with:
 
+\begin{itemize}
+    \item Linear methods → PCA
+    \item Non-linear methods → t-SNE or UMAP
+\end{itemize}
 
+PCA (Principal Component Analysis) is a linear method that identifies orthogonal directions (principal components) that maximize the projected variance. We keep those that explain most of the total variance.
 
+t-SNE (t-Distributed Stochastic Neighbor Embedding) is a non-linear technique mainly used for visualization of high-dimensional clusters. It preserves local neighborhoods rather than global distances.
 
+UMAP (Uniform Manifold Approximation and Projection) is also non-linear. It attempts to preserve both local and some global structure based on manifold and topological assumptions.
 
+\vspace{10pt}
+
+Dimensionality reduction is widely used in text mining to obtain dense vector representations. Classical representations include one-hot encoding, frequency vectors and TF-IDF (related to Zipf's law). More advanced embeddings include Word2Vec (CBOW or Skip-gram), which produce semantic clusters in vector space.
+
+\subsubsection{PCA}
+
+Principal Component Analysis aims at using an orthogonal transformation to convert a set of correlated variables into linearly uncorrelated principal components.  
+
+If we have \(k\) features, PCA can produce up to \(k\) components (kernel PCA as well: it cannot exceed the rank of the data, which is \(\min(n, k)\)).  
+
+Since PCA components are linear combinations of the original variables, PCA captures only linear relationships.
+
+\vspace{10pt}
+
+PCA steps:
+
+\begin{enumerate}
+    \item Standardize the data
+    \item Compute the covariance matrix
+    \item Perform eigendecomposition
+    \item Sort eigenvectors by descending eigenvalues
+    \item Select the principal components
+    \item Create the projection matrix
+    \item Transform the data
+\end{enumerate}
+
+\subsubsection{t-SNE}
+
+t-SNE uses probabilistic similarity measures to map high-dimensional data to a lower-dimensional space (typically 2D or 3D). It preserves local neighborhood structure.  
+
+\begin{itemize}
+    \item Build conditional probabilities \(p_{j|i}\) over pairs of points in high-dimensional space  
+    \item Build similar probabilities \(q_{ij}\) in low dimension using a Student-t distribution  
+    \item Minimize the KL divergence between the two distributions  
+\end{itemize}
+
+\[
+D_{KL}(P \parallel Q) = \sum_{i \ne j} p_{ij} \log\left(\frac{p_{ij}}{q_{ij}}\right)
+\]
+
+The Student-t distribution in low dimension helps alleviate the crowding problem.
+
+\vspace{10pt}
+
+The main parameter is \textbf{perplexity}, which controls the effective number of neighbors considered (typically between 5 and 50). It strongly influences the visualization.
+
+\subsubsection{UMAP}
+
+UMAP is a non-linear dimensionality reduction technique used for visualization and manifold learning, based on three assumptions:
+
+\begin{itemize}
+    \item Data is uniformly distributed on a manifold
+    \item The manifold is locally connected
+    \item The Riemannian metric is locally constant
+\end{itemize}
+
+With these assumptions, UMAP constructs a fuzzy topological representation of the data. The low-dimensional embedding is obtained by optimizing a layout that preserves this fuzzy structure.
+
+\begin{itemize}
+    \item Build the fuzzy representation of the manifold
+    \item Optimize the low-dimensional embedding
+\end{itemize}
+
+The objective function is:
+
+\[
+L_{UMAP} = \sum_{i,j} \left[ p_{ij}\log(q_{ij}) + (1 - p_{ij})\log(1 - q_{ij}) \right]
+\]
+
+The first term represents \textbf{attractive forces}, the second \textbf{repulsive forces}.
+
+Important parameters:
+\begin{itemize}
+    \item Number of nearest neighbors
+    \item Minimum distance in the embedding
+\end{itemize}

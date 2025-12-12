@@ -627,3 +627,105 @@ Disadvantages
     \item Debugging complexities
     \item Maintainability problems
 \end{itemize}
+
+\subsection{Query Optimization}
+
+
+\subsubsection{The problem}
+
+Users can complain that applications are slow. One reason can be that the queries in the SQL database are slow and not optimized.
+
+User's feeling about response time
+\begin{itemize}
+    \item 0.1 second \ra feels lika instantaneous
+    \item 1 second \ra limit to that feeling
+    \item 10 seconds \ra the user will do something else
+\end{itemize}
+
+A query of 3.19 seconds can be considered as slow, we need to understand if it has problems. We can do that by using a QEP (Query Execution Plan). A query plan is a list of instructions that the database needs in order to execute a query on the data. The query optimizer will generate multiple query plans for a single query and will select the most efficient one.
+
+\begin{verbatim}
+    SELECT *
+    FROM tools
+    WHERE name="Screwdriver";
+\end{verbatim}
+
+vs
+
+\begin{verbatim}
+    SELECT * 
+    FROM tools 
+    WHERE id = 3;
+\end{verbatim}
+
+Both are returning the same results but the second one because the index is usually unique and comparisons between strings is slower. 
+
+\subsubsection{EXPLAIN}
+
+The EXPLAIN command is used to show query plans. It doesn't run the actual SQL statement (except subqueries). It doesn't provide any tuning recommendation but information that can be used to do that. For example we can use a newly created index with an alter statement. 
+
+How to identify problems using EXPLAIN
+\begin{itemize}
+    \item No index used (NULL in the key column)
+    \item A lot of rows are processed (rows column)
+    \item A lot of indexes are evaluated (possible\_keys column)
+\end{itemize}
+
+Remember
+
+\begin{itemize}
+    \item We can optimize queries in many ways
+    \item The generated query plan can change depending o many factors
+    \item For UPDATE and DELETE statements we need to rewrite the query as a SELECT statement to confirm index usage
+\end{itemize}
+
+\subsubsection{Indexes}
+
+We need to be sure that our indexes make sense. An index is a structure that holds the field the index is sorting and a pointer from each record to their corresponding record in the original table where the data is stored. The id is incrementing based on the order in which the data was added. To fasten the search the data are organized like a binary tree based on the middle entry.
+Indexing makes columns faster to query by creating pointers to where data is stored within a database.
+
+\vspace{10pt}
+
+Index cardinality (amount of unique values)
+\begin{itemize}
+    \item Multiple different indexes make MYSQL try to identify the most effective index for the query.
+    \item The optimizer chooses an index based on the estimated cost to do the least amount of work
+    \item Index cardinality can be used to to that
+\end{itemize}
+
+
+Normally indexes are created when the table is created. After we can do that using
+
+\begin{verbatim}
+    CREATE INDEX index_name ON table_name
+    (column_list)
+\end{verbatim}
+
+\subsubsection{Data types}
+
+Even data types can impact performance based on their structures. Usually the simpler teh datatype is the better it performs. The best way to do this is to use a data type that is native for the data that we need to use
+
+\begin{itemize}
+    \item tinyint
+    \item int
+    \item bigint
+    \item json
+    \item longtext
+    \item longblob
+    \item decimal
+    \item float
+    \item double
+    \item enum
+\end{itemize}
+
+\subsubsection{Tips}
+
+\begin{enumerate}
+    \item Define SELECT fields instead of SELECT *
+    \item Avoid SELECT DISTINCT if possible
+    \item Use WHERE instead of HAVING
+    \item Use WILDCARDS at the end of the phrase
+    \item Use LIMIT
+    \item Run queries during off-peak times
+    \item Index the queries properly \ra the column is queried frequently, foreign keys to other tables and a unique key exists on the columns
+\end{enumerate}
