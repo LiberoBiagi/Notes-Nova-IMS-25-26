@@ -729,3 +729,77 @@ Even data types can impact performance based on their structures. Usually the si
     \item Run queries during off-peak times
     \item Index the queries properly \ra the column is queried frequently, foreign keys to other tables and a unique key exists on the columns
 \end{enumerate}
+
+\subsection{CAP theorem and NOSQL databases}
+
+\subsubsection{ACID properties}
+
+Transactions are collections of actions that make consistent transformations  of systems preserving consistency
+
+\begin{itemize}
+    \item A \ra atomicity, the changes must be fully done
+    \item C \ra consistency, any database transaction must change affected data only in allowed ways
+    \item I \ra isolation, how and when the changes made by one operation become visible to others
+    \item D \ra durability, transactions that have been commited must survive permanently
+\end{itemize}
+
+RDBMs must be ACID compliant. New data or modifications are noit accepted unless they comply with the given schema in terms of data, integrity etc. In big databases we need flexibility since we have a lot of data variety. Also new functionalities need all the elements to support the new structure. 
+
+
+\subsubsection{NOSQL}
+
+Since we might have multiple queries together we can scale our server both vertically or horizontally
+
+\begin{itemize}
+    \item Vertically \ra extending storage capacity and/or CPU power of
+the database server
+    \item Horizontally \ra multiple DBMS servers being arranged in a
+cluster
+\end{itemize}
+
+RDBMs can have problems in horizontally scaling. NOSQL databases solve this by using formats other than tabular relations.
+They aims at near linear horizontal scalability distributing data on clusters of database nodes for improving performance and availability. Also we have eventual consistency: the data will become consistent at a certain point. The languages can vary from different languages
+
+
+\includegraphics[width=10cm]{nosql.png}
+\vspace{10pt}
+
+NOSQL databases as rule of thumb are not acid compliant than can be problematic for critical trnasactions.
+
+\vspace{10pt}
+
+NOSQL relies on BaSE model
+
+\begin{itemize}
+    \item Basically available \ra Guarantees the availability of the data . There will be a
+response to any request (can be failure too).
+
+\item Soft state \ra The system can change over time, even without receiving
+input (since nodes continue to update each other)
+
+\item Eventual consistency \ra The system will become consistent over time but might not
+be consistent at a particular moment
+\end{itemize}
+
+\subsubsection{CAP theorem}
+
+A distributed computer system, such as the one we’ve
+looked at above, cannot guarantee the following three
+properties simultaneously: consistency (all nodes see the
+same data simultaneously); availability (guarantees that
+every request receives a response indicating a success or
+failure result); and partition tolerance (the system
+continues to work even if nodes go down or are added).
+
+
+
+\includegraphics[width=10cm]{cap theorem.png}
+
+
+We have to choose between 2 of those points 
+
+
+\begin{itemize}
+    \item CA \ra Vertical scalability, SQL
+    \item P \ra horizontal scalability
+\end{itemize}
