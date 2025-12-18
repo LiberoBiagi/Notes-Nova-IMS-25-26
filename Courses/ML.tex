@@ -1432,3 +1432,387 @@ The most famous algorithm is the Random forest. Is a very efficient algorithm on
         \item Calculate performance from OOB (Out-Of-Bag) observations
     \end{enumerate}
 \end{itemize}
+
+
+\subsection{SVM}
+
+Support vector machines are a supervised ML algorithm that can be used for classification and regression. Like for KNR we plot the points obtaining the coordinates but we try to create an hyperplane that maximises the difference between the different classes. The border is defined by the points nearest to them, those are our support vectors. The hyperplane is linear. 
+
+\vspace{10pt}
+
+With previous approach every line that splits the classes are ok, here we aim at find the "best one", where the space between the border points is maximised. This idea can also be called widest street approach. 
+
+Imagine a vector $\mathbf{w}$ of any length and perpendicular to the median line (dashed line).
+Now imagine an unknown point, and a vector pointing to it $\mathbf{u}$.
+What we would like to know is whether $\mathbf{u}$ is on the left or on the right side of the street.
+
+\bigskip
+
+\includegraphics[width=5cm]{svm.png}
+
+So, we project the vector $\mathbf{u}$ onto $\mathbf{w}$ (which is perpendicular to the street) and measure whether
+\[
+\mathbf{w} \cdot \mathbf{u} \ge c
+\]
+or equivalently
+\[
+\mathbf{w} \cdot \mathbf{u} + b \ge 0,
+\]
+with $c = -b$.
+
+In this case, the event is classified as positive.
+
+
+The decision rule of an SVM classifier is:
+\[
+\mathbf{w} \cdot \mathbf{u} + b \ge 0
+\]
+
+However:
+\begin{itemize}
+\item we do not know $b$,
+\item we do not know $\mathbf{w}$,
+\item there are infinitely many vectors $\mathbf{w}$ perpendicular to the separating hyperplane.
+\end{itemize}
+
+Therefore, we need additional constraints to determine $\mathbf{w}$ and $b$.
+
+
+
+By introducing constraints, we assume:
+\[
+\mathbf{w} \cdot \mathbf{x}^+ + b \ge 1
+\]
+\[
+\mathbf{w} \cdot \mathbf{x}^- + b \le -1
+\]
+
+This imposes a separation from $-1$ to $+1$ for all known samples.
+We can now solve the system to find $\mathbf{w}$ and $b$ that guarantee this separation for all training samples.
+
+
+For convenience, we introduce labels $y_i$ such that:
+\[
+y_i =
+\begin{cases}
++1 & \text{for positive samples} \\
+-1 & \text{for negative samples}
+\end{cases}
+\]
+
+Multiplying the constraints by $y_i$, we obtain:
+\[
+y_i \left( \mathbf{w} \cdot \mathbf{x}_i + b \right) \ge 1
+\]
+
+This can be rewritten as:
+\[
+y_i \left( \mathbf{w} \cdot \mathbf{x}_i + b \right) - 1 \ge 0
+\]
+
+
+For samples lying exactly on the margin (support vectors), the constraint becomes:
+\[
+y_i \left( \mathbf{w} \cdot \mathbf{x}_i + b \right) - 1 = 0
+\]
+
+
+These constraints define the two boundaries of the street such that the separation between positive and negative examples is as wide as possible.
+
+
+Consider one positive sample $\mathbf{x}^+$ and one negative sample $\mathbf{x}^-$.
+Their difference is:
+\[
+\mathbf{x}^+ - \mathbf{x}^-
+\]
+
+The width of the margin is obtained by projecting this difference onto the unit vector normal to the hyperplane.
+Since $\mathbf{w}$ is normal to the median line, its unit vector is:
+\[
+\frac{\mathbf{w}}{\|\mathbf{w}\|}
+\]
+
+Thus, the width of the street is:
+\[
+\text{width} = (\mathbf{x}^+ - \mathbf{x}^-) \cdot \frac{\mathbf{w}}{\|\mathbf{w}\|}
+\]
+
+
+From the boundary condition:
+\[
+y_i \left( \mathbf{w} \cdot \mathbf{x}_i + b \right) - 1 = 0
+\]
+
+we obtain:
+\[
+\mathbf{w} \cdot \mathbf{x}_i = 1 - b \quad \text{for positive samples}
+\]
+\[
+\mathbf{w} \cdot \mathbf{x}_i = -1 - b \quad \text{for negative samples}
+\]
+
+Therefore:
+\[
+\text{width} =
+\frac{\mathbf{x}^+ \cdot \mathbf{w} - \mathbf{x}^- \cdot \mathbf{w}}{\|\mathbf{w}\|}
+=
+\frac{(1 - b) - (-1 - b)}{\|\mathbf{w}\|}
+=
+\frac{2}{\|\mathbf{w}\|}
+\]
+
+
+To maximize the margin width:
+\[
+\frac{2}{\|\mathbf{w}\|}
+\]
+
+it is sufficient to minimize $\|\mathbf{w}\|$.
+For mathematical convenience, this is usually formulated as minimizing:
+\[
+\frac{1}{2} \|\mathbf{w}\|^2
+\]
+
+From Calcus 2, to minimize a function on a constrained domain we can use the Lagrange multipliers method
+
+Assume that $L$ (the Lagrangian) is the function that we want to minimize:
+\[
+L = \frac{1}{2}\|\mathbf{w}\|^2 - \sum_i \alpha_i \left[ y_i (\mathbf{w} \cdot \mathbf{x}_i + b) - 1 \right]
+\]
+
+We subtract the sum of all constraints multiplied by constants $\alpha_i$ (one for each constraint).
+
+Finding an extremum implies computing the derivatives and setting them equal to zero.
+
+
+
+\[
+\frac{\partial L}{\partial \mathbf{w}} = \mathbf{w} - \sum_i \alpha_i y_i \mathbf{x}_i = 0
+\]
+
+which implies:
+\[
+\mathbf{w} = \sum_i \alpha_i y_i \mathbf{x}_i
+\]
+
+Therefore, $\mathbf{w}$ is a linear combination of the vectors in the training set.
+
+
+The Lagrangian must be differentiated with respect to all variables that may vary, including $b$:
+\[
+\frac{\partial L}{\partial b} = - \sum_i \alpha_i y_i = 0
+\]
+
+which implies:
+\[
+\sum_i \alpha_i y_i = 0
+\]
+
+
+Recall the expression for the decision vector:
+\[
+\mathbf{w} = \sum_i \alpha_i y_i \mathbf{x}_i
+\]
+
+We now substitute $\mathbf{w}$ into the Lagrangian:
+\[
+L =
+\frac{1}{2}
+\left(
+\sum_i \alpha_i y_i \mathbf{x}_i
+\right)
+\cdot
+\left(
+\sum_j \alpha_j y_j \mathbf{x}_j
+\right)
+-
+\sum_i \alpha_i y_i \mathbf{x}_i
+\cdot
+\left(
+\sum_j \alpha_j y_j \mathbf{x}_j
+\right)
+-
+\sum_i \alpha_i y_i b
++
+\sum_i \alpha_i
+\]
+
+Since $b$ is a constant and
+\[
+\sum_i \alpha_i y_i = 0,
+\]
+we have:
+\[
+\sum_i \alpha_i y_i b = b \sum_i \alpha_i y_i = 0
+\]
+
+Thus, the Lagrangian can be rewritten as:
+\[
+L =
+\frac{1}{2}
+\sum_i \alpha_i y_i \mathbf{x}_i
+\cdot
+\sum_j \alpha_j y_j \mathbf{x}_j
+-
+\sum_i \alpha_i y_i \mathbf{x}_i
+\cdot
+\sum_j \alpha_j y_j \mathbf{x}_j
++
+\sum_i \alpha_i
+\]
+
+which simplifies to:
+\[
+L =
+\sum_i \alpha_i
+-
+\frac{1}{2}
+\sum_i
+\sum_j
+\alpha_i \alpha_j y_i y_j
+(\mathbf{x}_i \cdot \mathbf{x}_j)
+\]
+
+
+We find that the optimization depends only on the dot product of pairs of samples.
+
+
+Recall the decision rule for a new observation $\mathbf{u}$:
+\[
+\mathbf{w} \cdot \mathbf{u} + b \ge 0
+\]
+
+Substituting $\mathbf{w}$, we obtain:
+\[
+\left( \sum_i \alpha_i y_i \mathbf{x}_i \right) \cdot \mathbf{u} + b \ge 0
+\]
+
+If the inequality holds, the sample is classified as positive.
+
+Only points lying on the margin (i.e.\ the support vectors $\mathbf{x}_i$) have $\alpha_i > 0$.
+
+Therefore, the decision rule depends only on the dot product between training samples and the unknown observation.
+
+
+It can be shown (proof omitted) that this optimization problem is convex.
+This implies that there are no local minima.
+
+As a consequence, any reasonable optimization algorithm (including Hill Climbing) can find the global optimum (or a very good approximation of it).
+
+
+% Primo vettore: parametri del modello (w1, w2, b)
+\[
+\begin{pmatrix}
+w_1 \\
+w_2 \\
+b
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.4615 \\
+-0.3076 \\
+-3.6153
+\end{pmatrix}
+\]
+
+% Secondo vettore: moltiplicatori di Lagrange (alpha1, alpha2, alpha3)
+\[
+\begin{pmatrix}
+\alpha_1 \\
+\alpha_2 \\
+\alpha_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+0.1538 \\
+0 \\
+0.1538
+\end{pmatrix}
+\]
+% Interpretation of points and SVM parameters
+
+Consider the vector of Lagrange multipliers:
+\[
+\alpha = 
+\begin{pmatrix} 0.1538 \\ 0 \\ 0.1538 \end{pmatrix}
+\]
+
+Quick interpretation:
+\begin{itemize}
+    \item $\alpha_i > 0$: the point is a \textbf{support vector} and contributes to the decision boundary.
+    \item $\alpha_i = 0$: the point does not contribute, it is ignored.
+\end{itemize}
+
+For example, here points 1 and 3 are support vectors, point 2 does not influence the model.
+
+---
+
+The decision parameters are given by:
+\[
+\mathbf{w} = 
+\begin{pmatrix} w_1 \\ w_2 \end{pmatrix} =
+\begin{pmatrix} -0.4615 \\ -0.3076 \end{pmatrix}, 
+\quad b = -3.6153
+\]
+
+- $w_1, w_2$ determine the \textbf{slope} of the decision line.
+- $b$ shifts the line up or down without changing its slope.
+
+The equation of the decision boundary is:
+\[
+w_1 x_1 + w_2 x_2 + b = 0 \quad \text{or equivalently} \quad x_2 = -\frac{w_1}{w_2} x_1 - \frac{b}{w_2}
+\]
+
+---
+
+To classify a new point $\mathbf{u} = (u_1, u_2)$:
+\[
+\text{score} = w_1 u_1 + w_2 u_2 + b
+\]
+
+- score $> 0$ $\Rightarrow$ positive side
+- score $< 0$ $\Rightarrow$ negative side
+- score $\approx 0$ $\Rightarrow$ near the margin
+
+---
+
+Summary (at a glance):
+\begin{itemize}
+    \item Check $\alpha_i$ to identify support vectors.
+    \item Use $\mathbf{w}$ and $b$ to define the line slope and position.
+    \item Evaluate $w \cdot u + b$ for a new point to see which side it falls on.
+\end{itemize}
+
+The main parameter of SVM is C, we can choose the trade-off between error and margin. C is adjusted by the user. Large C means high penalty to classification errors, the number of missclassified patterns is minimized. With smaller C the points go inside the margin. 
+
+\vspace{10pt}
+
+If we have inseparable data we can project them into an higher feature space (like from 1 to 2 dimensions) to make them separable. Those functions are called kernel
+
+Some examples are
+
+\begin{itemize}
+    \item Polynomial
+    \item Radial
+    \item Sigmoid
+\end{itemize}
+
+% Explanation of gamma in RBF kernel
+
+Gamma ($\gamma$) is the free parameter of the Gaussian radial basis function (RBF).
+
+\begin{itemize}
+    \item \textbf{Small gamma:} The Gaussian has a large variance.  
+    This means each support vector influences a \textbf{large area} around itself.  
+    Even points that are far away from the support vector are affected, making the model smoother and more general.
+    
+    \item \textbf{Large gamma:} The Gaussian has a small variance.  
+    Each support vector influences only points very close to it.  
+    Points farther away are hardly affected, making the model more sensitive to the training points (risking overfitting).
+\end{itemize}
+
+\textbf{Analogy:} Imagine a bell above each support vector:
+\begin{itemize}
+    \item Small gamma $\rightarrow$ wide bell $\rightarrow$ many points hear it
+    \item Large gamma $\rightarrow$ narrow bell $\rightarrow$ only nearby points hear it
+\end{itemize}

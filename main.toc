@@ -36,62 +36,63 @@
 \contentsline {subsection}{\numberline {3.8}Neural Networks}{44}{subsection.3.8}%
 \contentsline {subsection}{\numberline {3.9}Decision Trees}{45}{subsection.3.9}%
 \contentsline {subsection}{\numberline {3.10}Ensemble Learning}{48}{subsection.3.10}%
-\contentsline {section}{\numberline {4}Statistic for data science}{51}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Data exploration and basic concepts}{51}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Preliminary concepts}{51}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Describing and visualizing data}{51}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Statistical Distributions}{53}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Motivations and important concepts}{53}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Discrete distributions}{53}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Continuous distributions}{54}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Point estimation, hypothesis testing and confidence intervals}{56}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Point estimation}{56}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Hypothesis Testing}{57}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Inference for two samples}{59}{subsubsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}Confidence Intervals}{60}{subsubsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.4}Linear regression model}{60}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Introduction}{60}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Simple Linear Regression Model}{60}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Multiple Linear Regression Model}{62}{subsubsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.4}Introduction to inference}{63}{subsubsection.4.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.5}The t-Test}{63}{subsubsection.4.4.5}%
-\contentsline {subsubsection}{\numberline {4.4.6}The F-test}{65}{subsubsection.4.4.6}%
-\contentsline {subsubsection}{\numberline {4.4.7}Heteroskedasticity}{66}{subsubsection.4.4.7}%
-\contentsline {subsubsection}{\numberline {4.4.8}Asymptotic Properties of the OLS}{67}{subsubsection.4.4.8}%
-\contentsline {subsubsection}{\numberline {4.4.9}RESET Test}{68}{subsubsection.4.4.9}%
-\contentsline {subsubsection}{\numberline {4.4.10}Multiple Regression Analysis with Qualitative Information}{68}{subsubsection.4.4.10}%
-\contentsline {subsection}{\numberline {4.5}Panel Data}{69}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Motivations}{69}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Estimators}{70}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Hausman Test}{73}{subsubsection.4.5.3}%
-\contentsline {section}{\numberline {5}Database}{74}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Introduction}{74}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}What is a database}{74}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Conceptual Modelling of a database}{74}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Normalization}{74}{subsubsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.2}Database modelling}{75}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Architecture}{75}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}ERD}{76}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}From ERD to tables}{76}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}SQL}{76}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}What is SQL}{76}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Create a database}{77}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Create tables}{77}{subsubsection.5.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.4}CRUD operations}{79}{subsubsection.5.3.4}%
-\contentsline {subsubsection}{\numberline {5.3.5}SQL clauses and operators}{80}{subsubsection.5.3.5}%
-\contentsline {subsubsection}{\numberline {5.3.6}SQL joins}{81}{subsubsection.5.3.6}%
-\contentsline {subsubsection}{\numberline {5.3.7}Functions}{83}{subsubsection.5.3.7}%
-\contentsline {subsubsection}{\numberline {5.3.8}Group By}{84}{subsubsection.5.3.8}%
-\contentsline {subsubsection}{\numberline {5.3.9}Having}{84}{subsubsection.5.3.9}%
-\contentsline {subsubsection}{\numberline {5.3.10}Views}{84}{subsubsection.5.3.10}%
-\contentsline {subsubsection}{\numberline {5.3.11}Triggers}{84}{subsubsection.5.3.11}%
-\contentsline {subsection}{\numberline {5.4}Query Optimization}{85}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}The problem}{85}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}EXPLAIN}{86}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Indexes}{86}{subsubsection.5.4.3}%
-\contentsline {subsubsection}{\numberline {5.4.4}Data types}{86}{subsubsection.5.4.4}%
-\contentsline {subsubsection}{\numberline {5.4.5}Tips}{87}{subsubsection.5.4.5}%
-\contentsline {subsection}{\numberline {5.5}CAP theorem and NOSQL databases}{87}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}ACID properties}{87}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}NOSQL}{87}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}CAP theorem}{88}{subsubsection.5.5.3}%
+\contentsline {subsection}{\numberline {3.11}SVM}{51}{subsection.3.11}%
+\contentsline {section}{\numberline {4}Statistic for data science}{55}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Data exploration and basic concepts}{55}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Preliminary concepts}{55}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Describing and visualizing data}{55}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Statistical Distributions}{57}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Motivations and important concepts}{57}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Discrete distributions}{57}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Continuous distributions}{58}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Point estimation, hypothesis testing and confidence intervals}{60}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Point estimation}{60}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Hypothesis Testing}{61}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Inference for two samples}{63}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Confidence Intervals}{64}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Linear regression model}{64}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Introduction}{64}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Simple Linear Regression Model}{64}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Multiple Linear Regression Model}{66}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Introduction to inference}{67}{subsubsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.5}The t-Test}{67}{subsubsection.4.4.5}%
+\contentsline {subsubsection}{\numberline {4.4.6}The F-test}{69}{subsubsection.4.4.6}%
+\contentsline {subsubsection}{\numberline {4.4.7}Heteroskedasticity}{70}{subsubsection.4.4.7}%
+\contentsline {subsubsection}{\numberline {4.4.8}Asymptotic Properties of the OLS}{71}{subsubsection.4.4.8}%
+\contentsline {subsubsection}{\numberline {4.4.9}RESET Test}{72}{subsubsection.4.4.9}%
+\contentsline {subsubsection}{\numberline {4.4.10}Multiple Regression Analysis with Qualitative Information}{72}{subsubsection.4.4.10}%
+\contentsline {subsection}{\numberline {4.5}Panel Data}{73}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Motivations}{73}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Estimators}{74}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Hausman Test}{77}{subsubsection.4.5.3}%
+\contentsline {section}{\numberline {5}Database}{78}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Introduction}{78}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}What is a database}{78}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Conceptual Modelling of a database}{78}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Normalization}{78}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Database modelling}{79}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Architecture}{79}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}ERD}{80}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}From ERD to tables}{80}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}SQL}{80}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}What is SQL}{80}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Create a database}{81}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Create tables}{81}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}CRUD operations}{83}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.5}SQL clauses and operators}{84}{subsubsection.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.6}SQL joins}{85}{subsubsection.5.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.7}Functions}{87}{subsubsection.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.8}Group By}{88}{subsubsection.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.9}Having}{88}{subsubsection.5.3.9}%
+\contentsline {subsubsection}{\numberline {5.3.10}Views}{88}{subsubsection.5.3.10}%
+\contentsline {subsubsection}{\numberline {5.3.11}Triggers}{88}{subsubsection.5.3.11}%
+\contentsline {subsection}{\numberline {5.4}Query Optimization}{89}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}The problem}{89}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}EXPLAIN}{90}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Indexes}{90}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}Data types}{90}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.5}Tips}{91}{subsubsection.5.4.5}%
+\contentsline {subsection}{\numberline {5.5}CAP theorem and NOSQL databases}{91}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}ACID properties}{91}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}NOSQL}{91}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}CAP theorem}{92}{subsubsection.5.5.3}%
