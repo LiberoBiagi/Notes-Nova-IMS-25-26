@@ -2031,7 +2031,212 @@ this assumption.
     \end{itemize}
 \end{itemize}
 
+\subsection{Causal inference}
 
+
+\subsubsection{Motivation}
+
+So far we looked at the study of the ceteris paribus relationship between dependent variable and one or more independent ones. We looked for associations among variables, based on which we may do some predictions. Causal inference is about counterfactual prediction, what would have happened to the same units after an exposure to a different condition. 
+
+\vspace{10pt}
+
+Traditional prediction uses data to find patterns and find a functional relationship between the variables. Causal inference tries to find the effects that a different choice could have give us. 
+
+Recall that 
+
+\begin{itemize}
+    \item Correlation doesn't mean causality
+    \item Coming first doesn't mean causality
+    \item Causality may mask correlations
+\end{itemize}
+
+\subsubsection{Potential outcomes}
+
+Until recently econometrics used realized outcomes to model causality. Now we can also care about potential outcomes. Take the covid and ventilators example. The treatment is the variable that we can manipulate (D). We model the potential outcomes assuming that we have two possible states for the same receiver if it had or not the treatment. Our analysis is to understand how big those differences are. 
+
+\begin{itemize}
+    \item $D_{i,t}$ \ra where i is the index of the receiver, t the ime of receivement and D either 0 or 1 if it received the treatment
+    \item $Y^j_{i, t}$ \ra same as above but j is the treatment status and Y the status obtained from D
+\end{itemize}
+
+We denote potential outcom $Y^1$ as a priori fixed but unknown (outcomes associated with
+different possible treatment assignments) and realized $Y^0$ as posterior and known ( outcome associated with a specific treatment assignment). 
+
+\vspace{10pt}
+
+Definitions
+
+\begin{enumerate}
+    \item Individual treatment effect \ra The individual treatment effect $\delta_i$ associated with a ventilator is $Y^1_i - Y_i^0$
+    \item Switching equation \ra An individual's realizd health outcome $Y_j$, is determined by treatment assignment $D_i$ which selects one of the potential outcomes
+    \[
+    Y_i = D_iY^1_i + (1 -D_i)Y_i^0
+    \]
+    \[
+    Y_i = \begin{cases}
+        Y_i^1 \text{ if } D_i = 1 \\
+
+        Y^0_i \text{ if } D_i = 0
+    \end{cases}
+    \]
+    \item Fundamental problem of causal inference \ra If you need both potential outcomes to know causality with certainty, then since it is impossible to observe both $Y_i^1$  and $Y_i^0$ for the same individual, $\delta_i$ , is unknowable. The Fundamental problem is deep and impossible to overcome. Causal inference is a missing data problem. All of causal inference involves imputing missing counterfactuals and not all imputations are equal
+    \item  Average treatment effect (ATE) \ra The average treatment effect is the population average of all i individual treatment effects
+    \[
+    E[\delta_i] = E[Y_i^1 - Y_i^0] = E[Y_i^1] - E[Y_i^0]
+    \]
+    Cannot be calculated because $Y^1_i$ and $Y^0_i$ do not exist for the same unit i due to switching equation
+    \item Average Treatment Effect on the Treated (ATT) \ra The average treatment effect on the treatment group is equal to the average treatment effect conditional on being a treatment group member:
+    \[
+    E[\delta|D=1] = E[Y^1 - Y^0 |D=1] = E[Y^1|D=1] - E[Y^0|D=1]
+    \]
+    Cannot be calculated because $Y^1_i$ and $Y^0_i$ do not exist for the same unit i due to switching equation.
+    \item Average Treatment Effect on the Untreated (ATU) \ra The average treatment effect on the untreated group is equal to the average treatment effect conditional on being untreated:
+    \[
+    E[\delta|D=0] = E[Y^1-Y^0|D=0] = E[Y^1|D=0] - E[Y^0|D=0]
+    \]
+    Cannot be calculated because $Y^1_i$ and $Y^0_i$ do not exist for the same unit i due to switching equation.
+
+\end{enumerate}
+
+Average treatment effects are simple summaries. Because aggregate causal parameters are summaries of individual treatment effects, each
+of which cannot be calculated, the aggregates cannot be calculated either. Here the missing data are really non-existent. While we cannot measure average causal effects, we can estimate them, but only in
+situations and we review one  randomization.
+
+
+\subsubsection{DAGs}
+
+Causal Graphs are a kind of graphs that let us model a representation of causal effects. 
+
+Why
+\begin{itemize}
+    \item Facilitates the task of designing identification strategy for estimating average causal effects
+    \item  Facilitates the task of testing compatibility of the model with your data
+    \item Visualizes the identifying assumptions which opens up the model to critical scrutiny
+\end{itemize}
+
+Notation
+
+\begin{enumerate}
+    \item Treatment \ra D
+    \item Outcome \ra Y
+    \item Observed covariates or confounders \ra X 
+    \item Unobserved covariates or confounders \ra U 
+\end{enumerate}
+
+\includegraphics[width=5cm]{simple dag.png}
+Here we have 3 random variables X, D and Y. There is a direct path from D to Y , which represents a causal effect. But there is also a second path from D to Y called the backdoor path. The backdoor path is given by D ← X → Y . The backdoor path is not causal, we therefore call X a confounder.
+
+\vspace{10pt}
+
+Confounding occurs when the treatment and the outcomes have a common cause or parent which creates spurious correlation between D and Y . The correlation between D and Y no longer reflects the causal effect of D on Y because of selection bias due to a confounder. We need then to control for X to close the backdoor path.
+
+\includegraphics[width=5cm]{backdoor.png}
+
+We can ”block” any particular backdoor path by conditioning on variable X so long as it is not a collider. Once we condition on X , the correlation between D and Y estimates the causal effect of D on Y
+Conditioning means calculating E [Y | D = 1, X ] - E [Y | D = 0, X ] for each value of X
+
+\includegraphics[width=5cm]{unobserved.png}
+
+Now we have an unobserved confounder. Since U is unobserved that backdoor pathway is open.
+
+\includegraphics[width=5cm]{other dag.png}
+
+D → Y (causal effect of D on Y) and D → X ← Y (backdoor path 1). Just like last time, there are two ways to get from D to Y . But this time, X has two arrows pointing to it, not away from it. When two variables cause a third variable along some path, we call that third variable a
+“collider”. But so what? Colliders are special because when they appear along a backdoor path, that backdoor path is closed simply because of their presence. DAGs allow us to map the relationship between variables.
+Identify colliders and confounding factors will determine which variables we should (and should not) condition, i.e., control for in the analysis. To identify a causal relationship, we want to block (close) all the backdoor paths.
+
+\vspace{10pt}
+
+A backdoor path is closed if and only if
+\begin{itemize}
+    \item It contains a noncollider that has been conditioned on
+    \item Or it contains a collider that has not been conditioned on
+\end{itemize}
+
+Examples
+
+\includegraphics[width=12cm]{examples colliders.png}
+
+Conditioning on X satisfies the backdoor criterion with respect to (D, Y ) directed path if:
+
+\begin{enumerate}
+    \item All backdoor paths are blocked by X
+    \item No element of X is a collider
+\end{enumerate}
+In words: If X satisfies the backdoor criterion with respect to (D, Y ), then controlling for or
+matching on X identifies the causal effect of D on Y .
+And again note that a path which has a conditioned-on-collider can still be closed, but only with a noncollider-conditioned-on.
+
+\vspace{10pt}
+
+You can identify average causal effects using a covariate adjustment strategy so long as you do not in the process inadvertently “open” backdoor paths. Backdoor paths can remain open in covariate adjustment strategies through two ways:
+
+\begin{enumerate}
+    \item  You did not close the path because you did not condition on the confounder
+    \item Your conditioning variable opened up a previously closed backdoor path because on that path the variable was a collider
+\end{enumerate}
+
+Colliders are “bad controls”; they are often outcomes, but not always and not all outcomes create this problem. This is the risk of blindly controlling for variables (“kitchen sink regressions”)
+
+\subsubsection{Instrumental variables}
+
+An instrumental variable (Z) is a variable that influences treatment assignment, is independent of unmeasured confounders and has no effect on the outcome except through its effect on the treatment. We should use them when we have unobserved confounders. With them we can estimate the variation in the treatment that is free of the unmeasured confounders. We can use this confounder free variation to estimate the causal effect of the treatment. The biggest challenge in using IV methods is finding a good IV.
+
+\vspace{10pt}
+
+To assess the values of the correlation of instrumental variables we can do Two stage least squares
+
+\begin{itemize}
+    \item Start from the causal model of the main research question
+    \item Do a regression on the parameter explained by the instrumental variable and find the relative value of the second
+    \item Use the fitted values of education in the model
+\end{itemize}
+
+The fitted value, educ, can be seen as the estimated version of educ that is uncorrelated
+with u. Therefore, 2SLS first “purges” educ of its correlation with u before doing the OLS regression.
+
+\vspace{10pt}
+
+We can have some specification tests
+
+\begin{itemize}
+    \item Weak instruments \ra The null is "All instruments are weak". We reject if all are strong
+    \item Hausman test for endogeneity \ra The null is that the covariance between x and u is 0. We reject if we need instrumental variables for the existence of endogeneity
+    \item Sargan test \ra This test for the validity of instruments (whether the instruments are corrrelated with the
+error term) can only be performed for the extra instruments, those that are in excess of the
+number of endogenous variables. The null is that the covariance between z and u is 0. So if we reject at least one of the extra instruments are not valid.
+\end{itemize}
+
+\subsubsection{Difference-in-difference}
+
+Very old but easy approach for research design. A group of units are assigned some treatment and then compared to a group of units that
+weren't.
+
+We can do this with and without regression.
+
+\begin{itemize}
+    \item Without \ra  We start by taking the average value of each group's outcome before and after the treatment. Then, calculate the difference-in-differences of the averages $(\bar{y}^T_A-\bar(y)^T_B)- (\bar{y}^C_A - \bar{y}^C_B)$
+    \item With \ra We fit a regression model $y_{it} = \beta_0 + \beta_1D_i + \beta_2 \text{Post}_t + \beta_3(D_i \times\text{Post}_t) + u_{it}$ Where D=1 if i has received the treatment and Post=1 is t is after the treatment. We have two groups and two periods.
+\end{itemize}
+
+
+We can simplify the with regression model by assuming that we have one equation for the treated and one for the non treated. The regression framework allows to add regressors as controls. In that case, the
+interpretation is no longer as sample average, but as partial effects after controlling for
+other factors.
+
+How we would expect the treated group to behave in the absence of treatment is called the parallel trends assumption. Parallel trends assumes away the selection bias associated with comparisons
+The assumption is thought to be more plausible than simply assuming simple comparisons held equal
+
+\[
+E[Y^0|D=0] = E[Y^0|D=1]
+\]
+
+We do a visual inspection of the plots and/or test the difference in means in the periods
+before the intervention. If the parallel trends assumptions holds, then the differences in
+means between the control and treated group, before the intervention are zero.
+\subsubsection{Advanced topics}
+
+not copying this
 
 
 

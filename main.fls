@@ -533,6 +533,36 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib5.tf
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy7.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy5.tfm
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\simple dag.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\backdoor.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\unobserved.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\other dag.png
+INPUT .\Courses\Images\examples colliders.png
+INPUT .\Courses\Images\examples colliders.png
+INPUT .\Courses\Images\examples colliders.png
+INPUT .\Courses\Images\examples colliders.png
+INPUT .\Courses\Images\examples colliders.png
+INPUT .\Courses\Images\examples colliders.png
 INPUT .\Courses\database.tex
 INPUT .\Courses\database.tex
 OUTPUT Courses\database.aux
