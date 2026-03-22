@@ -205,24 +205,6 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\framed\framed.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\framed\framed.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\pgfplots\pgfplots.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\pgfplots\pgfplots.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.revision.tex
@@ -279,6 +261,24 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\tikzlibrarypgfplots.statistics.code.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\tikzlibrarypgfplots.statistics.code.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
@@ -348,21 +348,15 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr10.
 INPUT .\main.aux
 INPUT .\main.aux
 INPUT main.aux
-INPUT .\Courses\data.aux
-INPUT .\Courses\data.aux
-INPUT Courses\data.aux
-INPUT .\Courses\programming.aux
-INPUT .\Courses\programming.aux
-INPUT Courses\programming.aux
-INPUT .\Courses\ML.aux
-INPUT .\Courses\ML.aux
-INPUT Courses\ML.aux
-INPUT .\Courses\Stat.aux
-INPUT .\Courses\Stat.aux
-INPUT Courses\Stat.aux
-INPUT .\Courses\database.aux
-INPUT .\Courses\database.aux
-INPUT Courses\database.aux
+INPUT .\Courses\ethics.aux
+INPUT .\Courses\ethics.aux
+INPUT Courses\ethics.aux
+INPUT .\Courses\cifo.aux
+INPUT .\Courses\cifo.aux
+INPUT Courses\cifo.aux
+INPUT .\Courses\bigdata.aux
+INPUT .\Courses\bigdata.aux
+INPUT Courses\bigdata.aux
 OUTPUT main.aux
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -441,200 +435,59 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\liber\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
 OUTPUT main.toc
-INPUT .\Courses\data.tex
-INPUT .\Courses\data.tex
-OUTPUT Courses\data.aux
-INPUT .\Courses\data.tex
-INPUT .\Courses\data.tex
-INPUT Courses\data.tex
+INPUT .\Courses\ethics.tex
+INPUT .\Courses\ethics.tex
+OUTPUT Courses\ethics.aux
+INPUT .\Courses\ethics.tex
+INPUT .\Courses\ethics.tex
+INPUT Courses\ethics.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr7.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx7.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr7.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr5.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
+INPUT .\Courses\cifo.tex
+INPUT .\Courses\cifo.tex
+OUTPUT Courses\cifo.aux
+INPUT .\Courses\cifo.tex
+INPUT .\Courses\cifo.tex
+INPUT Courses\cifo.tex
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx7.tfm
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx5.tfm
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx7.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx5.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr9.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr9.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi9.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy9.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx9.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmbx6.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT .\Courses\programming.tex
-INPUT .\Courses\programming.tex
-OUTPUT Courses\programming.aux
-INPUT .\Courses\programming.tex
-INPUT .\Courses\programming.tex
-INPUT Courses\programming.tex
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT .\Courses\bigdata.tex
+INPUT .\Courses\bigdata.tex
+OUTPUT Courses\bigdata.aux
+INPUT .\Courses\bigdata.tex
+INPUT .\Courses\bigdata.tex
+INPUT Courses\bigdata.tex
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt9.tfm
-INPUT .\Courses\ML.tex
-INPUT .\Courses\ML.tex
-OUTPUT Courses\ML.aux
-INPUT .\Courses\ML.tex
-INPUT .\Courses\ML.tex
-INPUT Courses\ML.tex
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L2.png
-INPUT .\Courses\Images\L1.png
-INPUT .\Courses\Images\L1.png
-INPUT .\Courses\Images\L1.png
-INPUT .\Courses\Images\L1.png
-INPUT .\Courses\Images\L1.png
-INPUT .\Courses\Images\L1.png
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx5.tfm
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\ensemble tree.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Images\svm.png
-INPUT .\Courses\Stat.tex
-INPUT .\Courses\Stat.tex
-OUTPUT Courses\Stat.aux
-INPUT .\Courses\Stat.tex
-INPUT .\Courses\Stat.tex
-INPUT Courses\Stat.tex
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt8.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmtt8.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr5.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib7.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmib5.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy7.tfm
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy5.tfm
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\simple dag.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\backdoor.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\unobserved.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\other dag.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\Images\examples colliders.png
-INPUT .\Courses\database.tex
-INPUT .\Courses\database.tex
-OUTPUT Courses\database.aux
-INPUT .\Courses\database.tex
-INPUT .\Courses\database.tex
-INPUT Courses\database.tex
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\dbms structure.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\structure erd.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\basic crows.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\multiplicities.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\options.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\nosql.png
-INPUT .\Courses\Images\cap theorem.png
-INPUT .\Courses\Images\cap theorem.png
-INPUT .\Courses\Images\cap theorem.png
-INPUT .\Courses\Images\cap theorem.png
-INPUT .\Courses\Images\cap theorem.png
-INPUT .\Courses\Images\cap theorem.png
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
 INPUT main.aux
-INPUT .\Courses\data.aux
-INPUT .\Courses\data.aux
-INPUT Courses\data.aux
-INPUT .\Courses\programming.aux
-INPUT .\Courses\programming.aux
-INPUT Courses\programming.aux
-INPUT .\Courses\ML.aux
-INPUT .\Courses\ML.aux
-INPUT Courses\ML.aux
-INPUT .\Courses\Stat.aux
-INPUT .\Courses\Stat.aux
-INPUT Courses\Stat.aux
-INPUT .\Courses\database.aux
-INPUT .\Courses\database.aux
-INPUT Courses\database.aux
+INPUT .\Courses\ethics.aux
+INPUT .\Courses\ethics.aux
+INPUT Courses\ethics.aux
+INPUT .\Courses\cifo.aux
+INPUT .\Courses\cifo.aux
+INPUT Courses\cifo.aux
+INPUT .\Courses\bigdata.aux
+INPUT .\Courses\bigdata.aux
+INPUT Courses\bigdata.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx7.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmex10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmex10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
@@ -643,29 +496,21 @@ INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi5.p
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi5.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi9.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi9.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmib10.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmib10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr17.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr17.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr5.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr5.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmr7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmri10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmri10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy5.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy5.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy7.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt10.pfb
 INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt10.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt9.pfb
-INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmtt9.pfb
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\liber\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

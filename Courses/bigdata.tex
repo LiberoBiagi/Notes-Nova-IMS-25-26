@@ -1,0 +1,498 @@
+\section{Big data analytics}
+
+\subsection{Introduction}
+
+\subsubsection{What is Big data}
+
+Big data is a buzzword used to characterise certain kind of data. Those data were originally characterised by their volume, velocity and variety but now we have more dimensions. Big data processing life cycle follows this path
+
+\begin{enumerate}
+    \item Acquisition
+    \item Preprocessing
+    \item Storage and management
+    \item Privacy and security
+    \item Analyzing
+    \item Visualization
+\end{enumerate}
+
+Usually these datasets are very huge and traditional tools can't process them efficiently. 
+
+\vspace{10pt}
+
+Traditional data 
+
+\begin{itemize}
+    \item Relational
+    \item Structured
+    \item Manageable in SQL systems
+\end{itemize}
+
+Big data
+\begin{itemize}
+    \item Distributed across systems
+    \item Structured, semi-structured or unstructured
+    \item Requires new technology
+\end{itemize}
+
+With traditional data the best way to manage them is by vertically scaling the requirements, with big data we have to grow horizontally. 
+
+\subsubsection{Data sources}
+
+The mahority of big data come from the web revolution with drivers that are everyday more common
+
+\begin{itemize}
+    \item Internet
+    \item Smartphones
+    \item Social media
+    \item Sensors
+\end{itemize}
+
+The data can be considered by their origins
+
+\begin{itemize}
+    \item Human generated
+    \item Machine generated
+    \item Business and institutional
+    \item Open/public
+\end{itemize}
+
+\subsubsection{The Vs of Big data}
+
+The 3 Vs
+
+\begin{enumerate}
+    \item Volume
+    \item Velocity 
+    \item Variety 
+\end{enumerate}
+
+5 additional Vs
+\begin{enumerate}
+    \item Veracity
+    \item Value
+    \item Variability
+    \item Validity
+    \item Visualization
+\end{enumerate}
+
+
+\subsubsection{The Big data ecosystem}
+
+The place where we process these data, composed of
+
+\begin{itemize}
+    \item Storage systems
+    \item Process engines
+    \item Management and governance
+    \item Analytics and visualization tools
+    \item People and skills
+\end{itemize}
+
+The ecosystem is characterised by 4 layers
+
+\begin{enumerate}
+    \item Storage layer
+    \item Processing layer
+    \item Management layer
+    \item Analytics layer
+\end{enumerate}
+
+We use many tools to visualise these data and 3 main kind of people act in the ecosystem
+
+\begin{enumerate}
+    \item Data engineers
+    \item Data scientists
+    \item Business analysts
+\end{enumerate}
+
+\subsubsection{Applications of Big data}
+
+Big data analytics as many possible fields of application
+
+\begin{enumerate}
+    \item Business and retail
+    \item Social media communication
+    \item Healthcare and life sciences
+    \item Finance and economy
+    \item Government and public sector
+    \item Smart cities
+    \item Science and research
+\end{enumerate}
+
+
+\subsection{Distributed storage, ecosystems and programming paradigms}
+
+\subsubsection{Distributed storage and file systems}
+
+To save our data we could think about saving flat files on local disks but this comes with problems of redundancy, slow search and retrieval and poor security. Then we can use file systems that define how files are named, stored and retireved. Those systems use directories and store the data in blocks of given size. 
+
+\vspace{10pt}
+
+As said before we need distribution to save our data in a good way, then we use many servers. To avoid problems given by common node failures we can use replication and sequential writing. The concept of connecting many independent computers to work as one big system is called \textbf{cluster computing}. Each computer runs it's own operating system but when combined they form a unified resource. \textbf{Sharding} is another way where we split our big datasets into smaller pieces called shards which are then distributed across multiple machines. 
+
+\vspace{10pt}
+
+Splitting our data let us ensure availability and reliability, usually we have a replication factor of 3. One of the main systems is HDFS (Hadoop Distributed File System). In HDFS we have namenodes, datanodes and replication pipelines among the datanodes. 
+
+\vspace{10pt}
+
+HDFS strenghts
+
+\begin{itemize}
+    \item Efficient for very large files
+    \item Streaming data access
+    \item Good on low cost hardwares
+\end{itemize}
+
+HDFS cons
+\begin{itemize}
+    \item Low latency access
+    \item Lots of small files
+    \item Multiple writers/edits
+\end{itemize}
+
+Another way to store data is using object storage (Cloud). The data are stored as objects in a bucket. Good for elastic scaling but we have higher latency. 
+
+\subsubsection{Distributed computing models}
+
+Divide and conquer approach where we process data where they are stored. We scale horizontally across nodes. 
+
+\subsubsection{The big data ecosystem}
+
+Formed by a web of interconnected tools for storage, processing, analytics and visualization. They will lower costs and time of deployment. 
+
+\vspace{10pt}
+
+Hadoop ecosystem
+\begin{itemize}
+    \item HDFS for storage
+    \item YARN to manage resources
+    \item MapReduce for batch processing
+    \item Hive, Pig, Sqoop, Flume for analytics
+\end{itemize}
+
+Apache Spark
+
+\begin{itemize}
+    \item Unifier engine for multiple tools
+    \item Faster than MapReduce
+    \item Multiple programming languages
+\end{itemize}
+
+The databases usually are NoSQL and can be
+\begin{itemize}
+    \item Key-Value
+    \item Document
+    \item Columnar
+    \item Graph 
+\end{itemize}
+
+For unstructure and structured data we use data lakes, warehouses of lakehoues
+
+\subsubsection{Programming paradigms}
+
+As said we need to parallelize and resist to fault when working with big data. We can have imperative (step by step), functional (we define our own functions) and declarative (what to compute, not how) programming. 
+
+\vspace{10pt}
+
+The most common approach is functional programming where computation is considered as evaluation of functions. We use things like map, reduce, filter and fold.
+
+\vspace{10pt}
+
+MapReduce paradigm
+\begin{itemize}
+    \item Apply function to data blocks (Map step)
+    \item Group by Key (Shuffle step)
+    \item Aggregate results (Reduce step)
+\end{itemize}
+
+
+\subsection{Distributed parallel processing and the map reduce paradigm}
+
+\subsubsection{Distributed parallel processing}
+
+Using big data we deal with terabytes of data so we can't put them on a single server. The execution will be too slow, then we will split the workload into smaller tasks that will run simultaneously and possibly in parallel. 
+
+\begin{itemize}
+    \item \textbf{Parallel} \ra multiple tasks executed at the same time
+    \item \textbf{Concurrent} \ra multiple tasks that progress together but not necessarily at the same time
+\end{itemize}
+
+The traditional way of analysing data is to move all the data to one machine and process them. This is inefficient, to save network bandwidth we can do a distributed approach where we send the computations where the data already is. The architecture is cluster like and made by nodes organized in racks. 
+
+\subsubsection{The MapReduce paradigm}
+
+Paradigm where we try to reduce complexity. We can use Hadoop to resolove logistic problems. 
+
+\textbf{Work flow} 
+
+\begin{enumerate}
+    \item \textbf{Map} \ra Process input split and emit key-value pairs
+    \item \textbf{Shuffle/Sort} \ra group intermediate pairs by key
+    \item \textbf{Reduce } \ra Aggregate values for each key to get a final output
+\end{enumerate}
+
+\begin{verbatim}
+    def map(key, value):
+        for word in value.split():
+        emit(word, 1)
+
+    def reduce(key, values):
+        emit(key, sum(values))
+\end{verbatim}
+
+\subsubsection{Case study}
+
+\begin{itemize}
+    \item Temperature records
+    \item Retail analytics
+\end{itemize}
+
+Strengths of MapReduce
+\begin{itemize}
+    \item Scales to thousands of nodes
+    \item Fault-tolerant
+    \item Simplifies distributed programming
+\end{itemize}
+
+Limitations
+\begin{itemize}
+    \item Batch only, causes latency
+    \item Heavy disk
+    \item Iterative and ML inefficient
+\end{itemize}
+
+\subsection{The Hadoop ecosystem}
+
+\subsubsection{Hadoop}
+
+Hadoop is an open source framework for distributed storage and processing of large datasets. It's designed to scale horizontally across clusters.
+
+Key features are fault tolerance (data replication), high throughput (parallel processing) and scalability (from few nodes to thousands). 
+Hadoop has two main pillars
+
+\begin{enumerate}
+    \item HDFS \ra Hadoop distributed file system (stores data across multiple machines and replicates blocks for reliability)
+    \item MapReduce \ra processing engine (splits computation between map and reduce, extended with yarn to manage cluster resources)
+\end{enumerate}
+
+Before Hadoop we had to fit our data into one machine (limited scalability). Hadoop allowed big data storage and parallel computation.
+
+\subsubsection{Filesystems and HDFS basics}
+
+Since large datasets can't fit on one machine we have to distribute it across nodes and to make computation where data resides. 
+
+Terms of Filesystems
+
+\begin{itemize}
+    \item \textbf{Block} \ra fixed-sixe unit of storage
+    \item \textbf{Split} \ra logical division of input for MapReduce
+    \item \textbf{Shard/Partition} terms for splitting datasets
+\end{itemize}
+
+Filesystems can be local (one disk, not fault tolerant) or distributed (replicates blocks across many nodes). HDFS stores large files and is optimized for throughput, write once and read many times.
+
+\vspace{10pt}
+
+HDFS components
+\begin{itemize}
+    \item NameNode \ra Manages metadata and block locations
+    \item Secondary NameNode \ra assist with checkpoints
+    \item DataNodes \ra store actual blocks
+\end{itemize}
+
+To ensure fault tolerance we have block replication, one block is stored in multiple nodes or racks. Large block size reduces metadata overhead and we have data locality for the computation. 
+
+\subsubsection{Hadoop execution model}
+
+Hadoop originally used MApReduce v1 both as computation engine and resource manager but there were some problems like single job tracker, limited scalability and rigidity. YARN was introduced to fix this in Hadoop 2.0.
+
+\textbf{V1}
+
+\begin{itemize}
+    \item We have a JobTracker that assigns and manages tasks.
+    \item The TaskTracker runs the map and reduce tasks and teport the status to the JobTracker. 
+    \item If JobTracker is overloaded it will break.
+    \item As the clusters grow we have a bottleneck that will easily break the system.
+\end{itemize}
+
+\textbf{YARN}
+
+\begin{itemize}
+    \item Separates resource management from job execution.
+    \item The key roles are ResourceManager, NodeManager and ApplicationMaster
+    \item It supports multiple processing frameworks
+    \item Allows for better scalability, reliability and flexibility
+\end{itemize}
+
+\textbf{YARN Architecture Components}\begin{itemize}\item \textbf{ResourceManager (RM):} The global authority of the cluster. It handles resource scheduling (via the \textit{Scheduler}) and job submissions (via the \textit{ApplicationManager}). It tracks availability of $\text{CPU}$, memory, and $\text{I/O}$.\item \textbf{NodeManager (NM):} Runs on each worker node. It manages local resources, launches tasks inside \textbf{Containers}, and reports health and usage back to the RM.\item \textbf{ApplicationMaster (AM):} One instance per job. It negotiates resources with the RM and manages the job lifecycle (requesting containers, handling failures) without micromanaging every task.\end{itemize}\textbf{Containers and Locality}\begin{itemize}\item \textbf{Containers:} A logical bundle of resources ($\text{CPU} + \text{Memory} + \text{I/O}$). Every task runs in its own isolated container to prevent conflicts.\item \textbf{Locality Awareness:} To minimize network costs, YARN prefers \textbf{Node-local} execution (data on the same node), then \textbf{Rack-local}, and finally \textbf{Off-switch} as a last resort.\end{itemize}\textbf{Scheduling and Benefits}\begin{itemize}\item \textbf{Schedulers:} Supports \textit{FIFO} (simple order), \textit{Capacity} (guaranteed queues), and \textit{Fair} (equal sharing/preemption).\item \textbf{Advantages:} Enables multitenancy, scales to tens of thousands of nodes, and supports multiple engines like Spark, Tez, and Flink beyond just MapReduce.\end{itemize}
+
+\subsubsection{Optimization and refinements}
+
+\textbf{From Splits to Reducers}
+\begin{itemize}
+    \item \textbf{Input Splits \& Blocks:} Large files are broken into HDFS blocks (default 128 MB). Each split is assigned to a map task; parallelism depends on the number of blocks.
+    \item \textbf{Shuffle \& Sort:} Mappers produce (key, value) pairs. The system groups all values with the same key across the cluster. This step is \textbf{network-intensive} and often the bottleneck of MapReduce.
+    \item \textbf{Reducers:} Each reducer receives one or more key groups, applies the function (sum, max, etc.), and writes the final output back to HDFS.
+\end{itemize}
+
+
+
+\textbf{Optimizations: Combiners \& Partitioners}
+\begin{itemize}
+    \item \textbf{Combiners:} Optional "mini-reducers" on mapper output. They perform local aggregation before the shuffle phase to reduce network traffic (e.g., local word count sums).
+    \item \textbf{Partitioners:} Decide which reducer processes a specific key (default: $hash(key) \pmod{numReducers}$). Used for load balancing or specific workflows.
+\end{itemize}
+
+
+
+\textbf{Handling Stragglers \& Joins}
+\begin{itemize}
+    \item \textbf{Speculative Execution:} To handle slow nodes ("stragglers"), Hadoop launches duplicate copies of slow tasks on other nodes. The first copy to finish is kept, reducing job completion time.
+    \item \textbf{Reduce-side Joins:} Used for joining datasets on a key (e.g., $R(A,B) \bowtie S(B,C)$). Mappers emit (B, row) from both datasets, and the reducer performs the join. Flexible but expensive due to high shuffle overhead.
+\end{itemize}
+
+\textbf{Hadoop Strengths \& Limitations}
+\begin{itemize}
+    \item \textbf{Strengths:} Handles petabytes of data, fault-tolerant (automatic replication/retries), and supported by a large ecosystem (Hive, HBase, Sqoop).
+    \item \textbf{Limitations:} \textbf{Batch-oriented} (not suitable for real-time), high latency due to heavy disk I/O, and inefficient for iterative jobs (ML, graph algorithms).
+\end{itemize}
+\subsubsection{YARN and scheduling}
+
+\textbf{Resource Management in YARN}\begin{itemize}\item \textbf{Resource Types:} YARN manages four key resources across the cluster: $\text{CPU}$ (cores), \textbf{Memory} (RAM), \textbf{Disk I/O} (read/write), and \textbf{Network I/O} (bandwidth).\item \textbf{Container Allocation:} Resources are bundled into \textbf{Containers}. Each container represents a specific amount of $\text{CPU}$ and Memory, ensuring jobs get exactly what they requested.\item \textbf{Benefits:} This provides strict \textbf{isolation} between jobs and increases efficiency by sizing containers to actual application needs.\end{itemize}\textbf{YARN Scheduling Policies}\begin{itemize}\item \textbf{FIFO Scheduler:} Jobs run in the strict order of submission. While simple, it causes head-of-line blocking where small jobs must wait for large ones to finish.\item \textbf{Capacity Scheduler:} The cluster is divided into \textbf{queues} with guaranteed resources (e.g., Department A gets $50\%$ quota). This ensures multi-tenant access, though unused capacity can be "borrowed" by other queues.\item \textbf{Fair Scheduler:} Resources are dynamically shared so that all jobs get a fair share over time. Small interactive jobs can start immediately even if a large job is already running.\end{itemize}\textbf{Scheduling Scenarios in Practice}\begin{itemize}\item \textbf{Scenario 1 (FIFO):} A massive data-cleaning job starts first; a subsequent small query is blocked until the first job completes, leading to poor responsiveness.\item \textbf{Scenario 2 (Capacity):} A department is guaranteed $50\%$ of the cluster. Even if other departments are busy, the quota ensures they always have access to resources.\item \textbf{Scenario 3 (Fair):} When a small job arrives during a large job's execution, the scheduler reassigns some containers so both can progress simultaneously.\end{itemize}
+
+\subsubsection{Hive, Pig and Sqoop}
+
+
+\textbf{Apache Hive: Data Warehouse on Hadoop}
+\begin{itemize}
+    \item \textbf{Overview:} A data warehouse infrastructure built on top of Hadoop. It provides \textbf{HiveQL} (a SQL-like language), making Hadoop accessible to analysts without Java/MapReduce knowledge.
+    \item \textbf{Schema-on-Read:} Unlike traditional databases, Hive loads data into HDFS "as is" and applies the schema only when the data is read. This offers great flexibility for semi-structured data.
+    
+    
+    
+    \item \textbf{Architecture:}
+    \begin{itemize}
+        \item \textbf{Metastore:} Stores table metadata and schemas.
+        \item \textbf{Compiler \& Optimizer:} Parses HiveQL and improves the execution plan (e.g., predicate pushdown).
+        \item \textbf{Execution Engine:} Converts the plan into MapReduce, Tez, or Spark jobs.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Hive Optimization \& File Formats}
+\begin{itemize}
+    \item \textbf{Partitioning:} Splits tables into HDFS directories based on a column (e.g., \textit{year=2024}). It improves performance via \textbf{partition pruning}.
+    \item \textbf{Bucketing:} Further divides data based on a hash function to ensure balanced distribution for joins.
+    
+    
+    
+    \item \textbf{Storage Formats:}
+    \begin{itemize}
+        \item \textbf{ORC / Parquet:} Columnar formats, highly compressed, best for analytical queries.
+        \item \textbf{Avro:} Row-based format, excellent for schema evolution and streaming.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Apache Pig: Scripting for ETL}
+\begin{itemize}
+    \item \textbf{Overview:} A high-level platform for analyzing large data sets using a procedural language called \textbf{Pig Latin}.
+    \item \textbf{Use Case:} Designed for complex data pipelines and ETL (Extract, Transform, Load) workflows. It is more "step-by-step" compared to Hive's declarative SQL approach.
+    \item \textbf{Example Flow:} \texttt{LOAD} (bring data) $\rightarrow$ \texttt{GROUP} (by key) $\rightarrow$ \texttt{FOREACH} (apply aggregation).
+\end{itemize}
+
+\textbf{Apache Sqoop: SQL-to-Hadoop}
+\begin{itemize}
+    \item \textbf{Overview:} A tool designed for efficiently transferring bulk data between \textbf{Relational Databases} (RDBMS) and the Hadoop ecosystem (HDFS, Hive, or HBase).
+    \item \textbf{Functionality:} It uses Map-only jobs to import/export data in parallel via JDBC.
+    
+    
+    
+    \item \textbf{Example Command:}
+\begin{verbatim}
+sqoop import --connect jdbc:mysql://localhost/db --table orders
+\end{verbatim}
+    \item \textbf{Pros/Cons:} Simple and supports incremental loads, but it is better suited for bulk transfers rather than real-time streaming.
+\end{itemize}
+
+\subsection{SPARK}
+
+Ecco una sintesi completa ed efficace dei tuoi appunti su Apache Spark, strutturata in LaTeX per il tuo documento. Ho mantenuto i termini tecnici in inglese e utilizzato i grassetti e il codice sorgente come richiesto.
+
+\subsubsection{Introduction to Apache Spark}
+
+\textbf{Apache Spark} is an open-source, in-memory data processing engine designed for large-scale data analytics. Originally written in \textbf{Scala}, it provides high-level APIs in Java, Scala, Python (\textbf{PySpark}), and R.
+
+\begin{itemize}
+\item \textbf{Key Benefit:} Speed. By keeping data \textbf{in-memory} between stages, it avoids the repeated disk I/O that makes Hadoop MapReduce slow.
+\item \textbf{Unified Engine:} Supports multiple workloads including batch processing, SQL queries (\textbf{Spark SQL}), machine learning (\textbf{MLlib}), graph processing (\textbf{GraphX}), and real-time streaming.
+\item \textbf{Decoupled Storage:} Spark performs computation but does not own storage; it can process data from HDFS, S3, Cassandra, or Hive.
+\end{itemize}
+
+\subsubsection{Spark Architecture}
+
+Spark follows a master-slave architecture composed of three main entities:
+
+\begin{itemize}
+\item \textbf{Driver Program:} The central coordinator that runs the \texttt{SparkSession} (or \texttt{SparkContext}), defines the data transformations, and schedules tasks.
+\item \textbf{Cluster Manager:} Allocates resources across the cluster (e.g., \textbf{YARN}, \textbf{Kubernetes}, or Standalone mode).
+\item \textbf{Executors:} Worker processes that run individual tasks in parallel and cache data in RAM for reuse.
+\end{itemize}
+
+\subsubsection{The RDD Abstraction (Resilient Distributed Dataset)}
+
+The \textbf{RDD} is the fundamental low-level data abstraction in Spark. It is a distributed collection of objects partitioned across the cluster.
+
+\begin{itemize}
+\item \textbf{Resilient:} Fault-tolerant via \textbf{Lineage}. If a partition is lost, Spark recomputes it using the history of transformations (DAG).
+\item \textbf{Distributed:} Stored across multiple nodes in the cluster.
+\item \textbf{Immutable:} Once created, an RDD cannot be changed; you create a new RDD by transforming an old one.
+\item \textbf{Lazy Evaluation:} Transformations are not executed immediately. Spark builds a \textbf{Logical Plan} and only executes it when an \textbf{Action} is called.
+\end{itemize}
+
+\subsubsection{Programming Model: Transformations vs. Actions}
+
+Spark operations are strictly divided into two categories:
+
+\begin{itemize}
+\item \textbf{Transformations:} Define a new RDD from an existing one.
+\begin{itemize}
+\item \textit{Narrow:} Each input partition contributes to only one output partition (e.g., \texttt{map}, \texttt{filter}).
+\item \textit{Wide:} Multiple input partitions are needed to create an output partition, causing a \textbf{Shuffle} (e.g., \texttt{reduceByKey}, \texttt{groupByKey}).
+\end{itemize}
+\item \textbf{Actions:} Trigger the actual computation and return a result to the driver or write to storage (e.g., \texttt{collect}, \texttt{count}, \texttt{take}, \texttt{saveAsTextFile}).
+\end{itemize}
+
+\subsubsection{PySpark Code Examples}
+
+\textbf{Example: Word Count (Pair RDD Pattern)}
+\begin{verbatim}
+
+Standard word count using the key-value pattern
+rdd_text = sc.textFile("data.txt")
+rdd_words = rdd_text.flatMap(lambda line: line.split(" "))
+rdd_pairs = rdd_words.map(lambda word: (word, 1))
+rdd_counts = rdd_pairs.reduceByKey(lambda a, b: a + b)
+result = rdd_counts.collect()
+\end{verbatim}
+
+\textbf{Example: Pi Estimation (Monte Carlo)}
+\begin{verbatim}
+import random
+def inside(_):
+x, y = random.random(), random.random()
+return 1 if x2 + y2 <= 1 else 0
+
+NUM_SAMPLES = 1000000
+count = sc.parallelize(range(NUM_SAMPLES)).map(inside).reduce(lambda a, b: a + b)
+print(f"Pi is roughly {4.0 * count / NUM_SAMPLES}")
+\end{verbatim}
+
+\subsubsection{RDD vs. DataFrames}
+
+While RDDs provide fine-grained control, modern Spark development favors \textbf{DataFrames} (introduced in Spark 2.0).
+
+\begin{itemize}
+\item \textbf{Optimization:} DataFrames use the \textbf{Catalyst Optimizer} and \textbf{Tungsten Engine} to automatically generate the most efficient physical execution plan.
+\item \textbf{Schema:} Unlike RDDs (untyped objects), DataFrames have a defined schema (columns and types).
+\item \textbf{Entry Point:} Modern applications use \texttt{SparkSession} instead of the legacy \texttt{SparkContext}.
+\end{itemize}

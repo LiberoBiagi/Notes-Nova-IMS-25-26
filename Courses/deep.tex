@@ -1,0 +1,85 @@
+\section{Deep Learning}
+
+\subsection{Introduction}
+
+We start seeing the algorithms that we will use
+
+\begin{itemize}
+    \item CNN for computer vision
+    \item LSTM for time series
+\end{itemize}
+
+The exam is a project. We use keras, I want to die. 
+
+
+\subsection{Binary classification}
+
+
+We see NNs for tabular data.
+
+\vspace{10pt}
+
+Objects of a NN
+
+\begin{itemize}
+    \item Model
+    \item Layers
+    \item Input data
+    \item Targets
+    \item Loss function
+    \item Optimizer
+\end{itemize}
+
+A layer is a data processing module that takes one or more as input and outputs one or more tensors. The layers are connected via some weights. Layers can be dense, convolutional or recurrent.
+
+
+\begin{pythoncode}
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras.layers import dense
+    layer = Dense(32, input_dim = 100)
+\end{pythoncode}
+
+We created a neural network for 100 input features with 32 neurons in the first hidden layer. 
+
+\begin{pythoncode}
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras.layers import Dense
+    from tensorflow.keras.models import Model, Sequential
+    model = Sequential()
+    model.add(Dense(32, input_dim=100))
+    model.add(Dense(20))
+\end{pythoncode}
+
+Here we added an additional layer of 20 neurons.
+
+\vspace{10pt}
+
+A NN is a DAG, it's topology is called hypothesis space. Choosing a network topology means to constrain the hypothesis space to a specific series of tensor operations. So mapping input data to output data. We want to find the right combination of values for the weight of the tensors. 
+
+\vspace{10pt}
+
+After the topology we need to specify the loss function and the optimizer. The first must be minimized during the training and validation. The second is our way to implement the SGD minimization. 
+
+\vspace{10pt}
+
+\begin{itemize}
+    \item Binary classification \ra Binary cross entropy
+    \item Classification \ra Cross entropy
+    \item Regression \ra MSE 
+\end{itemize}
+
+\vspace{10pt}
+
+First keras model
+
+\begin{pythoncode}
+    from tensorflow.keras.datasets import imdb
+    (train_data, train_labels), (test_data, test_labels) = imdb.load_data( num_words=10000)
+\end{pythoncode}
+
+We can either use an embedding layer or one-hot encoding the words to vectorise our reviews. We should remove the most common and useless words like the, a, and  and such.
+
+
+

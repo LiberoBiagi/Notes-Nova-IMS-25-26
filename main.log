@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  20 DEC 2025 09:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.8)  16 MAR 2026 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,7 +448,51 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box86
 \enit@count@id=\count341
 \enitdp@description=\count342
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
+\t@pgfplots@toka=\toks49
+\t@pgfplots@tokb=\toks50
+\t@pgfplots@tokc=\toks51
+\pgfplots@tmpa=\dimen277
+\c@pgfplots@coordindex=\count343
+\c@pgfplots@scanlineindex=\count344
+ (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks52
+\t@pgf@tokb=\toks53
+\t@pgf@tokc=\toks54
+(C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count345
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count346
+\t@pgfplotstable@a=\toks55
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count347
+ (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen278
+\pgfdecoratedremainingdistance=\dimen279
+\pgfdecoratedinputsegmentcompleteddistance=\dimen280
+\pgfdecoratedinputsegmentremainingdistance=\dimen281
+\pgf@decorate@distancetomove=\dimen282
+\pgf@decorate@repeatstate=\count348
+\pgfdecorationsegmentamplitude=\dimen283
+\pgfdecorationsegmentlength=\dimen284
+)
+\tikz@lib@dec@box=\box87
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count349
+\pgfplots@xmin@reg=\dimen285
+\pgfplots@xmax@reg=\dimen286
+\pgfplots@ymin@reg=\dimen287
+\pgfplots@ymax@reg=\dimen288
+\pgfplots@zmin@reg=\dimen289
+\pgfplots@zmax@reg=\dimen290
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip55
 
@@ -457,59 +501,59 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2024/11/17 v2.01 AMS text
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks49
-\ex@=\dimen277
+\@emptytoks=\toks56
+\ex@=\dimen291
 )) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen278
+\pmbraise@=\dimen292
 ) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count343
+\inf@bad=\count350
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count344
-\leftroot@=\count345
+\uproot@=\count351
+\leftroot@=\count352
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count346
-\DOTSCASE@=\count347
+\classnum@=\count353
+\DOTSCASE@=\count354
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box87
-\strutbox@=\box88
+\Mathstrutbox@=\box88
+\strutbox@=\box89
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen279
+\big@size=\dimen293
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count348
+\macc@depth=\count355
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count349
+\c@MaxMatrixCols=\count356
 \dotsspace@=\muskip17
-\c@parentequation=\count350
-\dspbrk@lvl=\count351
-\tag@help=\toks50
-\row@=\count352
-\column@=\count353
-\maxfields@=\count354
-\andhelp@=\toks51
-\eqnshift@=\dimen280
-\alignsep@=\dimen281
-\tagshift@=\dimen282
-\tagwidth@=\dimen283
-\totwidth@=\dimen284
-\lineht@=\dimen285
-\@envbody=\toks52
+\c@parentequation=\count357
+\dspbrk@lvl=\count358
+\tag@help=\toks57
+\row@=\count359
+\column@=\count360
+\maxfields@=\count361
+\andhelp@=\toks58
+\eqnshift@=\dimen294
+\alignsep@=\dimen295
+\tagshift@=\dimen296
+\tagwidth@=\dimen297
+\totwidth@=\dimen298
+\lineht@=\dimen299
+\@envbody=\toks59
 \multlinegap=\skip56
 \multlinetaggap=\skip57
-\mathdisplay@stack=\toks53
+\mathdisplay@stack=\toks60
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 ) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
@@ -523,69 +567,25 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks54
-\thm@bodyfont=\toks55
-\thm@headfont=\toks56
-\thm@notefont=\toks57
-\thm@headpunct=\toks58
+\thm@style=\toks61
+\thm@bodyfont=\toks62
+\thm@headfont=\toks63
+\thm@notefont=\toks64
+\thm@headpunct=\toks65
 \thm@preskip=\skip58
 \thm@postskip=\skip59
 \thm@headsep=\skip60
-\dth@everypar=\toks59
+\dth@everypar=\toks66
 )
-\c@theorem=\count355
+\c@theorem=\count362
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count356
-\float@exts=\toks60
-\float@box=\box89
-\@float@everytoks=\toks61
-\@floatcapt=\box90
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
- (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
-\t@pgfplots@toka=\toks62
-\t@pgfplots@tokb=\toks63
-\t@pgfplots@tokc=\toks64
-\pgfplots@tmpa=\dimen286
-\c@pgfplots@coordindex=\count357
-\c@pgfplots@scanlineindex=\count358
- (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
-Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks65
-\t@pgf@tokb=\toks66
-\t@pgf@tokc=\toks67
-(C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count359
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count360
-\t@pgfplotstable@a=\toks68
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count361
- (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen287
-\pgfdecoratedremainingdistance=\dimen288
-\pgfdecoratedinputsegmentcompleteddistance=\dimen289
-\pgfdecoratedinputsegmentremainingdistance=\dimen290
-\pgf@decorate@distancetomove=\dimen291
-\pgf@decorate@repeatstate=\count362
-\pgfdecorationsegmentamplitude=\dimen292
-\pgfdecorationsegmentlength=\dimen293
-)
-\tikz@lib@dec@box=\box91
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count363
-\pgfplots@xmin@reg=\dimen294
-\pgfplots@xmax@reg=\dimen295
-\pgfplots@ymin@reg=\dimen296
-\pgfplots@ymax@reg=\dimen297
-\pgfplots@zmin@reg=\dimen298
-\pgfplots@zmax@reg=\dimen299
-) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
- (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
-File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.statistics.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+\c@float@type=\count363
+\float@exts=\toks67
+\float@box=\box90
+\@float@everytoks=\toks68
+\@floatcapt=\box91
+) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.statistics.code.tex) (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 51.
 \cftparskip=\skip61
@@ -742,30 +742,30 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip92
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 133.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 138.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (main.aux (Courses/data.aux) (Courses/programming.aux) (Courses/ML.aux) (Courses/Stat.aux) (Courses/database.aux))
+) (main.aux (Courses/ethics.aux) (Courses/cifo.aux) (Courses/bigdata.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count385
@@ -822,38 +822,38 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 \c@lstlisting=\count391
-Package hyperref Info: Link coloring ON on input line 133.
+Package hyperref Info: Link coloring ON on input line 138.
 (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 140.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 140.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 140.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 140.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 140.
+(Font)              <12> on input line 145.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 140.
+(Font)              <8> on input line 145.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 140.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 140.
+(Font)              <6> on input line 145.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 145.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (main.toc
@@ -867,429 +867,104 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [1
 
-{C:/Users/liber/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
-
-[2])
+{C:/Users/liber/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
 
 
-[3]
-\openout2 = `Courses/data.aux'.
+[2]
+\openout2 = `Courses/ethics.aux'.
 
- (Courses/data.tex
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 20.
+ (Courses/ethics.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 11.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[4
+[3
 
-{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+
+[4]
 
 [5]
 
-[6]
+[6])
 
 [7]
+\openout2 = `Courses/cifo.aux'.
 
-[8{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+ (Courses/cifo.tex
+
+[8
+
+
+
+{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 
 [9]
 
-[10{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+[10]
 
 [11]
 
-[12]
+[12{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}])
 
 [13]
+\openout2 = `Courses/bigdata.aux'.
 
-[14{C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+ (Courses/bigdata.tex
+
+[14
+
+
+
+]
 
 [15]
 
 [16]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1009.
-
-
-[17]
-
-[18])
-
-[19]
-\openout2 = `Courses/programming.aux'.
-
- (Courses/programming.tex (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 235.
  (C:\Users\liber\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[20
+[17]
 
+[18]
 
+[19]
 
-]
-
-[21]
-
-[22]
-
-[23]
-
-[24]
-
-[25]
-
-[26]
-
-[27]
-
-[28]
-
-[29]
-
-[30])
-
-[31]
-\openout2 = `Courses/ML.aux'.
-
- (Courses/ML.tex
-
-[32
-
-
-
-]
-
-[33]
-
-[34]
-<Courses/Images/L2.png, id=1137, 380.622pt x 298.11375pt>
-File: Courses/Images/L2.png Graphic file (type png)
-<use Courses/Images/L2.png>
-Package pdftex.def Info: Courses/Images/L2.png  used on input line 285.
-(pdftex.def)             Requested size: 380.62105pt x 298.11302pt.
-
-
-[35]
-<Courses/Images/L1.png, id=1149, 368.577pt x 305.943pt>
-File: Courses/Images/L1.png Graphic file (type png)
-<use Courses/Images/L1.png>
-Package pdftex.def Info: Courses/Images/L1.png  used on input line 295.
-(pdftex.def)             Requested size: 368.57608pt x 305.94223pt.
-
-
-[36 <./Courses/Images/L2.png> <./Courses/Images/L1.png>]
-
-[37]
-
-[38]
-
-[39]
-
-[40]
-
-[41]
-
-[42]
-
-[43]
-
-[44]
-
-[45]
-
-[46]
-
-[47]
-
-[48]
-<Courses/Images/ensemble tree.png, id=1255, 720.89325pt x 424.58624pt>
-File: Courses/Images/ensemble tree.png Graphic file (type png)
-<use Courses/Images/ensemble tree.png>
-Package pdftex.def Info: Courses/Images/ensemble tree.png  used on input line 1284.
-(pdftex.def)             Requested size: 483.69684pt x 284.88594pt.
-
-
-[49 <./Courses/Images/ensemble tree.png>]
-
-[50]
-
-[51]
-<Courses/Images/svm.png, id=1277, 290.2845pt x 302.3295pt>
-File: Courses/Images/svm.png Graphic file (type png)
-<use Courses/Images/svm.png>
-Package pdftex.def Info: Courses/Images/svm.png  used on input line 1451.
-(pdftex.def)             Requested size: 142.26378pt x 148.1658pt.
-
-
-[52 <./Courses/Images/svm.png>]
-
-[53]
-
-[54])
-
-[55]
-\openout2 = `Courses/Stat.aux'.
-
- (Courses/Stat.tex
-Package pgfplots info on input line 65: Using 'lua backend=false' for axis: x coord trafo unsupported.
-
-
-[56
-
-
-
-]
-
-[57]
-
-[58]
-
-[59]
-
-[60]
-
-[61]
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-[]\T1/lmr/bx/n/10 Research ques-
- []
-
-
-Underfull \hbox (badness 2469) in paragraph at lines 612--612
-[]\T1/lmr/bx/n/10 Alternative Hy-
+[20]
+Overfull \hbox (7.34174pt too wide) in paragraph at lines 405--406
+[]\T1/lmr/bx/n/10 Overview: \T1/lmr/m/n/10 A tool de-signed for ef-fi-ciently trans-fer-ring bulk data be-tween \T1/lmr/bx/n/10 Re-la-tional Databases \T1/lmr/m/n/10 (RDBMS)
  []
 
 
 
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 679--679
-[]\T1/lmr/bx/n/10 Research ques-
- []
+[21])
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 679--679
-\T1/lmr/m/n/10 proportion dif-fer-ent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 679--679
-\T1/lmr/m/n/10 proportion greater
- []
-
-
-Underfull \hbox (badness 2469) in paragraph at lines 683--683
-[]\T1/lmr/bx/n/10 Alternative Hy-
- []
-
-
-
-[63]
-
-[64]
-
-[65]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[66]
-
-[67]
-
-[68]
-
-[69]
-
-[70]
-
-[71]
-Overfull \hbox (27.41563pt too wide) detected at line 1497
-[][]
- []
-
-
-
-[72]
-
-[73]
-
-[74]
-Underfull \hbox (badness 10000) in paragraph at lines 1774--1775
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1792--1793
-
- []
-
-
-
-[75]
-Underfull \hbox (badness 10000) in paragraph at lines 1844--1846
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1919--1920
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1924--1925
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1929--1930
-
- []
-
-
-
-[76]
-
-[77]
-
-[78]
-<Courses/Images/simple dag.png, id=1477, 97.5645pt x 70.46326pt>
-File: Courses/Images/simple dag.png Graphic file (type png)
-<use Courses/Images/simple dag.png>
-Package pdftex.def Info: Courses/Images/simple dag.png  used on input line 2126.
-(pdftex.def)             Requested size: 142.26378pt x 102.74753pt.
-<Courses/Images/backdoor.png, id=1478, 93.951pt x 63.23625pt>
-File: Courses/Images/backdoor.png Graphic file (type png)
-<use Courses/Images/backdoor.png>
-Package pdftex.def Info: Courses/Images/backdoor.png  used on input line 2133.
-(pdftex.def)             Requested size: 142.26378pt x 95.76788pt.
-
-
-[79 <./Courses/Images/simple dag.png>]
-<Courses/Images/unobserved.png, id=1493, 91.542pt x 66.2475pt>
-File: Courses/Images/unobserved.png Graphic file (type png)
-<use Courses/Images/unobserved.png>
-Package pdftex.def Info: Courses/Images/unobserved.png  used on input line 2138.
-(pdftex.def)             Requested size: 142.26378pt x 102.96559pt.
-<Courses/Images/other dag.png, id=1494, 89.133pt x 67.452pt>
-File: Courses/Images/other dag.png Graphic file (type png)
-<use Courses/Images/other dag.png>
-Package pdftex.def Info: Courses/Images/other dag.png  used on input line 2142.
-(pdftex.def)             Requested size: 142.26378pt x 107.66808pt.
-<Courses/Images/examples colliders.png, id=1495, 389.65575pt x 140.32425pt>
-File: Courses/Images/examples colliders.png Graphic file (type png)
-<use Courses/Images/examples colliders.png>
-Package pdftex.def Info: Courses/Images/examples colliders.png  used on input line 2158.
-(pdftex.def)             Requested size: 341.43306pt x 122.96541pt.
-
-
-[80 <./Courses/Images/backdoor.png> <./Courses/Images/unobserved.png> <./Courses/Images/other dag.png> <./Courses/Images/examples colliders.png>]
-
-[81])
-
-[82]
-\openout2 = `Courses/database.aux'.
-
- (Courses/database.tex
-
-[83
-
-
-
-]
-<Courses/Images/dbms structure.png, id=1524, 738.3585pt x 393.26926pt>
-File: Courses/Images/dbms structure.png Graphic file (type png)
-<use Courses/Images/dbms structure.png>
-Package pdftex.def Info: Courses/Images/dbms structure.png  used on input line 80.
-(pdftex.def)             Requested size: 455.24408pt x 242.47424pt.
-
-
-[84 <./Courses/Images/dbms structure.png>]
-<Courses/Images/structure erd.png, id=1530, 646.21425pt x 509.5035pt>
-File: Courses/Images/structure erd.png Graphic file (type png)
-<use Courses/Images/structure erd.png>
-Package pdftex.def Info: Courses/Images/structure erd.png  used on input line 129.
-(pdftex.def)             Requested size: 227.62204pt x 179.46394pt.
-<Courses/Images/basic crows.png, id=1531, 784.1295pt x 343.88475pt>
-File: Courses/Images/basic crows.png Graphic file (type png)
-<use Courses/Images/basic crows.png>
-Package pdftex.def Info: Courses/Images/basic crows.png  used on input line 131.
-(pdftex.def)             Requested size: 227.62204pt x 99.82372pt.
-<Courses/Images/multiplicities.png, id=1532, 602.25pt x 254.75175pt>
-File: Courses/Images/multiplicities.png Graphic file (type png)
-<use Courses/Images/multiplicities.png>
-Package pdftex.def Info: Courses/Images/multiplicities.png  used on input line 141.
-(pdftex.def)             Requested size: 170.71652pt x 72.21239pt.
-<Courses/Images/options.png, id=1534, 585.98924pt x 280.6485pt>
-File: Courses/Images/options.png Graphic file (type png)
-<use Courses/Images/options.png>
-Package pdftex.def Info: Courses/Images/options.png  used on input line 142.
-(pdftex.def)             Requested size: 170.71652pt x 81.75854pt.
-
-
-[85 <./Courses/Images/structure erd.png> <./Courses/Images/basic crows.png> <./Courses/Images/multiplicities.png> <./Courses/Images/options.png>]
-
-[86]
-
-[87]
-
-[88]
-
-[89]
-
-[90]
-
-[91]
-
-[92]
-
-[93]
-
-[94]
-
-[95]
-<Courses/Images/nosql.png, id=1592, 767.86874pt x 448.67625pt>
-File: Courses/Images/nosql.png Graphic file (type png)
-<use Courses/Images/nosql.png>
-Package pdftex.def Info: Courses/Images/nosql.png  used on input line 764.
-(pdftex.def)             Requested size: 284.52756pt x 166.25407pt.
-
-
-[96 <./Courses/Images/nosql.png>]
-<Courses/Images/cap theorem.png, id=1605, 560.69475pt x 194.52675pt>
-File: Courses/Images/cap theorem.png Graphic file (type png)
-<use Courses/Images/cap theorem.png>
-Package pdftex.def Info: Courses/Images/cap theorem.png  used on input line 796.
-(pdftex.def)             Requested size: 284.52756pt x 98.71458pt.
-)
-
-[97 <./Courses/Images/cap theorem.png>] (main.aux (Courses/data.aux) (Courses/programming.aux) (Courses/ML.aux) (Courses/Stat.aux) (Courses/database.aux))
+[22] (main.aux (Courses/ethics.aux) (Courses/cifo.aux) (Courses/bigdata.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6D36645BC2A8EA71227FECE9C652228C;16378.
+(rerunfilecheck)             Checksum: 59FAFD7698571BD0F62F959897BA8393;9576.
  ) 
 Here is how much of TeX's memory you used:
- 45863 strings out of 468130
- 1109646 string characters out of 5430633
- 2278332 words of memory out of 5000000
- 72970 multiletter control sequences out of 15000+600000
- 715152 words of font info for 108 fonts, out of 8000000 for 9000
+ 44240 strings out of 468130
+ 1086303 string characters out of 5430633
+ 1598691 words of memory out of 5000000
+ 72057 multiletter control sequences out of 15000+600000
+ 689772 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,17n,121p,1670b,2241s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (97 pages, 1888552 bytes).
+ 116i,11n,121p,2008b,2030s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/liber/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (22 pages, 378972 bytes).
 PDF statistics:
- 1881 PDF objects out of 2073 (max. 8388607)
- 815 named destinations out of 1000 (max. 500000)
- 945 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 532 PDF objects out of 1000 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
