@@ -4,7 +4,7 @@
 
 Definitions to start the course 
 \begin{itemize}
-    \item \textbf{Problem} \ra Task to be solved automatically (finde the maximum number in a list)
+    \item \textbf{Problem} \ra Task to be solved automatically (find the maximum number in a list)
     \item \textbf{Algorithm} \ra Process to solve a problem, set of precise and not ambiguous actions that all together will allow us to reach the solution
     \item \textbf{Program} \ra Translation of an algorithm into a programming language
 \end{itemize}
@@ -12,8 +12,8 @@ Definitions to start the course
 Motivation
 
 \begin{itemize}
-    \item In classical computational methods we start from a problem and we have a human being that imagines an algorithm (problem solving, it's creative and informal). Then software engineers will put the ideas into a computer in order to get a program (implementation, it's automatic and not creative). 
-    \item We need computational intelligence because traditional methods in many case fail, usually on the first step. We can have many problems where imaging solutions or algorithms it's either impossible or very hard for human being to imagine a solution. This is the case of \textbf{complex problems}
+    \item In classical computational methods we start from a problem, and we have a human being that imagines an algorithm (problem-solving, it's creative and informal). Then software engineers will put the ideas into a computer in order to get a program (implementation, it's automatic and not creative). 
+    \item We need computational intelligence because traditional methods in many cases fail, usually on the first step. We can have many problems where imaging solutions or algorithms it's either impossible or very hard for human being to imagine a solution. This is the case of \textbf{complex problems}
 \end{itemize}
 
 
@@ -25,7 +25,7 @@ Some examples of complex problems
     \item Driving a robot in a 3-D space 
 \end{itemize}
 
-Our idea is to give computers or informatic systems the ability to learn autonomously how to solve a problem. We define \textbf{learning} as improving something by means of experience. Those computers can also understand that the generated solution in not good enough and so they should understand a better way to find the optimal solution. 
+Our idea is to give computers or informatic systems the ability to learn autonomously how to solve a problem. We define \textbf{learning} as improving something by means of experience. Those computers can also understand that the generated solution in not good enough, and so they should understand a better way to find the optimal solution. 
 
 \vspace{10pt}
 
@@ -33,7 +33,7 @@ One of the most famous ways to improve those computers are bio-inspired algorith
 
 \vspace{10pt}
 
-One category of complex problems are the so called optimization problems. Even though they are complex they are easy to comprehend and to analyze.
+One category of complex problems are the so-called optimization problems. Even though they are complex they are easy to comprehend and to analyze.
 
 Informally solving an optimization problem means to find the best solution(s) in a typically huge set of possible alternative solutions. We are able to find if something is a solution and to evaluate the quality of the solution with respect to the others. More formally an optimization problem is a pair of objects S and f where
 \begin{itemize}
@@ -53,7 +53,7 @@ f(x^\ast) \geq f(y) \quad \forall y \in S.
 f(x^\ast) \leq f(y) \quad \forall y \in S.
 \]
 
-To solve these kind of problems we can use an optimization algorithm, a machine that is able to output multiple solutions (iterative machine). 
+To solve this kind of problems we can use an optimization algorithm, a machine that is able to output multiple solutions (iterative machine). 
 
 \vspace{10pt}
 
@@ -87,7 +87,7 @@ x can be either a global optimum or a local one, we want to find the global(s) o
 
 \vspace{10pt}
 
-To find the solution we will use some optimization algorithm, by definition an optimization algorithm is an iterative methos that at the end of each iteration returns a solution \begin{math}
+To find the solution we will use some optimization algorithm, by definition an optimization algorithm is an iterative method that at the end of each iteration returns a solution \begin{math}
     \in 
 \end{math} S. One of the usual algorithm is \textbf{Random search}. 
 
@@ -103,13 +103,13 @@ $A_1$ and $A_2$ have identical expected performance.
 
 The consequences of this theorem are that
 \begin{enumerate}
-    \item It is impossible to have an algorithm that is better than all the others an all possible problems (no super algorithm can exist).
+    \item It is impossible to have an algorithm that is better than all the others and on all possible problems (no super algorithm can exist).
     \item Given a problem it can't exist an automatic method to find the best algorithm. Then we need to test, experiment and use our prior knowledge.
 \end{enumerate}
 
 \vspace{10pt}
 
-Now we will see some algorithms. We start with \textbf{Hill climbing}. Before anything we need to clarify that we can't find every possible solution so we need to use certain starting points.
+Now we will see some algorithms. We start with \textbf{Hill climbing}. Before anything we need to clarify that we can't find every possible solution, so we need to use certain starting points.
 
 \vspace{10pt}
 
@@ -140,11 +140,11 @@ This process is repeated iteratively until a stopping criterion is met.
     \item Neighborhood = the students around the selected student
 \end{itemize}
 
-\textbf{Local otpimum} \ra given an optimization problem (S, f) a local optimum is a solution x such that $\forall y \in N(x), f(x)$ is better than $f(y)$. By definition hill climbing will return a local optimum with no guarantee that it will also be global. We can find the global optimum by expanding the radius or by trying more initializations
+\textbf{Local optimum} \ra given an optimization problem (S, f) a local optimum is a solution x such that $\forall y \in N(x), f(x)$ is better than $f(y)$. By definition hill climbing will return a local optimum with no guarantee that it will also be global. We can find the global optimum by expanding the radius or by trying more initialization
 
 \vspace{10pt}
 
-In pseudo code (general case)
+In pseudocode (general case)
 
 \begin{enumerate}
     \item Initialize the current solution $x$ (typically at random).
@@ -153,13 +153,13 @@ In pseudo code (general case)
         \item Generate a neighbor $y$ of $x$.
         \item If $f(y)$ is better than or equal to $f(x)$, set $x := y$.
     \end{enumerate}
-    until for all neighbors $y$ of $x$, $f(y)$ is worse than $f(x)$.
+    Until for all neighbors $y$ of $x$, $f(y)$ is worse than $f(x)$.
     \item Return $x$.
 \end{enumerate}
 
 In strict hill climbing we change the point only if the fitness is strictly better than the previous. With this setting we can have an infinite iteration between 2 equal points. We can set a timeout if we see the same points n times. 
 
-Tabu search can help the search by using memory, avoid the already checked points. 
+Taboo search can help the search by using memory, avoid the already checked points. 
 
 \vspace{10pt}
 
@@ -178,7 +178,7 @@ Tabu search can help the search by using memory, avoid the already checked point
 We produce a plot
 
 \begin{itemize}
-    \item X \ra all solutions produced ordered ny their neighborhood
+    \item X \ra all solutions produced ordered by their neighborhood
     \item Y \ra all the fitness values
 \end{itemize}
 
@@ -220,19 +220,19 @@ We produce a plot
 \caption{Fitness landscape for $S=\{0,\dots,15\}$ with neighborhood $|i-j|=1$.}
 \end{figure}
 
-With the fitness landscape we can find the difficult of the problem. A very smooth one is usually of a simple problem while a very obscillating one will be probably more difficult.
+With the fitness landscape we can find the difficulty of the problem. A very smooth one is usually of a simple problem while a very oscillating one will be probably more difficult.
 
 
 \subsection{Fitness landscape}
 
-In the last class we saw what is a fitness landscape. The plot in the 2-D setting is obtain by plotting on the axis
+In the last class we saw what is a fitness landscape. The plot in the 2-D setting is obtained by plotting on the axis
 
 \begin{itemize}
     \item Horizontal \ra All individual in the search space sorted according to the neighborhood
     \item Vertical \ra the fitness
 \end{itemize}
 
-Given an optimization problem (S, f) and a neighborhood N, a solution $x \in S$ is called a local otpimum if $\forall y \in N(x)$ f(y) is worse than f(x). By construction hill climbing will return a local optimum with no guarantee that it will also be a global otpimum.
+Given an optimization problem (S, f) and a neighborhood N, a solution $x \in S$ is called a local optimum if $\forall y \in N(x)$ f(y) is worse than f(x). By construction hill climbing will return a local optimum with no guarantee that it will also be a global optimum.
 
 \vspace{10pt} 
 
@@ -242,7 +242,7 @@ The fitness landscape gives a visual idea of how easy/hard is for an algorithm t
     \item Rugged \ra hard
 \end{itemize}
 
-But in practice we can't draw the landscape because the search space is humongous and the neighborhood is usually multidimensional.
+But in practice we can't draw the landscape because the search space is humongous, and the neighborhood is usually multidimensional.
 
 \vspace{10pt}
 
@@ -260,11 +260,11 @@ Example
 \end{axis}
 \end{tikzpicture}
 
-Here hill climbing will arrive at the global otpimum.
+Here hill climbing will arrive at the global optimum.
 
 \vspace{10pt}
 
-If we want to look for the number of 1 in the binary code of i we can encounter problems and stay stuck in a local otpimum without being able to find the global one. 
+If we want to look for the number of 1 in the binary code of i we can encounter problems and stay stuck in a local optimum without being able to find the global one. 
 \vspace{10pt}
 
 The definition of neighborhood is not fixed, we can define it in 2 ways.
@@ -399,7 +399,7 @@ Questions to answer
 \begin{enumerate}
     \item What are the solutions ?
     \item How it is convenient to represent the solutions?
-    \item Whats the fitness?
+    \item What's the fitness?
     \item If the algorithm is neighborhood based, then what is the neighborhood?
 \end{enumerate}
 
@@ -409,15 +409,15 @@ Answers
 
 \begin{enumerate}
     \item All the subsets of the set of investments
-    \item As sequences of values, a string of bits of length N. The array will have a pair cost, profit. We use 0s and 1s to "1-hot encoding" them. 
-    \item The sum for all the indexes where x is 1 of all the profits. $\sum\limits_{i:x[i]=1} p[i]$. We have a maximization problem. We only care about solutions that have a cost less than the budget. The fitness if this condition is not accepted we have -1 or 0 as fitness. Another way to define a non good fitness is to use the negative sum of the costs such that the distance ourselves as much as possible from a bad solution. 
-    \item The neighborhood is obtained here using the bitflip operator. 
+    \item As sequences of values, a string of bits of length N. The array will have a pair of  cost and profit. We use 0s and 1s to "1-hot encoding" them. 
+    \item The sum for all the indexes where x is 1 of all the profits. $\sum\limits_{i:x[i]=1} p[i]$. We have a maximization problem. We only care about solutions that have a cost less than the budget. The fitness if this condition is not accepted we have -1 or 0 as fitness. Another way to define a non-good fitness is to use the negative sum of the costs such that the distance ourselves as much as possible from a bad solution. 
+    \item The neighborhood is obtained here using the bit flip operator. 
 \end{enumerate}
 
 
 \vspace{10pt}
 
-Test case 2 \ra Travel sale person: given N cities for which we know all the pairwise distances between themselves. Give one of these cities there is one specific one that is called home. We want the cyclic path that starts from home, visits all the cities once and only once and terminates at home using the sortest possible path.
+Test case 2 \ra Travel-sale-person: given N cities for which we know all the pairwise distances between themselves. Give one of these cities there is one specific one that is called home. We want the cyclic path that starts from home, visits all the cities once and only once and terminates at home using the shortest possible path.
 
 \vspace{10pt}
 
