@@ -5,10 +5,10 @@
 
 \subsubsection{Law, moral and ethics}
 
-Ethics is really old but the application in data science is fairly recent. Ethics is really important in fields where the consequences are really important, like healthcare. 
+Ethics as concept is old, but the application in data science is fairly recent. Ethics is really important in fields where the consequences are really important, like healthcare. 
 
 \begin{itemize}
-    \item \textbf{Ethics} \ra Moral principles, branch of philosophy that studies the basis of moral. Set of rules of conduct. Aims to direct the individual towards good practices. Individual perfecting. Based on the relationship of the individual with himself. Ethical rules are filtered by the individual and it's conscience. Violation of ethical rules can lead to self-imposed sanctions. FOcussed on duties and obligations but not on rights.
+    \item \textbf{Ethics} \ra Moral principles, branch of philosophy that studies the basis of moral. Set of rules of conduct. Aims to direct the individual towards good practices. Individual perfecting. Based on the relationship of the individual with himself. Ethical rules are filtered by the individual, and it's conscience. Violation of ethical rules can lead to self-imposed sanctions. FOcussed on duties and obligations but not on rights.
     \item \textbf{Law} \ra Aims to regulate the essential relationships within a given society. Harmonious interactions and to solve conflicts between different people. Laws don't need individual conscience to be applied. Legal violations will lead to loss of liberties and life. Equal focus on duties and rights.
 \end{itemize}
 
@@ -496,22 +496,146 @@ Best practices
 
 \subsubsection{Responsible use of predictive analytics and machine learning}
 
+Predictive analytics can have different kinds of societal impacts, both on the negative and on the positive side
+
+\begin{itemize}
+    \item Positive \ra Enhance healthcare
+    \item Negative \ra Over-reliance 
+\end{itemize}
 
 
+Over-reliance can cause
+\begin{itemize}
+    \item Loss of human oversight
+    \item Automation bias
+    \item Context ignorance
+\end{itemize}
 
+To fight over-reliance we can
+\begin{itemize}
+    \item Maintain a human-in-the-loop approach
+    \item Algorithm audits
+    \item Empower human judgement
+\end{itemize}
 
+Algorithms entail by design some flaws. Some targets that we want to reach are the maximization of fairness and transparency and the minimization of the effects of bias.
 
+\vspace{10pt}
 
+Some ethical dilemmas that arise in this context of automation are
+\begin{itemize}
+    \item The impact on employment
+    \item Accountability of the decisions
+    \item Risks for privacy
+\end{itemize}
 
-
-
-
+Some examples of success  stories in automation yadda yadda.
 
 
 
 \subsubsection{Transparency and accountability}
 
+
+Transparency and accountability are two very important elements if we want to ensure that our discipline is ethical, trustworthy and aligned with societal values. 
+
+\vspace{10pt}
+
+Explainability and transparency are important because we want to be able to understand why a decision was made and to go back if we find some bias. The challenges to take care of are
+
+\begin{itemize}
+    \item ML models usually are black boxes
+    \item We lack data provenance
+    \item Stakeholders might not be able to understand how the models work
+\end{itemize}
+
+Explainability can be obtained by
+\begin{itemize}
+    \item Add interpretability layers
+    \item Add transparency during the collection of the data
+    \item Communicate effectively with the stakeholders
+\end{itemize}
+
+To ensure accountability we can work with different frameworks
+
+\begin{enumerate}
+    \item Accountability mechanisms \ra audits and impact assessment
+    \item Regulatory compliance \ra data protection laws, algorithmic accountability acts, cultural accountability
+    \item Governance models \ra Ethics committee, cultural principles (ISO and NIST), stakeholder involvements, building trust, risk mitigation and regulatory compliance
+\end{enumerate}
+
+Practitioners can be recommended to do
+\begin{itemize}
+    \item Adopt explainability by design
+    \item Conduct audits regularly
+    \item Engage with stakeholders
+    \item Establish clear governance policies
+\end{itemize}
+
+
+
+
 \subsubsection{Ethical decision-making process}
+
+
+Now we see some courses of action to make ethical decisions.
+
+\vspace{10pt}
+
+Structured framework for individuals and organizations to evaluate ethical dilemmas and determine the most appropriate course of action
+
+\begin{enumerate}
+    \item Recognize the ethical issue
+    \item Gather relevant information
+    \item Evaluate alternative actions
+    \item Make a decision
+    \item Implement the decision
+    \item Reflect on the outcome
+\end{enumerate}
+
+Kohlberg proposed a theory of moral development divided into 3 levels and 6 steps
+
+\begin{enumerate}[label=\textbf{Level \Roman*}:]
+    \item Pre-conventional morality
+    \begin{enumerate}[label=\arabic*.]
+        \item Obedience and punishment orientation $\rightarrow$ maintain personal safety
+        \item Instrumental relativist orientation $\rightarrow$ gain rewards
+    \end{enumerate}
+    
+    \item Conventional morality 
+    \begin{enumerate}[label=\arabic*., resume] 
+        \item Good interpersonal relationships $\rightarrow$ conforming to societal norms
+        \item Maintaining social order $\rightarrow$ promote stability
+    \end{enumerate}
+    
+    \item Post-conventional morality
+    \begin{enumerate}[label=\arabic*., resume]
+        \item Social contract and individual rights $\rightarrow$ greater good
+        \item Universal ethical principles $\rightarrow$ conscience
+    \end{enumerate}
+\end{enumerate}
+
+The application of the kinds of ethics can be done on certain parts of our previously defined framework
+
+\begin{itemize}
+    \item Utilitarianism \ra focus on the outcomes, we look for actions that mitigate harm and maximise benefits. We might justify morally questionable means.
+    \item Deontology \ra we want to ensure that our moral principles are respected. We obtain clear and on-negotiable ethical boundaries. We can be stuck if we are too rigid, consequently we will disregard possible beneficial outcomes if we don't want to compromise on certain principles
+    \item Virtue ethics \ra We accept implementations delays if it means that we are respecting ethical principles. This can lead to trust between the organization and the stakeholders. The decision-making process will be values-based but nonetheless subjective
+\end{itemize}
+
+In substance Utilitarianism is to evaluate the situation, Deontology to ensure that ethical boundaries are not crossed and virtue ethics to guide to actions aligned with the organization's identity and principles. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsubsection{Promoting ethical culture}
 
@@ -519,8 +643,54 @@ Best practices
 
 
 
+\subsection{Cybersecurity}
+
+We check if we have been hacked. F for who has a red mark.
+
+\vspace{10pt}
+
+\subsubsection{Basic definitions}
+
+Cyber comes from the Greek word Kubernetes, meaning governor. The term cybernetic was coined by Norbert Wiener. Cyber was then put at the start of many words to relate them to the digital world. Another term is the cyberspace, a word used to describe the whole virtual world and its environments. 
+
+\vspace{10pt}
+
+In the cyberspace we can have both art and criminal activities, a very big space.
+
+We define Cybersecurity as the ability to protect or defend the use of cyberspace from cyberattacks. 
+
+\vspace{10pt}
+
+Now that information is not stored on only physical devices we have to protect it in new ways since it can be accessed with many more devices. 
+
+\vspace{10pt}
+
+The three key objectives (CIA) are
+
+\begin{enumerate}
+    \item Confidentiality
+    \item Integrity
+    \item Availability
+\end{enumerate}
+
+We can define between cyber and information security. The first is for every kind of information stored in cyber systems while the second for information in general.
 
 
+
+\subsubsection{The evolution of Cybersecurity}
+
+The evolution of Cybersecurity followed the following steps
+
+\begin{itemize}
+    \item Antivirus
+    \item Firewalls and encryption
+    \item SOCs and Endpoint detection
+    \item Zero trust and AI-Augmented defense
+\end{itemize}
+
+The first cyberattack was made in 1988 by Robert Morris. Bro talks about conspiracy theories. 
+
+\subsubsection{Fundamentals of cyber risks}
 
 
 
