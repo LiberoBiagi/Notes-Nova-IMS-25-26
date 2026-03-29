@@ -439,6 +439,257 @@ Answers
 
 
 
+\subsection{Simulated annealing}
+
+Simulated annealing is similar to hill climbing, but we add the concept of probability. This can lead to a worse fitness. The idea is that we can explore more possible solutions and obtain a better optimum. But we can also miss some of those. Sometimes can be convenient that our current solution is a random neighbor.
+
+\vspace{10pt}
+
+We can start by defining our current solution $x$ and our candidate neighbor $y$.
+
+The probability $P(y)$ is defined as:
+
+\[
+P(y) = 
+\begin{cases} 
+    1 & \text{if } f(y) \leq f(x) \\
+    \exp\left(-\frac{|f(x) - f(y)|}{C}\right) & \text{otherwise}
+\end{cases}
+\]
+
+Where $C$ is a control parameter $C > 0$.
+
+\vspace{10pt}
+
+Afterward, we look for a random number in the interval $[0, 1]$ and if this number is $< P(y)$, we accept the move.
+
+We start with a large $C$, and we decrease it during the algorithm. $C$ will tend to $0$ without reaching it, following the cooling schedule:
+
+\[
+C = \frac{C}{h}
+\]
+
+Simulated annealing follows the following structure
+
+\begin{enumerate}
+    \item Initialize the current solution x (typically at random)
+    \item Initialize C and L
+    \item Repeat the following until termination
+    \begin{itemize}
+        \item Repeat L times
+        \begin{itemize}
+            \item Create a random neighbor x of y
+            \item Accept or not y with a certain probability 
+        \end{itemize}
+    \item Update C (not mandatory update L)
+    
+    \end{itemize}
+    \item Return x (or the best solution so far)
+\end{enumerate}
+
+We terminate when we have found a certain condition that can be either a good enough solution or we have run a prefixed maximum number of iterations of the external loop.
+
+\vspace{10pt}
+
+\textbf{Example}
+
+\begin{itemize}
+    \item S = {i $\in \mathbb{N} | 0 \le i \le 15$ }
+    \item $\forall i \in S, f(i) = $ number of 1s in the binary code of i
+    \item Maximization
+    \item Neighborhood \ra x and y are neighbors $\iff |x-y|=1$
+\end{itemize}
+
+\noindent
+\textbf{Step 1: Initialization} \\
+$x = 5$ (random initialization) $\rightarrow bin(5) = 101$ \\
+$f(x) = 2$ \\
+$N(x) = \{4, 6\}$ \\
+\textbf{Assume} $y = 6$ (random neighbor) $\rightarrow bin(6) = 110$ \\
+$f(y) = 2$ \\
+Since $f(y) \leq f(x)$, we accept the move: $x = 6$.
+
+\vspace{10pt}
+
+\noindent
+\textbf{Step 2: Iteration} \\
+$x = 6$ \\
+$N(x) = \{5, 7\}$ \\
+\textbf{Assume} $y = 7$ (random neighbor) $\rightarrow bin(7) = 111$ \\
+$f(y) = 3$ \\
+Since $f(y) > f(x)$, we calculate the acceptance probability.
+
+\vspace{10pt}
+
+\noindent
+\textbf{Step 3: Probability Calculation} \\
+Assume in this phase the control parameter is $C = 1$. \\
+Current state: $f(x) = 3$ \\
+Candidate neighbor: $f(y) = 1$
+
+\[
+P(acc \ y) = \exp\left( -\frac{|3 - 1|}{1} \right) = e^{-2} \simeq 0.13
+\]
+
+\vspace{5pt}
+\noindent
+This value represents a \textit{``large'' probability} for this phase of the algorithm.
+
+\vspace{10pt}
+
+\textbf{Theorem of asymptotic convergence of simulated annealing}
+
+\vspace{10pt}
+
+Given an optimization problem (S, f) and an appropriate neighborhood, if we decrease C so that it tends to 0 (without reaching it):
+
+\noindent
+As $t \rightarrow \infty$ and $C \rightarrow 0$, we analyze the convergence:
+
+\[
+\lim_{C \to 0} q_i(C) = \frac{1}{|S_{opt}|} \cdot g(i)
+\]
+
+\noindent
+\textbf{Where:}
+\begin{itemize}
+    \item $q_i(C)$ is the probability that Simulated Annealing (SA) will stabilize on solution $i$ with control parameter $C$.
+    \item $S_{opt}$ is the set of global optima.
+    \item $g(i)$ is an indicator function defined as:
+\end{itemize}
+
+\[
+g(i) = 
+\begin{cases} 
+    1 & \text{if } i \in S_{opt} \\
+    0 & \text{otherwise}
+\end{cases}
+\]
+
+\vspace{10pt}
+\noindent
+This limit shows that as the temperature $C$ approaches zero, the probability of being in a state $i$ becomes uniform over the set of global optimal solutions and zero elsewhere. To be sure to find a global optimum we should execute the process a very large number of times.
+
+\vspace{10pt}
+
+The parameters L and C are respectively Large and slow (decreasing)
+
+\subsection{Genetic algorithms}
+
+Genetic algorithms share similarities with simulated annealing
+
+\begin{itemize}
+    \item Both are optimization algorithms
+    \item Both allow to look for good solutions without an exhaustive analysis of the search space
+    \item Both start from random solutions and improve their quality iteratively
+\end{itemize} 
+
+The differences on the other hand are
+
+\begin{itemize}
+    \item The solutions (individuals) that are considered at a time are more than 1 (population)
+    \item Inspired by the theory of evolution of Charles Darwin
+    \item Individuals must be represented by strings of constant length
+\end{itemize}
 
 
+The theory of evolution has the following key elements
+\begin{itemize}
+    \item Reproduction
+    \item Ability of adaptation
+    \item Inheritance
+    \item Variation
+    \item Competition
+\end{itemize}
 
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        node distance=2cm and 3cm,
+        block/.style={rectangle, draw, minimum width=3cm, minimum height=2cm, align=center, thick},
+        arrow/.style={-Stealth, thick}
+    ]
+
+    % Nodi (I box del tuo disegno)
+    \node[block] (P) {Pop. $P$ \\ of $N$ individuals};
+    \node[block, right=of P] (P1) {Pop. $P'$ \\ of $N$ individ.};
+    \node[block, below right=1cm and 0.5cm of P] (P2) {Pop. $P''$ \\ of $N$ indiv.};
+
+    % Etichette sopra i box
+    \node[above=0.1cm of P1, font=\small] {POP. OF PARENTS};
+    \node[below=0.1cm of P2, font=\small] {POP. OF OFFSPRING};
+
+    % Frecce con etichette
+    \draw[arrow] (P) -- node[above] {SELECTION} node[below] {PROCESS} (P1);
+    
+    \draw[arrow] (P1.south) .. controls +(0,-2) and +(2,0) .. 
+        node[right, align=left, xshift=0.5cm] {REPRODUCTION \\ WITH VARIATION \\ (CROSSOVER AND \\ MUTATION)} (P2.east);
+        
+    \draw[arrow] (P2.west) .. controls +(-2,0) and +(0,-2) .. 
+        node[left, xshift=-0.5cm] {$P := P''$} (P.south);
+
+    \end{tikzpicture}
+    \caption{Genetic Algorithms Cycle}
+\end{figure}
+
+\noindent
+The \textbf{Selection Process} maps the initial population $P$ to the intermediate population $P'$ (parents):
+
+\vspace{10pt}
+
+\begin{center}
+    Population $P$ \hspace{2cm} Population $P'$ \\
+    \vspace{5pt}
+    \fbox{
+        \begin{tabular}{cc}
+            A & B \\
+            C & D
+        \end{tabular}
+    }
+    \hspace{1.5cm} $\xrightarrow{\text{Selection}}$ \hspace{1.5cm}
+    \fbox{
+        \begin{tabular}{cc}
+            A & A \\
+            A & C
+        \end{tabular}
+    }
+\end{center}
+
+\vspace{10pt}
+
+\noindent
+In this example, individual \textbf{A} is selected three times due to its high fitness, \textbf{C} is selected once, while \textbf{B} and \textbf{D} are discarded.
+
+\vspace{10pt}
+
+The selection process is made of iterations of N independent executions of a selection algorithm. The selection algorithm chooses 1 solution from a population P.
+
+The algorithm has the following general principles
+
+\begin{enumerate}
+    \item It's probabilistic
+    \item Given any pair of independent A and B in P if f(A) is better than f(B) then A has a bigger probability than B of being selected
+    \item No individual in P has a probability equal to 0 of being chosen
+\end{enumerate}
+
+\noindent
+\textbf{Fitness Proportionate (Roulette Wheel) Selection} \\
+Given $N$ individuals in population $P = \{1, 2, \dots, N\}$, for each $i = 1, 2, \dots, N$ we define the probability of selection as:
+
+\[
+P(sel \ i) = \frac{f_i}{\sum_{j \in P} f_j}
+\]
+
+\vspace{10pt}
+
+\noindent
+\textbf{Mechanism ($N = 4$):} \\
+This method acts like a roulette wheel where the area of each slice $i$ is proportional to its fitness $f_i$. 
+Individuals with higher fitness occupy a larger portion of the wheel, increasing their chances of being selected when the wheel is "spun" (represented by a random number $U \in [0, 1]$).
+
+\begin{itemize}
+    \item $i_1, i_2, i_3, i_4$: Individuals in the population.
+    \item $U$: Random pointer used to select the individual.
+\end{itemize}
+
+Other ways that can be used are \textbf{Ranking} and \textbf{Tournament} selection.

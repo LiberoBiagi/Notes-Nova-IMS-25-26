@@ -262,6 +262,11 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
@@ -465,6 +470,8 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx7.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmbx5.tfm
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmr9.tfm
 INPUT ./Courses/bigdata.tex
 INPUT ./Courses/bigdata.tex
 OUTPUT Courses/bigdata.aux
@@ -475,7 +482,6 @@ INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT main.aux
 INPUT ./Courses/ethics.aux
 INPUT ./Courses/ethics.aux
@@ -498,6 +504,7 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmr7.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb
