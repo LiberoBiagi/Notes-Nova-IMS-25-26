@@ -28,33 +28,40 @@
 \contentsline {subsection}{\numberline {2.5}Practical applications of Hill climbing}{19}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Simulated annealing}{20}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Genetic algorithms}{22}{subsection.2.7}%
-\contentsline {section}{\numberline {3}Big data analytics}{24}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Introduction}{24}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}What is Big data}{24}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Data sources}{24}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}The Vs of Big data}{25}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}The Big data ecosystem}{25}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Applications of Big data}{25}{subsubsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.2}Distributed storage, ecosystems and programming paradigms}{26}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Distributed storage and file systems}{26}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Distributed computing models}{26}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}The big data ecosystem}{26}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Programming paradigms}{27}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Distributed parallel processing and the map reduce paradigm}{27}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Distributed parallel processing}{27}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}The MapReduce paradigm}{27}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Case study}{27}{subsubsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.4}The Hadoop ecosystem}{28}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Hadoop}{28}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Filesystems and HDFS basics}{28}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Hadoop execution model}{28}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Optimization and refinements}{29}{subsubsection.3.4.4}%
-\contentsline {subsubsection}{\numberline {3.4.5}YARN and scheduling}{30}{subsubsection.3.4.5}%
-\contentsline {subsubsection}{\numberline {3.4.6}Hive, Pig and Sqoop}{30}{subsubsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.5}SPARK}{31}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Introduction to Apache Spark}{31}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Spark Architecture}{31}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}The RDD Abstraction (Resilient Distributed Dataset)}{31}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Programming Model: Transformations vs. Actions}{32}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}PySpark Code Examples}{32}{subsubsection.3.5.5}%
-\contentsline {subsubsection}{\numberline {3.5.6}RDD vs. DataFrames}{32}{subsubsection.3.5.6}%
+\contentsline {subsection}{\numberline {2.8}Again Genetic algorithms}{23}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}Fitness proportionate selection}{24}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}Ranking selection}{24}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}Tournament selection}{24}{subsubsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.9}Crossover and mutation}{25}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Crossover}{25}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Mutation}{25}{subsubsection.2.9.2}%
+\contentsline {section}{\numberline {3}Big data analytics}{26}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introduction}{26}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}What is Big data}{26}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Data sources}{26}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}The Vs of Big data}{27}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}The Big data ecosystem}{27}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Applications of Big data}{27}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Distributed storage, ecosystems and programming paradigms}{28}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Distributed storage and file systems}{28}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Distributed computing models}{28}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}The big data ecosystem}{28}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Programming paradigms}{29}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Distributed parallel processing and the map reduce paradigm}{29}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Distributed parallel processing}{29}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}The MapReduce paradigm}{29}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Case study}{29}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Hadoop ecosystem}{30}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Hadoop}{30}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Filesystems and HDFS basics}{30}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Hadoop execution model}{30}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Optimization and refinements}{31}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}YARN and scheduling}{32}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Hive, Pig and Sqoop}{32}{subsubsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.5}SPARK}{33}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Introduction to Apache Spark}{33}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Spark Architecture}{33}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}The RDD Abstraction (Resilient Distributed Dataset)}{33}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Programming Model: Transformations vs. Actions}{34}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}PySpark Code Examples}{34}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}RDD vs. DataFrames}{34}{subsubsection.3.5.6}%

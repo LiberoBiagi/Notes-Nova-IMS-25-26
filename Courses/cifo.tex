@@ -693,3 +693,278 @@ Individuals with higher fitness occupy a larger portion of the wheel, increasing
 \end{itemize}
 
 Other ways that can be used are \textbf{Ranking} and \textbf{Tournament} selection.
+
+
+
+
+\subsection{Again Genetic algorithms}
+
+We forgor something about simulated annealing. The theorem that we talked about miss something.
+
+Basically we can only use simulated annealing in an appropriate algorithm, but we didn't define what we meant by appropriate. 
+
+\vspace{10pt}
+
+From the part of asymptotic convergence. We must have a certain property \ra given any pair of solutions x and y it must be possible to build a sequence of solutions $a_1, a_2,..., a_n$ such that $\forall i = 1,2,3,...,n-1, a_i \text{ and } a_{i+1} $are neighbors. So $a_1=x$ and $a_n=y$. We say that the neighborhood is completely connected. 
+
+
+
+\vspace{10pt}
+
+Now going back to genetic algorithms.
+
+We start with a population P of N individuals. N is a hyperparameter. We modify the population with two steps.
+\begin{itemize}
+    \item Selection phase \ra We have a population P' of N individuals
+    \item Reproduction with Variation phase \ra We have a population P'' of N individuals
+\end{itemize}
+
+The new current population will be P'' and we repeat the two phases until we reach a stopping criterion, and we select as solution the best individual in the final P. 
+
+We create new individuals (offspring) via means of crossover and mutation.
+
+\vspace{10pt}
+
+The idea behind this algorithm comes from the Darwinian ideas of adaptation, competition, reproductions, inheritance and variation. The first two are for the first phase, while the other 3 for the second one. The selection phase is an iteration of N independent executions of a selection algorithm where the objective is to choose one solution from a population of N solutions. 
+
+\vspace{10pt}
+
+Is important that the selection algorithm is probabilistic since we want to have different solutions every time. The probability of selecting a solution must be based on fitness. All individuals must have a non-zero probability of being selected. 
+
+\vspace{10pt}
+
+In this course we will talk about 3 main selection algorithms
+
+\subsubsection{Fitness proportionate selection}
+
+Also known as roulette wheel. We have a population of N individuals called 1, 2,..., n. For each i in 1, 2,..., n we have that the probability of selecting i we have $P(i) = \frac{f(i)}{\sum_{j \in P} f(j)}$. This is a maximization only algorithm, for minimization we can do 1 divided by fitness but if we have 0 fitness we use to add a constant to every possible value. 
+
+\vspace{10pt}
+
+The general take out concept is to adapt our solutions to every case. 
+
+
+\begin{tikzpicture}
+    % Definizione dei colori per i diversi individui
+    \def\colorA{orange!60}
+    \def\colorB{blue!40}
+    \def\colorC{green!50}
+    \def\colorD{red!40}
+
+    % Disegno delle fette (angoli calcolati in base alla fitness)
+    % Individuo 1 (40% -> 144 gradi)
+    \filldraw[fill=\colorA, draw=black] (0,0) -- (0:3) arc (0:144:3) -- cycle;
+    % Individuo 2 (25% -> 90 gradi)
+    \filldraw[fill=\colorB, draw=black] (0,0) -- (144:3) arc (144:234:3) -- cycle;
+    % Individuo 3 (20% -> 72 gradi)
+    \filldraw[fill=\colorC, draw=black] (0,0) -- (234:3) arc (234:306:3) -- cycle;
+    % Individuo 4 (15% -> 54 gradi)
+    \filldraw[fill=\colorD, draw=black] (0,0) -- (306:3) arc (306:360:3) -- cycle;
+
+    % Etichette centrali (Individui e Probabilità)
+    \node at (72:2) {\textbf{Ind. 1}};
+    \node at (72:1.5) {$P_1 = 0.40$};
+    
+    \node at (189:2) {\textbf{Ind. 2}};
+    \node at (180:1.5) {$P_2 = 0.25$};
+    
+    \node at (270:2) {\textbf{Ind. 3}};
+    \node at (270:1.5) {$P_3 = 0.20$};
+    
+    \node at (333:2) {\textbf{Ind. 4}};
+    \node at (333:1.5) {$P_4 = 0.15$};
+
+    % Disegno della freccia di selezione (Pointer)
+    \draw[line width=2pt, -stealth, red] (4,0) -- (3.2,0);
+    \node[anchor=west] at (4.1,0) {\textbf{Selection Point}};
+
+    % Titolo o decorazione centrale
+    \draw[fill=white, draw=black, thick] (0,0) circle (0.5);
+    \node at (0,0) {$f_i$};
+
+\end{tikzpicture}
+
+\subsubsection{Ranking selection}
+
+We follow this procedure
+
+\begin{enumerate}
+    \item Sort the individuals from the worst to the best based on fitness. 
+    \item We calculate the probability selection based on the indexes. So $P(i) = \frac{\text{index}}{\sum \text{indexes}} $
+\end{enumerate}
+
+This algorithm is not sensitive to fitness differences, we don't care about how much a certain individual is better than another one. We can generalize this algorithm by changing the function (now is linear) to have a logarithm, an exponential and so on. This can change the selection pressure. 
+
+
+\begin{tikzpicture}
+    % Definizione colori
+    \def\colorRankOne{blue!60}
+    \def\colorRankTwo{blue!45}
+    \def\colorRankThree{blue!30}
+    \def\colorRankFour{blue!15}
+
+    % Rappresentazione a "gradini" o Ruota basata su Rank
+    % Supponiamo 4 individui. Somma ranghi = 1+2+3+4 = 10.
+    % Spazi: 4/10 (144°), 3/10 (108°), 2/10 (72°), 1/10 (36°)
+
+    % Rank 1 (Il migliore) - 144 gradi
+    \filldraw[fill=\colorRankOne, draw=black] (0,0) -- (0:3) arc (0:144:3) -- cycle;
+    % Rank 2 - 108 gradi
+    \filldraw[fill=\colorRankTwo, draw=black] (0,0) -- (144:3) arc (144:252:3) -- cycle;
+    % Rank 3 - 72 gradi
+    \filldraw[fill=\colorRankThree, draw=black] (0,0) -- (252:3) arc (252:324:3) -- cycle;
+    % Rank 4 (Il peggiore) - 36 gradi
+    \filldraw[fill=\colorRankFour, draw=black] (0,0) -- (324:3) arc (324:360:3) -- cycle;
+
+    % Etichette
+    \node at (72:2.2) {\textbf{Rank 1}};
+    \node at (72:1.7) {$P = 0.4$};
+    
+    \node at (198:2.2) {\textbf{Rank 2}};
+    \node at (180:1.7) {$P = 0.3$};
+    
+    \node at (288:2.2) {\textbf{Rank 3}};
+    \node at (288:1.7) {$P = 0.2$};
+    
+    \node at (342:2.2) {\textbf{Rank 4}};
+    \node at (350:1.7) {$P = 0.1$};
+
+    % Pointer
+    \draw[line width=2pt, -stealth, gray] (4,0) -- (3.2,0);
+    \node[anchor=west] at (4.1,0) {Selection};
+
+    % Centro
+    \draw[fill=white] (0,0) circle (0.4);
+    \node at (0,0) {$\mathcal{R}$};
+
+\end{tikzpicture}
+
+\subsubsection{Tournament selection}
+
+We follow the following schema (To draw). 
+
+
+This can be considered as both random and deterministic.
+
+\begin{enumerate}
+    \item It is possible (in some cases) to not evaluate all the possible individual's fitness.  
+    \item We can change the selection pressure by changing the tournament size
+\end{enumerate}
+
+
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    individual/.style={rectangle, draw, fill=gray!10, minimum width=2cm, minimum height=0.8cm, rounded corners},
+    winner/.style={rectangle, draw=green!60!black, fill=green!10, minimum width=2cm, minimum height=0.8cm, rounded corners, line width=1.5pt},
+    loser/.style={rectangle, draw=red!40, fill=red!5, minimum width=2cm, minimum height=0.8cm, rounded corners, dashed}
+]
+
+    % Titolo del Torneo
+    \node[font=\Large\bfseries] at (2.5, 2) {Tournament Selection ($k=3$)};
+
+    % Popolazione di sfondo (simbolica)
+    \draw[dashed, gray] (-1,-4.5) rectangle (1.5, 0.5);
+    \node[gray, rotate=90] at (-0.7,-2) {Population Pool};
+
+    % Individui estratti per il torneo
+    \node[individual] (ind1) at (3, 0) {Ind. A (Fit: 45)};
+    \node[individual] (ind2) at (3, -1.5) {Ind. B (Fit: 82)};
+    \node[individual] (ind3) at (3, -3) {Ind. C (Fit: 12)};
+
+    % Frecce di estrazione dalla pool
+    \draw[latex-, shorten <=2pt] (ind1.west) -- (1.5, 0);
+    \draw[latex-, shorten <=2pt] (ind2.west) -- (1.5, -1.5);
+    \draw[latex-, shorten <=2pt] (ind3.west) -- (1.5, -3);
+
+    % Nodo del Vincitore
+    \node[winner] (winner) at (10, -1.5) {Winner: Ind. B};
+
+    % Frecce del confronto
+    \draw[-Stealth, thick] (ind1.east) -- (winner.west) node[midway, above, sloped, font=\small] {loss};
+    \draw[-Stealth, ultra thick, green!60!black] (ind2.east) -- (winner.west) node[midway, above, font=\small] {Best Fitness};
+    \draw[-Stealth, thick] (ind3.east) -- (winner.west) node[midway, below, sloped, font=\small] {loss};
+
+    % Nota sulla Pressione Selettiva
+    \node[draw, fill=yellow!10, text width=4cm, font=\footnotesize, anchor=north] at (5, -4.5) {
+        \textbf{Logic:} \\
+        Pick $k$ individuals at random. \\
+        The one with the highest fitness wins the tournament.
+    };
+
+\end{tikzpicture}
+
+
+\subsection{Crossover and mutation}
+
+Now we talk about the part about reproduction with variation. Selection depends only on phenotype while crossover and mutation only on genotype (DNA structure).
+
+
+\subsubsection{Crossover}
+
+We start by taking two solutions that are in P'. 
+
+\begin{tikzpicture}
+    \tikzset{bit/.style={rectangle, draw=black, minimum size=0.9cm, font=\ttfamily\bfseries}}
+    \tikzset{highlight1/.style={fill=blue!20}}
+    \tikzset{highlight2/.style={fill=orange!20}}
+
+    % ── PARENTS ──────────────────────────────────────────
+    \node[anchor=west, font=\bfseries] at (0, 2.2) {Parents};
+
+    % Etichette riga
+    \node[anchor=east] at (0.8, 1.3) {P1:};
+    \node[anchor=east] at (0.8, 0.2) {P2:};
+
+    % P1
+    \foreach \val [count=\i] in {1,0,1,1,0,0,1} {
+        \node[bit, highlight1] at (\i*0.9+0.8, 1.3) {\val};
+    }
+
+    % P2
+    \foreach \val [count=\i] in {0,1,0,0,1,1,0} {
+        \node[bit, highlight2] at (\i*0.9+0.8, 0.2) {\val};
+    }
+
+    % ── LINEA DI TAGLIO (tra 3° e 4° bit) ───────────────
+    % Centro del 3° bit: x = 3*0.9+0.8 = 3.5
+    % Centro del 4° bit: x = 4*0.9+0.8 = 4.4
+    % Punto di taglio: (3.5+4.4)/2 = 3.95
+    \draw[red, ultra thick, dashed] (3.95, 2.8) -- (3.95, -3.5);
+    \node[below, font=\small\sffamily, text=red] at (3.95, -4.0) {Cutting point};
+
+    % ── OFFSPRING ────────────────────────────────────────
+    \node[anchor=west, font=\bfseries] at (0, -1.2) {Offspring};
+
+    % Etichette riga
+    \node[anchor=east] at (0.8, -1.8) {F1:};
+    \node[anchor=east] at (0.8, -2.9) {F2:};
+
+    % F1: primi 3 da P1 + ultimi 4 da P2
+    \foreach \val [count=\i] in {1,0,1} {
+        \node[bit, highlight1] at (\i*0.9+0.8, -1.8) {\val};
+    }
+    \foreach \val [count=\i] in {0,1,1,0} {
+        \node[bit, highlight2] at (\i*0.9+3.5, -1.8) {\val};
+    }
+
+    % F2: primi 3 da P2 + ultimi 4 da P1
+    \foreach \val [count=\i] in {0,1,0} {
+        \node[bit, highlight2] at (\i*0.9+0.8, -2.9) {\val};
+    }
+    \foreach \val [count=\i] in {1,0,0,1} {
+        \node[bit, highlight1] at (\i*0.9+3.5, -2.9) {\val};
+    }
+
+\end{tikzpicture}
+
+
+This example is for 1-point crossover, but we can have multiple cutting points. 
+
+
+\subsubsection{Mutation}
+
+For each character we change it with a given probability of mutation (another hyperparameter)
+
+
+
+
