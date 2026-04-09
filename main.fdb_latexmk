@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1775482948.49929 "/home/libero/Desktop/Appunti/main.tex" "main.pdf" "main" 1775482951.85026 0
+["pdflatex"] 1775747262.03075 "/home/libero/Desktop/Appunti/main.tex" "main.pdf" "main" 1775747265.52131 0
   "/etc/texmf/web2c/texmf.cnf" 1774274963.51512 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/libero/Desktop/Appunti/main.tex" 1774747221.32986 4338 a3c9df1473a87d3794eb523195581993 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -287,16 +287,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1774274999.43548 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1774275055 8212203 591f3182e6e5f1b19a2dcc5afb02f587 ""
-  "Courses/bigdata.aux" 1775482951.5765 5008 f6d95a4ea49b176cdf4bde1c38591787 "pdflatex"
+  "Courses/bigdata.aux" 1775747265.2306 5008 5808e21407995ed744c7e8bb1f480fc2 "pdflatex"
   "Courses/bigdata.tex" 1773047666 23875 4382ab3a018b2ba2211b6b03cf6642c5 ""
-  "Courses/cifo.aux" 1775482951.45249 3071 b9fb59802465698ef7a77c80fae3ab42 "pdflatex"
-  "Courses/cifo.tex" 1775482948.11574 34660 97cd48eed1c1ecab7c2765b80214a6fc ""
-  "Courses/ethics.aux" 1775482950.61947 3902 03e3e01cf374f692b8bc63439e6a19c6 "pdflatex"
-  "Courses/ethics.tex" 1774714929.82552 27415 4bae8a86bb50d94500ed2457feeff4c6 ""
-  "main.aux" 1775482951.5765 246 75fad931310986c82e1f6670c8cb23a2 "pdflatex"
-  "main.out" 1775482951.5815 12763 839ee1aa5bae87014864b0b29fed9c2c "pdflatex"
+  "Courses/cifo.aux" 1775747265.1036 3071 c9b8dc5d818b3163713289867a960880 "pdflatex"
+  "Courses/cifo.tex" 1775482973.59525 34660 97cd48eed1c1ecab7c2765b80214a6fc ""
+  "Courses/ethics.aux" 1775747264.19663 3902 fc8586286439353f00afc28e39a0a22f "pdflatex"
+  "Courses/ethics.tex" 1775747258.18182 34549 7a59451cb8bacd9dd181b55d1a489a32 ""
+  "main.aux" 1775747265.2306 246 f8a4b0a8332d13aa220dec7af31d145d "pdflatex"
+  "main.out" 1775747265.2356 12763 839ee1aa5bae87014864b0b29fed9c2c "pdflatex"
   "main.tex" 1774747221.32986 4338 a3c9df1473a87d3794eb523195581993 ""
-  "main.toc" 1775482951.58259 6515 521485478c03ea8126de426e3ac482b8 "pdflatex"
+  "main.toc" 1775747265.23647 6515 4192afb4ebc6f749750e6fee749b42f1 "pdflatex"
   (generated)
   "Courses/bigdata.aux"
   "Courses/cifo.aux"
