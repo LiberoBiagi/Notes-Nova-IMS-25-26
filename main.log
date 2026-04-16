@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.23)  13 APR 2026 11:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.23)  16 APR 2026 14:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,27 +924,27 @@ Overfull \hbox (7.34174pt too wide) in paragraph at lines 405--406
 []\T1/lmr/bx/n/10 Overview: \T1/lmr/m/n/10 A tool de-signed for ef-fi-ciently trans-fer-ring bulk data be-tween \T1/lmr/bx/n/10 Re-la-tional Databases \T1/lmr/m/n/10 (RDBMS)
  []
 
-[34]) [35] (./main.aux (./Courses/ethics.aux) (./Courses/cifo.aux) (./Courses/bigdata.aux))
+[34] [35] [36] [37] [38] [39] [40]) [41] (./main.aux (./Courses/ethics.aux) (./Courses/cifo.aux) (./Courses/bigdata.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 818BB4CC2579DD8E4A6227B82ED5C225;11560.
+(rerunfilecheck)             Checksum: ECE1F6F8B56BDAE319F482FE3CF2A0F5;12563.
  ) 
 Here is how much of TeX's memory you used:
- 44823 strings out of 474222
- 1092266 string characters out of 5748733
+ 44875 strings out of 474222
+ 1092848 string characters out of 5748733
  1948975 words of memory out of 5000000
- 66198 multiletter control sequences out of 15000+600000
+ 66206 multiletter control sequences out of 15000+600000
  637112 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,12n,121p,1985b,2032s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,12n,121p,1988b,2032s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 484056 bytes).
+Output written on main.pdf (41 pages, 492684 bytes).
 PDF statistics:
- 749 PDF objects out of 1000 (max. 8388607)
- 655 compressed objects within 7 object streams
- 203 named destinations out of 1000 (max. 500000)
- 501 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 757 compressed objects within 8 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 565 words of extra memory for PDF output out of 10000 (max. 10000000)
 

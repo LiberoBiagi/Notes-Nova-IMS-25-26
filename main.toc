@@ -48,14 +48,22 @@
 \contentsline {subsection}{\numberline {3.4}The Hadoop ecosystem}{31}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Hadoop}{31}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Filesystems and HDFS basics}{31}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Hadoop execution model}{31}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.3}Hadoop's execution model}{31}{subsubsection.3.4.3}%
 \contentsline {subsubsection}{\numberline {3.4.4}Optimization and refinements}{32}{subsubsection.3.4.4}%
 \contentsline {subsubsection}{\numberline {3.4.5}YARN and scheduling}{33}{subsubsection.3.4.5}%
 \contentsline {subsubsection}{\numberline {3.4.6}Hive, Pig and Sqoop}{33}{subsubsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.5}SPARK}{34}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Introduction to Apache Spark}{34}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Spark Architecture}{34}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}The RDD Abstraction (Resilient Distributed Dataset)}{34}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Programming Model: Transformations vs. Actions}{35}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}PySpark Code Examples}{35}{subsubsection.3.5.5}%
-\contentsline {subsubsection}{\numberline {3.5.6}RDD vs. DataFrames}{35}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}Summary}{34}{subsubsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.5}Introduction to Spark}{34}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}DataFrames in Spark and Spark-Hadoop relationship}{36}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Recap}{36}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}DataFrames}{36}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Datasets}{38}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Spark-Hadoop relationship}{38}{subsubsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.7}Spark in Cloud-based computational environments}{38}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.7.1}Databricks}{39}{subsubsection.3.7.1}%
+\contentsline {subsubsection}{\numberline {3.7.2}AWS Elastic MapReduce (EMR)}{40}{subsubsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.3}Google Cloud Dataproc}{40}{subsubsection.3.7.3}%
+\contentsline {subsubsection}{\numberline {3.7.4}Azure HDInsight}{40}{subsubsection.3.7.4}%
+\contentsline {subsubsection}{\numberline {3.7.5}Kubernetes}{40}{subsubsection.3.7.5}%
+\contentsline {subsubsection}{\numberline {3.7.6}Google Colab}{41}{subsubsection.3.7.6}%
+\contentsline {subsubsection}{\numberline {3.7.7}Lightning AI}{41}{subsubsection.3.7.7}%
