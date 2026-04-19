@@ -67,3 +67,7 @@
 \contentsline {subsubsection}{\numberline {3.7.5}Kubernetes}{40}{subsubsection.3.7.5}%
 \contentsline {subsubsection}{\numberline {3.7.6}Google Colab}{41}{subsubsection.3.7.6}%
 \contentsline {subsubsection}{\numberline {3.7.7}Lightning AI}{41}{subsubsection.3.7.7}%
+\contentsline {subsection}{\numberline {3.8}Performance and data engineering in Spark}{41}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Why Spark jobs are slow}{41}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}How Spark optimizes queries}{41}{subsubsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.3}Data engineering for performance}{41}{subsubsection.3.8.3}%

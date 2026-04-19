@@ -921,3 +921,117 @@ Lightning AI supports GPU acceleration, auto-scaling and monitoring and Jupyter-
 
 
 
+\subsection{Performance and data engineering in Spark}
+
+\subsubsection{Why Spark jobs are slow}
+
+Different ways of running a query can have different results in terms of execution cost. Useless aggregations can result in worse performance, the use of filters can be advisable. In Spark moving data is more expensive than computing on it and by this Shuffle is the main bottleneck in terms of performance.
+
+\vspace{10pt}
+
+The golden rule in Spark to improve efficiency is to reduce data and movement, this can be achieved by
+
+\begin{itemize}
+    \item Filtering early
+    \item Select only needed columns
+    \item Avoid unnecessary shuffle
+\end{itemize}
+
+
+\subsubsection{How Spark optimizes queries}
+
+Spark does not optimize the queries as written instead it analyzes the query, it rewrites and chooses the most efficient execution. Every Spark job follows the pipeline
+
+\begin{enumerate}
+    \item Query
+    \item Plan
+    \item Optimize
+    \item Execute
+\end{enumerate}
+
+Usually Spark tries to reduce rows early, reduce columns, minimize shuffle with the goal of reducing data movement. For the Join Spark chooses Broadcast Join or Shuffle Join.
+
+
+
+\subsubsection{Data engineering for performance}
+
+Good performance is obtained by following these principles
+
+\begin{enumerate}
+    \item Reduce data size
+    \item Avoid shuffle
+    \item Use efficient formats
+    \item Reuse computation
+    \item Use correct join strategy
+\end{enumerate}
+
+One good format is Parquet, different from CSV because is columnar, compressed and fast. Data can be organized by key and by partition pruning.
+
+Another useful element is caching, we save some results in the memory to reuse them. We should avoid caching if we are in a one-time use setting, data are very large and the memory is limited. 
+
+\vspace{10pt}
+
+Joins are expensive operations, and we can have two types of them
+
+\begin{itemize}
+    \item Broadcast \ra Small table sent to all nodes, large table stays distributed
+    \item Shuffle \ra Large tables require redistribution, expensive because data move across nodes
+\end{itemize}
+
+If we apply repartition we have shuffling, with coalesce we don't.
+
+\vspace{10pt}
+
+Uneven data distribution can also be problematic since if one node is overloaded we can have a bottleneck. To handle this case
+
+\begin{itemize}
+    \item Repartition
+    \item Filtering early
+    \item Key salting
+\end{itemize}
+
+The size of the files has an impact too, too many small files means overhead while too large files means poor parallelism.
+
+\vspace{10pt}
+
+The ETL pipeline 
+
+\begin{enumerate}
+    \item Raw
+    \item Clean
+    \item Transform
+    \item Store
+    \item Query
+\end{enumerate}
+
+Real pipeline example
+
+\begin{enumerate}
+    \item S3
+    \item Spark
+    \item Parquet
+    \item BI
+\end{enumerate}
+
+The processing of the data can be periodic (Batch) or in real-time (streaming).
+
+\vspace{10pt}
+
+Performance checklist
+
+\begin{itemize}
+    \item Use Parquet
+    \item Filter early
+    \item Select needed columns
+    \item Avoid shuffle
+    \item Use caching wisely
+\end{itemize}
+
+Common mistakes
+
+\begin{itemize}
+    \item SELECT *
+    \item Too many joins
+    \item No partitioning
+    \item Ignoring skew
+\end{itemize}
