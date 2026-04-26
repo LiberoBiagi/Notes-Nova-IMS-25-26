@@ -1035,3 +1035,181 @@ Common mistakes
     \item No partitioning
     \item Ignoring skew
 \end{itemize}
+
+
+\subsection{Big data storage technologies and relation with Spark}
+
+
+\subsubsection{Intro to big data storage}
+
+Given the scale and diversity of big data we can't use traditional relational databases. The problems come from the volume, the velocity and the variety of this kind of data. We need a scalable, distributed and flexible way to store our data. Most modern solutions employ horizontal scalability, fault tolerance, flexible schema and integration with different engines like Spark and Hadoop. 
+
+\vspace{10pt}
+
+Recall that HDFS splits the data in block of 128 MB across nodes, and it's ideal for large sequential reads (batch analysis) but not for small and real-time queries. NoSQL technologies arose to handle these new workloads, we have the main 4 families:
+
+\begin{enumerate}
+    \item Key-value Stores
+    \item Document Stores
+    \item Column-family store
+    \item Graph databases
+\end{enumerate}
+
+Recall the CAP theorem, BASE and ACID principles from storing and retrieving. 
+
+\vspace{10pt}
+
+Since no single database fits every use case modern architectures combine multiple storage types, this approach is called polyglot persistence. 
+
+
+\subsubsection{Key-value DB}
+
+
+This is the simplest form of a NoSQL database. The data are stored as a pair key:value. It's optimized for constant-time lookups, it's schema-free and extremely fast. Some common systems are Redis, Amazon DynamoDB and Riak. They key must be unique, and the values can be of different types. Redis keeps the data in memory, so the operations will be very fast. 
+
+Some operations are 
+
+\begin{itemize}
+    \item SET key value \ra store data
+    \item GET key \ra retrieve
+    \item DEL key \ra delete
+    \item INCR key \ra increment counters
+    \item EXPIRE key seconds \ra set time-to-live 
+\end{itemize}
+
+
+Strengths
+\begin{itemize}
+    \item Extremely fast reads/writes
+    \item Simple data access model
+    \item Scales horizontally
+\end{itemize}
+
+Limitations
+\begin{itemize}
+    \item No complex queries and joins
+    \item Limited analytical capability
+\end{itemize}
+
+The best use cases are caching, gaming and high-traffic web apps. This approach generalizes the concept of Associative Keys to databases.
+
+
+
+
+\subsubsection{Document DB - MongoDB focus}
+
+This kind of databases store data as JSON-like documents. The schema is flexible, and we can easily query using fields and indexes. Some examples are MongoDB and Couchbase. It's ideal for semi-structured data such as catalogs, users and logs. MongoDB is the most popular document database. It's open-source, widely adopted and stores data and BSON (binary JSON). It balances performance, flexibility and scalability. Used by organizations like eBay, Forbes and CERN. 
+
+\vspace{10pt}
+
+The hierarchy is the following
+\begin{enumerate}
+    \item Database
+    \item Collections
+    \item Documents
+\end{enumerate}
+
+Even though the schema is not fixed we can still validate it. Every MongoDB document needs to have a '\_id'.
+
+\vspace{10pt}
+
+The usual operations are CRUD (create, read, update and delete)
+\begin{enumerate}
+    \item Insert
+    \item Read
+    \item Update
+    \item Delete
+\end{enumerate}
+
+Using indexes we can improve the query performance. Indexes can be
+\begin{itemize}
+    \item Single-field
+    \item Compound
+    \item Text and geo-indexes
+\end{itemize}
+
+The aggregation in MongoDB works like a pipeline with some common stages like \$match, \$group, \$sort and \$project.
+
+\vspace{10pt}
+
+Replication in MongoDB ensures data redundancy and fault tolerance by copying data across multiple servers, called replica sets. A replica is made of primary node (handles all write operations) and secondary node (replicate data from the primary asynchronously). If the primary fails, one secondary becomes the new primary (automatic failover) and the clients continue reading from any node. The benefits of this approach are high availability, fault tolerance, data redundancy and read scalability. 
+
+\vspace{10pt}
+
+Sharding is another tool where data are distributed across multiple servers (shards) so that no single node has to handle all the load or store all the data. 
+\begin{enumerate}
+    \item Data is split into chunks based on a shard key
+    \item Each chunk is stored on a different shard
+    \item A config server keeps track of where each chunk resides
+    \item A mongo's router direct client queries to the appropriate shard
+\end{enumerate}
+
+The benefits are horizontal scalability, balance of read and write load across nodes and geographical distribution is supported.
+
+\vspace{10pt}
+
+In production, we usually combine replication ad sharding to make global scalability possible. Each shard is a replica set, this provides both scalability and fault tolerance. 
+
+\vspace{10pt}
+
+MongoDB has some strengths (flexible schema, JSON integration, great for rapid prototyping and rich aggregation features) and limitations (joins are limited, ACID are weaker, and we require index management)
+
+\vspace{10pt}
+
+The main ecosystems related to MongoDB are 
+\begin{itemize}
+    \item MongoDB Atlas
+    \item Compass
+    \item BI Connector
+    \item Spark Connector
+\end{itemize}
+
+
+\subsubsection{Wide column DB}
+
+This typology of database store data in rows and dynamic columns grouped into column families. It's inspired by Google's Bigtable. Some examples are Apache Cassandra and Apache HBase. The first one doesn't rely on Hadoop while the second one does. Wide columns DB are best for high-write, time-series and IoT data. 
+
+The table structure is like relational databases but with more flexibility and scalability. Each row will have a different set of columns, and columns are grouped into column families rather than fixed tables (like a nested key-value store). Data is stored by column rather than by row. This structure is optimized for aggregations on specific columns. The usual Cassandra operations are Create, Insert, Query and Delete. 
+
+\vspace{10pt}
+
+As always we have clusters (here peer-to-peer with no master node), data is replicated across nodes for fault tolerance, and we have tunable consistency (one, quorum and all). We can see Wide columns DBs as a collection of spreadsheets where each row have its own set of columns depending on what data it has. 
+
+\vspace{10pt}
+
+Some design guidelines are 
+\begin{itemize}
+    \item Denormalize instead of join
+    \item Use both column names and column values to store data
+    \item Model an entity with a single row
+\end{itemize}
+
+
+\subsubsection{Graph DB}
+
+Graph databases store data as nodes, edges and properties in order to traverse relationships easily. Some examples are Neo4j, JanusGraph and TigerGraph. With this structure queries can be fast and intuitive. Some easy common use cases are social networks, fraud detection, knowledge graphs and recommendation systems. 
+
+
+\subsubsection{Other DB types} 
+
+We also have additional kinds of databases like
+\begin{itemize}
+    \item Search databases \ra Optimized for text search and analytics. Some examples are Elasticsearch and Apache Solr. Inverted indexes are used for fast keywords and full-text queries. These are great for log analytics, monitoring and search engines.
+    \item Time-series databases \ra Specialized for sequential data. Some examples are InfluxDB, TimescaleDB and Prometheus. This structure is optimized for regular insertions and aggregations over time windows
+    \item Vector databases \ra New generation databases for AI and similarity search. Some examples are Pinecone, Weaviate, Milvus and FAISS. The database stores embeddings of our numerical vectors and can be used for semantic search, recommendation and image/text similarity.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

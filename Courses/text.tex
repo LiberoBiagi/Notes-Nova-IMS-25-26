@@ -1,0 +1,63 @@
+\section{Text mining}
+
+\subsection{Introduction to NLP}
+
+Natural language processing is an area of computer science and artificial intelligence that is concerned with the interaction between computers and humans in natural language. The ultimate goal of NLP is to enable computers to understand language as well as we do.
+
+Some applications of NLP can be machine translation, dialog systems, search engines and predictive keyboards with autocorrectors. 
+
+\subsection{Challenges of natural language}
+
+Natural language is made of two main elements:
+\begin{enumerate}
+    \item Grammatical system, with its own rules, used by people to communicate
+    \item Natural evolution due to people communication (like new words or regularization of the language)
+\end{enumerate}
+
+\vspace{10pt}
+
+Some problems in its analysis can arise from the variability of it. Different sentences can have the same meaning (paraphrases) or a single sentence can have multiple meanings (ambiguity). NLP systems should also be able to generalize as much as possible (work in different languages), to achieve this we train it on a corpus. Since the system can encounter inputs that it never encountered (Out-of-Domain or Out-of-Vocabulary) we want to extend its knowledge to these new words or meanings.
+
+
+\subsection{The NLP pipeline}
+
+A typical NLP pipeline follows these steps: Corpus \ra Feature engineering \ra Task.
+
+\begin{itemize}
+    \item \textbf{Corpus} \ra collection of text organized into datasets. It can be made up of everything that is written in natural language. A collection of more than one corpus is called corpora. First we split the corpus into train, validation and test set (or we can use k-fold cross-validation)
+    \item \textbf{Feature Engineering} \ra we need a way to represent text in a way that a computer can understand it. The most basic way is the Bag-of-Words representation (glorified 1-Hot-encoding), it gives us a sparse representation of our documents.
+    \item \textbf{Task} \ra we can have multiple tasks like keyword extraction, text similarity, sentiment analysis and many more. Given two documents we can transform them into sparse vectors and compare them with simple distance metrics. If they share a lot of words they will be close to each other. This is the basic for multiple tasks. We can use euclidean distance ($D(a,b) = \sqrt{\sum_{i=1}^{n}(b_i-a_i)^2}$) to calculate the distance matrix and apply KNN to label our documents.
+\end{itemize}
+
+
+\subsection{Text preprocessing methods}
+
+Before applying BoW we need to define what's a word, this process is called \textbf{Tokenization}. We want to identify tokens (features in text), but it's not a trivial task. Some problems can arise from composed words and punctuation. It's also clear that with this kind of sparse representation we can encounter problems like the usual curse of dimensionality and the fact that we lose semantic relationships.
+
+\begin{itemize}
+    \item \text{Curse of dimensionality} \ra The total dimension of the BoW is the vocabulary size. Our model can easily overfit. We can use dimensionality reduction techniques.
+    \item \textbf{No semantic relationships} \ra BoW doesn't consider the semantic relationships between words since we discard the order and similar words can be considered as different features. 
+\end{itemize}
+
+\vspace{10pt}
+
+Following Zipf's law we know that some words have not a very big importance, but they are really common (the so-called stop words). Stop words presence means that we have more rules and more processing to apply. 
+
+We should also lowercase everything to reduce the vocabulary size (but take care of names) and normalize dates, numbers and names by either using regular expressions or applying a default token in their place.
+
+\vspace{10pt}
+
+We can also transform words in a way that if they represent the same meaning they are captured by the same token. This can reduce language inflection.
+Some ways are
+
+\begin{itemize}
+    \item Stemming \ra Remove the last characters to obtain a shorter form even if it has no meaning.
+    \item Lemmatization \ra Turns the words into their root word
+\end{itemize}
+
+We can also just consider certain type of words like verbs, nouns, adjectives and adverbs. 
+
+
+
+
+

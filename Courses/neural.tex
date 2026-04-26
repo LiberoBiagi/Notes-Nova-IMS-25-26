@@ -1,0 +1,235 @@
+\section{Neural and evolutionary learning}
+
+\subsection{Machine learning review}
+
+
+The traditional computational method involves the following pipeline: Problem \ra Algorithm \ra Program. When we encounter a problem for which it's difficult to come up with an algorithm we can go towards machine learning based approaches. In these approaches we try to give the computer the ability to learn how to solve those problems. 
+
+\vspace{10pt}
+
+A good way of learning is improving thanks to our own experience, a cycle where we do mistakes, we try to understand what was the mistake, why we did that mistake, and we try again while getting a reward whenever we do something good. Our systems will basically do this. In the context of machine learning we always try to learn a function.
+
+\vspace{10pt}
+
+The problems always involve a set of data and a function that tries to be as similar as possible the one that generated the initial set of data D. 
+
+\[
+\forall i \in \{1,2,\ldots,N\}, \quad
+\Phi(x_{i1}, x_{i2}, \ldots, x_{iM}) = y_i
+\]
+
+Where
+
+\begin{enumerate}
+    \item \textbf{$\Phi$} \ra is our target function
+    \item \textbf{D} \ra is our dataset
+    \item We call learn the process that allows us to find a function \textbf{f} that approximates \textbf{$\Phi$}
+    \item \textbf{f} \ra is the function returned by the learning process and is called data model
+    \item \textbf{$y_1, y_2,..., y_M$} \ra are called target values
+\end{enumerate}
+
+If the target values are known we talk about supervised learning, if they are unknown we are talking about unsupervised learning. Our function f should have good generalization ability (it behaves like $\Phi$ also with data that do not belong to D). This is a crucial concept in machine learning. 
+
+If this generalization ability is not good we say that f overfits the data, and this issue is known as overfitting. Generally we assume that our data are generated following a certain process and that we have knowledge hidden in our data. We want to learn this knowledge and build follow-up knowledge that can be used with data that are outside our training set. 
+
+\vspace{10pt}
+
+The process of learning can be applied to two main tasks:
+
+\begin{itemize}
+    \item Classification \ra The co-domain of the target values is a discrete set of limited dimensions called classes. We want to partition our data into these classes
+    \item Regression \ra We try to find a function that receives the data and tries to output a continuous value 
+\end{itemize}
+
+\vspace{10pt}
+
+When we receive new data in a supervised setting we apply the function to the new data, and we accept the result (prediction). In the case of unsupervised we insert our new datum inside the class that is most similar to it. 
+
+\subsubsection{Performance measures for regression}
+
+\begin{itemize}
+
+    \item \textbf{Mean Absolute Error (MAE)}
+    \[
+    MAE = \frac{1}{N}\sum_{i=1}^{N} |y_i - \hat{y}_i|
+    \]
+    where:
+    \begin{itemize}
+        \item $N$ = total number of observations
+        \item $y_i$ = actual (true) value of the $i$-th observation
+        \item $\hat{y}_i$ = predicted value of the $i$-th observation
+        \item $|y_i - \hat{y}_i|$ = absolute error between actual and predicted value
+    \end{itemize}
+
+    \item \textbf{Mean Squared Error (MSE)}
+    \[
+    MSE = \frac{1}{N}\sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+    \]
+    where:
+    \begin{itemize}
+        \item $N$ = total number of observations
+        \item $y_i$ = actual (true) value of the $i$-th observation
+        \item $\hat{y}_i$ = predicted value of the $i$-th observation
+        \item $(y_i - \hat{y}_i)^2$ = squared error between actual and predicted value
+    \end{itemize}
+
+    \item \textbf{Root Mean Squared Error (RMSE)}
+    \[
+    RMSE = \sqrt{\frac{1}{N}\sum_{i=1}^{N} (y_i - \hat{y}_i)^2}
+    \]
+    where:
+    \begin{itemize}
+        \item $N$ = total number of observations
+        \item $y_i$ = actual (true) value of the $i$-th observation
+        \item $\hat{y}_i$ = predicted value of the $i$-th observation
+        \item $(y_i - \hat{y}_i)^2$ = squared error
+        \item $\sqrt{\cdot}$ = square root operation
+    \end{itemize}
+
+    \item \textbf{Pearson Correlation Coefficient}
+    \[
+    r = \frac{\sum_{i=1}^{N}(x_i - \bar{x})(y_i - \bar{y})}
+    {\sqrt{\sum_{i=1}^{N}(x_i - \bar{x})^2}\sqrt{\sum_{i=1}^{N}(y_i - \bar{y})^2}}
+    \]
+    where:
+    \begin{itemize}
+        \item $N$ = total number of paired observations
+        \item $x_i$ = value of the first variable for the $i$-th observation
+        \item $y_i$ = value of the second variable for the $i$-th observation
+        \item $\bar{x}$ = mean value of variable $x$
+        \item $\bar{y}$ = mean value of variable $y$
+        \item $r$ = Pearson correlation coefficient
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{10pt}
+
+MAE is not very sensitive to outliers in comparison to MSE since it doesn't punish huge errors. MSE is more accurate than MAE since it highlights large errors over small ones. MSE is also differentiable, so it can help to find maximums and minimums more effectively but by squaring all the values some errors are extremized. We can use RMSE to reduce the impact of this last point.
+
+\begin{itemize}
+    \item MAE \ra when outliers are low 
+    \item MSE \ra when we have many outliers but not a lot of noise
+    \item RMSE \ra if our large errors affect a lot the model's performance 
+\end{itemize}
+
+\subsubsection{Performance measures for classification}
+
+
+\begin{itemize}
+
+    \item \textbf{Accuracy}
+    \[
+    Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
+    \]
+    where:
+    \begin{itemize}
+        \item $TP$ = true positives
+        \item $TN$ = true negatives
+        \item $FP$ = false positives
+        \item $FN$ = false negatives
+        \item $TP + TN + FP + FN$ = total number of predictions
+    \end{itemize}
+
+    \item \textbf{Precision}
+    \[
+    Precision = \frac{TP}{TP + FP}
+    \]
+    where:
+    \begin{itemize}
+        \item $TP$ = true positives
+        \item $FP$ = false positives
+        \item $TP + FP$ = total predicted positive instances
+    \end{itemize}
+
+    \item \textbf{Recall}
+    \[
+    Recall = \frac{TP}{TP + FN}
+    \]
+    where:
+    \begin{itemize}
+        \item $TP$ = true positives
+        \item $FN$ = false negatives
+        \item $TP + FN$ = total actual positive instances
+    \end{itemize}
+
+    \item \textbf{F1-Measure}
+    \[
+    F1 = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}
+    \]
+    where:
+    \begin{itemize}
+        \item $Precision$ = proportion of correctly predicted positive instances
+        \item $Recall$ = proportion of correctly identified actual positive instances
+        \item $F1$ = harmonic mean of Precision and Recall
+    \end{itemize}
+
+    \item \textbf{Cohen's Kappa Measure}
+    \[
+    \kappa = \frac{p_o - p_e}{1 - p_e}
+    \]
+    where:
+    \begin{itemize}
+        \item $\kappa$ = Cohen's Kappa coefficient
+        \item $p_o$ = observed agreement between predictions and true labels
+        \item $p_e$ = expected agreement by chance
+    \end{itemize}
+
+    \item \textbf{ROC Curve}
+    \[
+    TPR = \frac{TP}{TP + FN}
+    \qquad
+    FPR = \frac{FP}{FP + TN}
+    \]
+    where:
+    \begin{itemize}
+        \item $TPR$ = true positive rate (Recall)
+        \item $FPR$ = false positive rate
+        \item $TP$ = true positives
+        \item $FP$ = false positives
+        \item $TN$ = true negatives
+        \item $FN$ = false negatives
+        \item ROC curve = graphical plot of $TPR$ against $FPR$
+    \end{itemize}
+
+    \item \textbf{Area Under the Curve (AUC)}
+    \[
+    AUC = \int_{0}^{1} TPR(FPR)\,d(FPR)
+    \]
+    where:
+    \begin{itemize}
+        \item $AUC$ = area under the ROC curve
+        \item $TPR$ = true positive rate
+        \item $FPR$ = false positive rate
+        \item higher AUC indicates better classifier performance
+    \end{itemize}
+
+\end{itemize}
+
+
+\subsubsection{Features}
+
+Our data are characterized by their meaning, in this case we call those meanings features. Features can be useful if they help us to make a difference in our decision. An appropriate choice of the features is crucial for our models. Redundancy can slow down our models, so we want to cut the number of features as much as possible while retaining the biggest amount of information. We have many ways to do feature selection, and we usually do it in the pre-processing phase. 
+
+\subsubsection{Experimental ML study}
+
+Since we can't know a priori the best model possible for our task we have to do some trial and error experiments. We should check as many algorithms as possible to be sure that our search space was covered enough. 
+
+\vspace{10pt}
+
+The general pipeline of a machine learning study follows these steps 
+\begin{itemize}
+    \item Data preprocessing
+    \item Choice of the method and the parameters
+    \item Estimating the predictive error
+    \item Inducing the final model
+    \item Testing the final model
+\end{itemize}
+
+When we split the data we need to remember that we shouldn't do anything on the test set if we learn information from it (data leakage). If we don't have a naturally given test set we should get it from the learning one before doing any transformation. 
+
+The typical transformations include normalization, errors cleaning, outliers removal, missing values imputation and feature engineering. Remember to base the transformations to the knowledge present in the training data only. Normalization of the test set for example should be done only with parameters learned the training set. Anyway we should know the expected error of our model. 
+
+\vspace{10pt}
+
+We can also get the validation set to find the best possible parameters and to assess overfitting. One way to have a more general partition of our data is obtained by using the so-called cross-validation

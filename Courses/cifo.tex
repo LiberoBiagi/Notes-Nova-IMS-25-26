@@ -966,5 +966,64 @@ This example is for 1-point crossover, but we can have multiple cutting points.
 For each character we change it with a given probability of mutation (another hyperparameter)
 
 
+\subsubsection{General function of genetic algorithms}
+
+Here we have a pseudocode on the general idea of genetic algorithms
+
+\begin{enumerate}
+    \item Initialize a population P of N individuals (typically at random)
+    
+
+    \item Repeat until termination condition is reached:
+    
+
+    \begin{enumerate}
+        \item Calculate the fitness of all the individuals in the population P (can be avoided in some cases, like tournament selection). This step is computationally costly
+        \item We create an empty population P'
+        \item Repeat P' has N individuals
+        \begin{enumerate}
+            \item We choose a genetic operator (crossover with probability $P_c$ or replication with probability $1-P_c$)
+            \item Select 2 individuals from population P 
+            \item Apply the operator to the individuals 
+            \item Apply mutation to the individuals resulting from the previous step 
+            \item Insert the individuals resulting from the previous point into P' 
+        \end{enumerate}
+        \item Replace P with P'
+    \end{enumerate}
+    \item Return the best individual in P in terms of fitness
+\end{enumerate}
+
+
+
+Some points
+
+\begin{itemize}
+    \item If N is odd:
+    \begin{itemize}
+        \item Select 1 individual mutated and insert it into P'
+        \item One crossover event copies into P' only one offspring (typically the best in fitness)
+    \end{itemize}
+    \item Elitism is the unchanged copy of the best K individuals in P into P' (bypassing the selection-crossover-mutation pipeline), typically K=1
+    \item We have to do something like P \ra selection \ra P' \ra crossover + mutation \ra P'' \ra P := P'' 
+    \item Replication is the unchanged copy of the parents
+    \item Termination condition is either
+    \begin{itemize}
+        \item A good enough solution is found, and we return it
+        \item A maximum number of generation was performed
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Hyperparameters of genetic algorithms}
+
+\begin{itemize}
+    \item String length \ra Given by the problem definition
+    \item Population size (N) \ra The bigger, the better. We have an upper bound (true for every problem)
+    \item Selection algorithm that we want to use \ra No free lunch holds, but tournament selection can be interesting to use (fast, and we can use the selection pressure). We can start with this and try the others. The tournament size should not be too big (2 can be good, and the minimum). 
+    \item Crossover probability ($P_c$) \ra Should be close to 1
+    \item Mutation probability ($P_m$) \ra Should be close to 0
+    \item Maximum number of generations \ra The bigger, the better but with an upper bound like for N
+    \item Elitism on or off  (and if on size of the elite and k) \ra Elitism should be used with K=1
+\end{itemize}
 
 
